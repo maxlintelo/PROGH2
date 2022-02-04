@@ -1,0 +1,63 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity top is
+  Port ( clk : in STD_LOGIC;
+         pwm : out STD_LOGIC);
+end top;
+
+architecture Behavioral of top is
+
+-- 8.192MHz / (256 * 4) = 8KHz
+component clk_wiz_0 is
+    Port ( 
+        clk_out1 : out STD_LOGIC;
+        reset : in STD_LOGIC;
+        locked : out STD_LOGIC;
+        clk_in1 : in STD_LOGIC
+    );
+end component clk_wiz_0;
+-- Memory voor sound
+component blk_mem_gen_0 is
+    Port ( 
+        clka : in STD_LOGIC;
+        ena : in STD_LOGIC;
+        addra : in STD_LOGIC_VECTOR ( 12 downto 0 );
+        douta : out STD_LOGIC_VECTOR ( 7 downto 0 )
+    );
+end component blk_mem_gen_0;
+
+-- Signals
+signal signal_clock_out : STD_LOGIC;
+signal pwm_counter : INTEGER range 0 to 255;
+signal clk_counter : INTEGER range 0 to 3;
+signal music_addres : STD_LOGIC_VECTOR(12 downto 0);
+signal music_data : STD_LOGIC_VECTOR(7 downto 0);
+
+begin
+    sound_clock: clk_wiz_0 port map(clk_out1 => signal_clock_out, reset => '0', clk_in1 => clk);
+    sound_memory: blk_mem_gen_0 port map(clka => signal_clock_out, ena => '1', addra => music_addres, douta => music_data);
+    
+    pwm_process: process(signal_clock_out) is
+    begin
+        if rising_edge(signal_clock_out) then
+            if pwm_counter > to_integer(unsigned(music_data)) then
+                pwm <= '0';
+            else
+                pwm <= '1';
+            end if;
+            if pwm_counter = 255 then
+                pwm_counter <= 0;
+                if clk_counter = 3 then
+                    clk_counter <= 0;
+                    music_addres <= std_logic_vector(to_unsigned(to_integer(unsigned(music_addres)) + 1, 13));
+                else
+                    clk_counter <= clk_counter + 1;
+                end if;
+            else
+                pwm_counter <= pwm_counter + 1;
+            end if;
+        end if;
+    end process pwm_process;
+end Behavioral;

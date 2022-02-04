@@ -1,61 +1,49 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 04.02.2022 13:12:13
--- Design Name: 
--- Module Name: PS2_read - Behavioral
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
 use IEEE.NUMERIC_STD;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
 entity PS2_read is
-Port (  clk_key     : in STD_LOGIC; -- clock is already stable and synced with fpga
-        data_key    : in STD_LOGIC;
-        scancode    : out STD_LOGIC_VECTOR(7 downto 0));
+Port (  clk : in STD_LOGIC;
+        ps2_clk : in STD_LOGIC; -- clock is already stable and synced with fpga
+        ps2_data : in STD_LOGIC;
+        ps2_code_new : out STD_LOGIC;
+        ps2_code : out STD_LOGIC_VECTOR(7 downto 0);
+        ps2_code_previous : out STD_LOGIC_VECTOR(7 downto 0));
 end PS2_read;
 
 architecture Behavioral of PS2_read is
 
 signal reading: STD_LOGIC := '0';
-signal data: STD_LOGIC_VECTOR(10 downto 0) := (others => '1');
+signal ps2_word : STD_LOGIC_VECTOR(10 downto 0) := (others => '1');
+signal error : STD_LOGIC;
+signal ps2_current_code : STD_LOGIC_VECTOR(7 downto 0);
 
 begin
-    
-    process(clk_key) is
-    
+    ps2_retrieve: process(ps2_clk) is
     begin
-        
-    if falling_edge(clk_key) then  
-        data <= data(9 downto 0) & data_key; -- shift data 
-        if data(10) = '0' then -- when last bit is 0, all data is send
-            scancode <= data(9 downto 2);
-            data <= (others => '1');
+        if rising_edge(ps2_clk) then
+            
+            ps2_word <= ps2_data & ps2_word(10 downto 1);
         end if;
-    end if;
+    end process ps2_retrieve;
     
-    end process;
-
+    error <= NOT (NOT ps2_word(0) AND ps2_word(10) AND (ps2_word(9) XOR ps2_word(8) XOR
+        ps2_word(7) XOR ps2_word(6) XOR ps2_word(5) XOR ps2_word(4) XOR ps2_word(3) XOR 
+        ps2_word(2) XOR ps2_word(1)));
+    ps2_code <= ps2_current_code;
+    
+    output_result: process(clk) is
+    begin
+        if rising_edge(clk) then
+            if error = '0' then
+                ps2_code_new <= '1';
+                if ps2_current_code /= ps2_word(8 downto 1) then
+                    ps2_code_previous <= ps2_current_code;
+                end if;
+                ps2_current_code <= ps2_word(8 downto 1);
+            else
+                ps2_code_new <= '0';
+            end if;
+        end if;
+    end process output_result;
 end Behavioral;

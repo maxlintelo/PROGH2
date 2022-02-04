@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Fri Feb  4 14:17:33 2022
-| Host         : LAPTOP-T2099UT1 running 64-bit major release  (build 9200)
+| Date         : Fri Feb  4 16:28:13 2022
+| Host         : DEKSTOP-MAX running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file top_timing_summary_routed.rpt -pb top_timing_summary_routed.pb -rpx top_timing_summary_routed.rpx -warn_on_violation
 | Design       : top
 | Device       : 7a35t-cpg236
@@ -53,9 +53,11 @@ Table of Contents
 
 1. checking no_clock
 --------------------
- There are 3 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+ There are 44 register/latch pins with no clock driven by root clock pin: clk (HIGH)
 
- There are 12 register/latch pins with no clock driven by root clock pin: meta_fix1/stable_clk_reg/Q (HIGH)
+ There are 12 register/latch pins with no clock driven by root clock pin: PS2_read1/ps2_code_new_reg/Q (HIGH)
+
+ There are 11 register/latch pins with no clock driven by root clock pin: meta_fix1/stable_clk_reg/Q (HIGH)
 
 
 2. checking constant_clock
@@ -70,7 +72,7 @@ Table of Contents
 
 4. checking unconstrained_internal_endpoints
 --------------------------------------------
- There are 27 pins that are not constrained for maximum delay. (HIGH)
+ There are 95 pins that are not constrained for maximum delay. (HIGH)
 
  There are 0 pins that are not constrained for maximum delay due to constant clock.
 
@@ -84,7 +86,7 @@ Table of Contents
 
 6. checking no_output_delay
 ---------------------------
- There is 1 port with no output delay specified. (HIGH)
+ There are 19 ports with no output delay specified. (HIGH)
 
  There are 0 ports with no output delay but user has a false path constraint
 

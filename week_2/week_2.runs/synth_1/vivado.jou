@@ -2,11 +2,11 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Fri Feb  4 14:16:15 2022
-# Process ID: 19080
-# Current directory: C:/Users/lenna/Documents/Github/PROGH2/week_2/week_2.runs/synth_1
+# Start of session at: Fri Feb  4 16:26:54 2022
+# Process ID: 3264
+# Current directory: C:/Development/PROGH2/week_2/week_2.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
-# Log file: C:/Users/lenna/Documents/Github/PROGH2/week_2/week_2.runs/synth_1/top.vds
-# Journal file: C:/Users/lenna/Documents/Github/PROGH2/week_2/week_2.runs/synth_1\vivado.jou
+# Log file: C:/Development/PROGH2/week_2/week_2.runs/synth_1/top.vds
+# Journal file: C:/Development/PROGH2/week_2/week_2.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source top.tcl -notrace

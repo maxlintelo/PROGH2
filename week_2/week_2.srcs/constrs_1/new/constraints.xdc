@@ -1,0 +1,8 @@
+set_property PACKAGE_PIN C17 [get_ports PS2_clock]
+set_property PACKAGE_PIN B17 [get_ports i_data_key]
+set_property PACKAGE_PIN W5 [get_ports clk]
+set_property PACKAGE_PIN L1 [get_ports led_out]
+set_property IOSTANDARD LVCMOS33 [get_ports led_out]
+set_property IOSTANDARD LVCMOS33 [get_ports i_data_key]
+set_property IOSTANDARD LVCMOS33 [get_ports clk]
+set_property IOSTANDARD LVCMOS33 [get_ports PS2_clock]

@@ -50,7 +50,7 @@ begin
         
     if falling_edge(clk_key) then  
         data <= data(9 downto 0) & data_key; -- shift data 
-        if data(10) = '0' then
+        if data(10) = '0' then -- when last bit is 0, all data is send
             scancode <= data(9 downto 2);
             data <= (others => '1');
         end if;

@@ -10,6 +10,7 @@ end top;
 architecture Behavioral of top is
 
 -- 8.192MHz / (256 * 4) = 8KHz
+-- 16.384MHz / (256 * 8) = 8KHz
 component clk_wiz_0 is
     Port ( 
         clk_out1 : out STD_LOGIC;
@@ -31,7 +32,7 @@ end component blk_mem_gen_0;
 -- Signals
 signal signal_clock_out : STD_LOGIC;
 signal pwm_counter : INTEGER range 0 to 255;
-signal clk_counter : INTEGER range 0 to 3;
+signal clk_counter : INTEGER range 0 to 7;
 signal music_addres : STD_LOGIC_VECTOR(12 downto 0);
 signal music_data : STD_LOGIC_VECTOR(7 downto 0);
 
@@ -40,16 +41,22 @@ begin
     sound_memory: blk_mem_gen_0 port map(clka => signal_clock_out, ena => '1', addra => music_addres, douta => music_data);
     
     pwm_process: process(signal_clock_out) is
+        variable temp_music : STD_LOGIC_VECTOR(7 downto 0) := std_logic_vector(to_unsigned(16#80#, 8));
     begin
         if rising_edge(signal_clock_out) then
-            if pwm_counter > to_integer(unsigned(music_data)) then
+            if unsigned(music_data) = 0 then
+                temp_music := std_logic_vector(to_unsigned(16#80#, 8));
+            else
+                temp_music := music_data;
+            end if;
+            if pwm_counter > to_integer(unsigned(temp_music)) then
                 pwm <= '0';
             else
                 pwm <= '1';
             end if;
             if pwm_counter = 255 then
                 pwm_counter <= 0;
-                if clk_counter = 3 then
+                if clk_counter = 7 then
                     clk_counter <= 0;
                     music_addres <= std_logic_vector(to_unsigned(to_integer(unsigned(music_addres)) + 1, 13));
                 else

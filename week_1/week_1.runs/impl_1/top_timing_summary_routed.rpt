@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Fri Feb  4 10:36:45 2022
+| Date         : Fri Feb  4 11:47:05 2022
 | Host         : DEKSTOP-MAX running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -file top_timing_summary_routed.rpt -pb top_timing_summary_routed.pb -rpx top_timing_summary_routed.rpx -warn_on_violation
 | Design       : top
@@ -127,7 +127,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-    116.349        0.000                      0                   70        0.070        0.000                      0                   70        3.000        0.000                       0                    39  
+     54.887        0.000                      0                   71        0.092        0.000                      0                   71        3.000        0.000                       0                    40  
 
 
 All user specified timing constraints are met.
@@ -138,11 +138,11 @@ All user specified timing constraints are met.
 | -------------
 ------------------------------------------------------------------------------------------------
 
-Clock                 Waveform(ns)         Period(ns)      Frequency(MHz)
------                 ------------         ----------      --------------
-clk                   {0.000 5.000}        10.000          100.000         
-  clk_out1_clk_wiz_0  {0.000 61.035}       122.070         8.192           
-  clkfbout_clk_wiz_0  {0.000 40.000}       80.000          12.500          
+Clock                 Waveform(ns)       Period(ns)      Frequency(MHz)
+-----                 ------------       ----------      --------------
+clk                   {0.000 5.000}      10.000          100.000         
+  clk_out1_clk_wiz_0  {0.000 30.516}     61.032          16.385          
+  clkfbout_clk_wiz_0  {0.000 25.000}     50.000          20.000          
 
 
 ------------------------------------------------------------------------------------------------
@@ -153,8 +153,8 @@ clk                   {0.000 5.000}        10.000          100.000
 Clock                     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----                     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
 clk                                                                                                                                                                     3.000        0.000                       0                     1  
-  clk_out1_clk_wiz_0      116.349        0.000                      0                   70        0.070        0.000                      0                   70       60.535        0.000                       0                    35  
-  clkfbout_clk_wiz_0                                                                                                                                                   20.000        0.000                       0                     3  
+  clk_out1_clk_wiz_0       54.887        0.000                      0                   71        0.092        0.000                      0                   71       30.016        0.000                       0                    36  
+  clkfbout_clk_wiz_0                                                                                                                                                   47.845        0.000                       0                     3  
 
 
 ------------------------------------------------------------------------------------------------
@@ -212,31 +212,31 @@ High Pulse Width  Fast    MMCME2_ADV/CLKIN1  n/a            2.000         5.000 
 From Clock:  clk_out1_clk_wiz_0
   To Clock:  clk_out1_clk_wiz_0
 
-Setup :            0  Failing Endpoints,  Worst Slack      116.349ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.070ns,  Total Violation        0.000ns
-PW    :            0  Failing Endpoints,  Worst Slack       60.535ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack       54.887ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.092ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack       30.016ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             116.349ns  (required time - arrival time)
+Slack (MET) :             54.887ns  (required time - arrival time)
   Source:                 sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
-                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Destination:            pwm_reg/R
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            122.070ns  (clk_out1_clk_wiz_0 rise@122.070ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        4.968ns  (logic 1.893ns (38.101%)  route 3.075ns (61.899%))
-  Logic Levels:           3  (CARRY4=1 LUT3=1 LUT4=1)
+  Requirement:            61.032ns  (clk_out1_clk_wiz_0 rise@61.032ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        5.602ns  (logic 1.885ns (33.648%)  route 3.717ns (66.352%))
+  Logic Levels:           4  (CARRY4=1 LUT3=1 LUT5=1 LUT6=1)
   Clock Path Skew:        -0.012ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.320ns = ( 120.750 - 122.070 ) 
+    Destination Clock Delay (DCD):    -1.320ns = ( 59.711 - 61.032 ) 
     Source Clock Delay      (SCD):    -0.737ns
     Clock Pessimism Removal (CPR):    0.571ns
-  Clock Uncertainty:      0.314ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:      0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.625ns
+    Discrete Jitter          (DJ):    0.382ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -251,124 +251,62 @@ Slack (MET) :             116.349ns  (required time - arrival time)
                                                      -6.961    -4.269 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.608    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.775    -0.737    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
+                         net (fo=34, routed)          1.775    -0.737    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
     RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
   -------------------------------------------------------------------    -------------------
-    RAMB36_X0Y26         RAMB36E1 (Prop_ramb36e1_CLKARDCLK_DOADO[3])
-                                                      0.882     0.145 r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/DOADO[3]
-                         net (fo=1, routed)           1.083     1.228    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/douta_array[3]
-    SLICE_X8Y130         LUT3 (Prop_lut3_I2_O)        0.150     1.378 r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/douta[3]_INST_0/O
-                         net (fo=2, routed)           0.986     2.365    music_data[3]
-    SLICE_X8Y131         LUT4 (Prop_lut4_I1_O)        0.328     2.693 r  pwm_i_8/O
-                         net (fo=1, routed)           0.000     2.693    pwm_i_8_n_0
-    SLICE_X8Y131         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.533     3.226 r  pwm_reg_i_1/CO[3]
-                         net (fo=1, routed)           1.006     4.231    p_0_in
-    SLICE_X6Y133         FDRE                                         r  pwm_reg/R
+    RAMB36_X0Y26         RAMB36E1 (Prop_ramb36e1_CLKARDCLK_DOADO[0])
+                                                      0.882     0.145 r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/DOADO[0]
+                         net (fo=1, routed)           1.143     1.288    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/douta_array[0]
+    SLICE_X9Y129         LUT3 (Prop_lut3_I2_O)        0.152     1.440 r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/douta[0]_INST_0/O
+                         net (fo=3, routed)           0.915     2.355    music_data[0]
+    SLICE_X9Y129         LUT6 (Prop_lut6_I3_O)        0.326     2.681 r  pwm_i_10/O
+                         net (fo=2, routed)           0.730     3.412    pwm_i_10_n_0
+    SLICE_X7Y129         LUT5 (Prop_lut5_I0_O)        0.124     3.536 r  pwm_i_6/O
+                         net (fo=1, routed)           0.000     3.536    pwm_i_6_n_0
+    SLICE_X7Y129         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401     3.937 r  pwm_reg_i_1/CO[3]
+                         net (fo=1, routed)           0.929     4.865    p_0_in
+    SLICE_X4Y133         FDRE                                         r  pwm_reg/R
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
-                                                    122.070   122.070 r  
-    W5                                                0.000   122.070 r  clk (IN)
-                         net (fo=0)                   0.000   122.070    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         1.388   123.458 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162   124.620    sound_clock/inst/clk_in1_clk_wiz_0
+                                                     61.032    61.032 r  
+    W5                                                0.000    61.032 r  clk (IN)
+                         net (fo=0)                   0.000    61.032    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    62.420 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    63.581    sound_clock/inst/clk_in1_clk_wiz_0
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.217   117.403 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581   118.984    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091   119.075 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.675   120.750    signal_clock_out
-    SLICE_X6Y133         FDRE                                         r  pwm_reg/C
-                         clock pessimism              0.571   121.321    
-                         clock uncertainty           -0.314   121.006    
-    SLICE_X6Y133         FDRE (Setup_fdre_C_R)       -0.426   120.580    pwm_reg
+                                                     -7.217    56.364 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    57.945    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    58.036 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          1.675    59.711    signal_clock_out
+    SLICE_X4Y133         FDRE                                         r  pwm_reg/C
+                         clock pessimism              0.571    60.282    
+                         clock uncertainty           -0.194    60.088    
+    SLICE_X4Y133         FDRE (Setup_fdre_C_R)       -0.335    59.753    pwm_reg
   -------------------------------------------------------------------
-                         required time                        120.580    
-                         arrival time                          -4.231    
+                         required time                         59.753    
+                         arrival time                          -4.865    
   -------------------------------------------------------------------
-                         slack                                116.349    
+                         slack                                 54.887    
 
-Slack (MET) :             118.528ns  (required time - arrival time)
+Slack (MET) :             57.691ns  (required time - arrival time)
   Source:                 pwm_counter_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Destination:            music_addres_reg[12]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            122.070ns  (clk_out1_clk_wiz_0 rise@122.070ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        2.986ns  (logic 0.766ns (25.657%)  route 2.220ns (74.343%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.390ns = ( 120.680 - 122.070 ) 
-    Source Clock Delay      (SCD):    -0.783ns
-    Clock Pessimism Removal (CPR):    0.571ns
-  Clock Uncertainty:      0.314ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.625ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.233     2.691    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -6.961    -4.269 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.661    -2.608    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.729    -0.783    signal_clock_out
-    SLICE_X10Y130        FDRE                                         r  pwm_counter_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X10Y130        FDRE (Prop_fdre_C_Q)         0.518    -0.265 r  pwm_counter_reg[1]/Q
-                         net (fo=8, routed)           0.911     0.646    pwm_counter_reg_n_0_[1]
-    SLICE_X8Y130         LUT6 (Prop_lut6_I5_O)        0.124     0.770 r  pwm_counter[7]_i_2/O
-                         net (fo=5, routed)           0.676     1.446    pwm_counter[7]_i_2_n_0
-    SLICE_X8Y129         LUT5 (Prop_lut5_I4_O)        0.124     1.570 r  music_addres[0]_i_1/O
-                         net (fo=14, routed)          0.633     2.203    music_addres
-    SLICE_X9Y131         FDRE                                         r  music_addres_reg[12]/CE
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                    122.070   122.070 r  
-    W5                                                0.000   122.070 r  clk (IN)
-                         net (fo=0)                   0.000   122.070    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         1.388   123.458 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162   124.620    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.217   117.403 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581   118.984    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091   119.075 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.605   120.680    signal_clock_out
-    SLICE_X9Y131         FDRE                                         r  music_addres_reg[12]/C
-                         clock pessimism              0.571   121.251    
-                         clock uncertainty           -0.314   120.936    
-    SLICE_X9Y131         FDRE (Setup_fdre_C_CE)      -0.205   120.731    music_addres_reg[12]
-  -------------------------------------------------------------------
-                         required time                        120.731    
-                         arrival time                          -2.203    
-  -------------------------------------------------------------------
-                         slack                                118.528    
-
-Slack (MET) :             118.584ns  (required time - arrival time)
-  Source:                 pwm_counter_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Destination:            music_addres_reg[0]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            122.070ns  (clk_out1_clk_wiz_0 rise@122.070ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        2.928ns  (logic 0.766ns (26.163%)  route 2.162ns (73.837%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.392ns = ( 120.678 - 122.070 ) 
-    Source Clock Delay      (SCD):    -0.783ns
+  Requirement:            61.032ns  (clk_out1_clk_wiz_0 rise@61.032ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        2.870ns  (logic 0.766ns (26.687%)  route 2.104ns (73.313%))
+  Logic Levels:           2  (LUT6=2)
+  Clock Path Skew:        -0.107ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.394ns = ( 59.637 - 61.032 ) 
+    Source Clock Delay      (SCD):    -0.717ns
     Clock Pessimism Removal (CPR):    0.571ns
-  Clock Uncertainty:      0.314ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:      0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.625ns
+    Discrete Jitter          (DJ):    0.382ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -383,56 +321,56 @@ Slack (MET) :             118.584ns  (required time - arrival time)
                                                      -6.961    -4.269 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.608    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.729    -0.783    signal_clock_out
-    SLICE_X10Y130        FDRE                                         r  pwm_counter_reg[1]/C
+                         net (fo=34, routed)          1.795    -0.717    signal_clock_out
+    SLICE_X6Y129         FDRE                                         r  pwm_counter_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y130        FDRE (Prop_fdre_C_Q)         0.518    -0.265 r  pwm_counter_reg[1]/Q
-                         net (fo=8, routed)           0.911     0.646    pwm_counter_reg_n_0_[1]
-    SLICE_X8Y130         LUT6 (Prop_lut6_I5_O)        0.124     0.770 r  pwm_counter[7]_i_2/O
-                         net (fo=5, routed)           0.676     1.446    pwm_counter[7]_i_2_n_0
-    SLICE_X8Y129         LUT5 (Prop_lut5_I4_O)        0.124     1.570 r  music_addres[0]_i_1/O
-                         net (fo=14, routed)          0.575     2.145    music_addres
-    SLICE_X9Y128         FDRE                                         r  music_addres_reg[0]/CE
+    SLICE_X6Y129         FDRE (Prop_fdre_C_Q)         0.518    -0.199 r  pwm_counter_reg[1]/Q
+                         net (fo=8, routed)           0.893     0.695    pwm_counter_reg_n_0_[1]
+    SLICE_X6Y129         LUT6 (Prop_lut6_I3_O)        0.124     0.819 f  pwm_counter[7]_i_2/O
+                         net (fo=6, routed)           0.331     1.150    pwm_counter[7]_i_2_n_0
+    SLICE_X6Y130         LUT6 (Prop_lut6_I5_O)        0.124     1.274 r  music_addres[0]_i_1/O
+                         net (fo=14, routed)          0.880     2.154    music_addres
+    SLICE_X8Y127         FDRE                                         r  music_addres_reg[0]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
-                                                    122.070   122.070 r  
-    W5                                                0.000   122.070 r  clk (IN)
-                         net (fo=0)                   0.000   122.070    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         1.388   123.458 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162   124.620    sound_clock/inst/clk_in1_clk_wiz_0
+                                                     61.032    61.032 r  
+    W5                                                0.000    61.032 r  clk (IN)
+                         net (fo=0)                   0.000    61.032    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    62.420 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    63.581    sound_clock/inst/clk_in1_clk_wiz_0
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.217   117.403 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581   118.984    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091   119.075 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.603   120.678    signal_clock_out
-    SLICE_X9Y128         FDRE                                         r  music_addres_reg[0]/C
-                         clock pessimism              0.571   121.249    
-                         clock uncertainty           -0.314   120.934    
-    SLICE_X9Y128         FDRE (Setup_fdre_C_CE)      -0.205   120.729    music_addres_reg[0]
+                                                     -7.217    56.364 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    57.945    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    58.036 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          1.601    59.637    signal_clock_out
+    SLICE_X8Y127         FDRE                                         r  music_addres_reg[0]/C
+                         clock pessimism              0.571    60.208    
+                         clock uncertainty           -0.194    60.014    
+    SLICE_X8Y127         FDRE (Setup_fdre_C_CE)      -0.169    59.845    music_addres_reg[0]
   -------------------------------------------------------------------
-                         required time                        120.729    
-                         arrival time                          -2.145    
+                         required time                         59.845    
+                         arrival time                          -2.154    
   -------------------------------------------------------------------
-                         slack                                118.584    
+                         slack                                 57.691    
 
-Slack (MET) :             118.584ns  (required time - arrival time)
+Slack (MET) :             57.691ns  (required time - arrival time)
   Source:                 pwm_counter_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Destination:            music_addres_reg[1]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            122.070ns  (clk_out1_clk_wiz_0 rise@122.070ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        2.928ns  (logic 0.766ns (26.163%)  route 2.162ns (73.837%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.392ns = ( 120.678 - 122.070 ) 
-    Source Clock Delay      (SCD):    -0.783ns
+  Requirement:            61.032ns  (clk_out1_clk_wiz_0 rise@61.032ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        2.870ns  (logic 0.766ns (26.687%)  route 2.104ns (73.313%))
+  Logic Levels:           2  (LUT6=2)
+  Clock Path Skew:        -0.107ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.394ns = ( 59.637 - 61.032 ) 
+    Source Clock Delay      (SCD):    -0.717ns
     Clock Pessimism Removal (CPR):    0.571ns
-  Clock Uncertainty:      0.314ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:      0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.625ns
+    Discrete Jitter          (DJ):    0.382ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -447,56 +385,56 @@ Slack (MET) :             118.584ns  (required time - arrival time)
                                                      -6.961    -4.269 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.608    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.729    -0.783    signal_clock_out
-    SLICE_X10Y130        FDRE                                         r  pwm_counter_reg[1]/C
+                         net (fo=34, routed)          1.795    -0.717    signal_clock_out
+    SLICE_X6Y129         FDRE                                         r  pwm_counter_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y130        FDRE (Prop_fdre_C_Q)         0.518    -0.265 r  pwm_counter_reg[1]/Q
-                         net (fo=8, routed)           0.911     0.646    pwm_counter_reg_n_0_[1]
-    SLICE_X8Y130         LUT6 (Prop_lut6_I5_O)        0.124     0.770 r  pwm_counter[7]_i_2/O
-                         net (fo=5, routed)           0.676     1.446    pwm_counter[7]_i_2_n_0
-    SLICE_X8Y129         LUT5 (Prop_lut5_I4_O)        0.124     1.570 r  music_addres[0]_i_1/O
-                         net (fo=14, routed)          0.575     2.145    music_addres
-    SLICE_X9Y128         FDRE                                         r  music_addres_reg[1]/CE
+    SLICE_X6Y129         FDRE (Prop_fdre_C_Q)         0.518    -0.199 r  pwm_counter_reg[1]/Q
+                         net (fo=8, routed)           0.893     0.695    pwm_counter_reg_n_0_[1]
+    SLICE_X6Y129         LUT6 (Prop_lut6_I3_O)        0.124     0.819 f  pwm_counter[7]_i_2/O
+                         net (fo=6, routed)           0.331     1.150    pwm_counter[7]_i_2_n_0
+    SLICE_X6Y130         LUT6 (Prop_lut6_I5_O)        0.124     1.274 r  music_addres[0]_i_1/O
+                         net (fo=14, routed)          0.880     2.154    music_addres
+    SLICE_X8Y127         FDRE                                         r  music_addres_reg[1]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
-                                                    122.070   122.070 r  
-    W5                                                0.000   122.070 r  clk (IN)
-                         net (fo=0)                   0.000   122.070    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         1.388   123.458 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162   124.620    sound_clock/inst/clk_in1_clk_wiz_0
+                                                     61.032    61.032 r  
+    W5                                                0.000    61.032 r  clk (IN)
+                         net (fo=0)                   0.000    61.032    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    62.420 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    63.581    sound_clock/inst/clk_in1_clk_wiz_0
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.217   117.403 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581   118.984    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091   119.075 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.603   120.678    signal_clock_out
-    SLICE_X9Y128         FDRE                                         r  music_addres_reg[1]/C
-                         clock pessimism              0.571   121.249    
-                         clock uncertainty           -0.314   120.934    
-    SLICE_X9Y128         FDRE (Setup_fdre_C_CE)      -0.205   120.729    music_addres_reg[1]
+                                                     -7.217    56.364 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    57.945    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    58.036 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          1.601    59.637    signal_clock_out
+    SLICE_X8Y127         FDRE                                         r  music_addres_reg[1]/C
+                         clock pessimism              0.571    60.208    
+                         clock uncertainty           -0.194    60.014    
+    SLICE_X8Y127         FDRE (Setup_fdre_C_CE)      -0.169    59.845    music_addres_reg[1]
   -------------------------------------------------------------------
-                         required time                        120.729    
-                         arrival time                          -2.145    
+                         required time                         59.845    
+                         arrival time                          -2.154    
   -------------------------------------------------------------------
-                         slack                                118.584    
+                         slack                                 57.691    
 
-Slack (MET) :             118.584ns  (required time - arrival time)
+Slack (MET) :             57.691ns  (required time - arrival time)
   Source:                 pwm_counter_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Destination:            music_addres_reg[2]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            122.070ns  (clk_out1_clk_wiz_0 rise@122.070ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        2.928ns  (logic 0.766ns (26.163%)  route 2.162ns (73.837%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.392ns = ( 120.678 - 122.070 ) 
-    Source Clock Delay      (SCD):    -0.783ns
+  Requirement:            61.032ns  (clk_out1_clk_wiz_0 rise@61.032ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        2.870ns  (logic 0.766ns (26.687%)  route 2.104ns (73.313%))
+  Logic Levels:           2  (LUT6=2)
+  Clock Path Skew:        -0.107ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.394ns = ( 59.637 - 61.032 ) 
+    Source Clock Delay      (SCD):    -0.717ns
     Clock Pessimism Removal (CPR):    0.571ns
-  Clock Uncertainty:      0.314ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:      0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.625ns
+    Discrete Jitter          (DJ):    0.382ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -511,56 +449,56 @@ Slack (MET) :             118.584ns  (required time - arrival time)
                                                      -6.961    -4.269 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.608    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.729    -0.783    signal_clock_out
-    SLICE_X10Y130        FDRE                                         r  pwm_counter_reg[1]/C
+                         net (fo=34, routed)          1.795    -0.717    signal_clock_out
+    SLICE_X6Y129         FDRE                                         r  pwm_counter_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y130        FDRE (Prop_fdre_C_Q)         0.518    -0.265 r  pwm_counter_reg[1]/Q
-                         net (fo=8, routed)           0.911     0.646    pwm_counter_reg_n_0_[1]
-    SLICE_X8Y130         LUT6 (Prop_lut6_I5_O)        0.124     0.770 r  pwm_counter[7]_i_2/O
-                         net (fo=5, routed)           0.676     1.446    pwm_counter[7]_i_2_n_0
-    SLICE_X8Y129         LUT5 (Prop_lut5_I4_O)        0.124     1.570 r  music_addres[0]_i_1/O
-                         net (fo=14, routed)          0.575     2.145    music_addres
-    SLICE_X9Y128         FDRE                                         r  music_addres_reg[2]/CE
+    SLICE_X6Y129         FDRE (Prop_fdre_C_Q)         0.518    -0.199 r  pwm_counter_reg[1]/Q
+                         net (fo=8, routed)           0.893     0.695    pwm_counter_reg_n_0_[1]
+    SLICE_X6Y129         LUT6 (Prop_lut6_I3_O)        0.124     0.819 f  pwm_counter[7]_i_2/O
+                         net (fo=6, routed)           0.331     1.150    pwm_counter[7]_i_2_n_0
+    SLICE_X6Y130         LUT6 (Prop_lut6_I5_O)        0.124     1.274 r  music_addres[0]_i_1/O
+                         net (fo=14, routed)          0.880     2.154    music_addres
+    SLICE_X8Y127         FDRE                                         r  music_addres_reg[2]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
-                                                    122.070   122.070 r  
-    W5                                                0.000   122.070 r  clk (IN)
-                         net (fo=0)                   0.000   122.070    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         1.388   123.458 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162   124.620    sound_clock/inst/clk_in1_clk_wiz_0
+                                                     61.032    61.032 r  
+    W5                                                0.000    61.032 r  clk (IN)
+                         net (fo=0)                   0.000    61.032    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    62.420 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    63.581    sound_clock/inst/clk_in1_clk_wiz_0
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.217   117.403 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581   118.984    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091   119.075 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.603   120.678    signal_clock_out
-    SLICE_X9Y128         FDRE                                         r  music_addres_reg[2]/C
-                         clock pessimism              0.571   121.249    
-                         clock uncertainty           -0.314   120.934    
-    SLICE_X9Y128         FDRE (Setup_fdre_C_CE)      -0.205   120.729    music_addres_reg[2]
+                                                     -7.217    56.364 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    57.945    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    58.036 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          1.601    59.637    signal_clock_out
+    SLICE_X8Y127         FDRE                                         r  music_addres_reg[2]/C
+                         clock pessimism              0.571    60.208    
+                         clock uncertainty           -0.194    60.014    
+    SLICE_X8Y127         FDRE (Setup_fdre_C_CE)      -0.169    59.845    music_addres_reg[2]
   -------------------------------------------------------------------
-                         required time                        120.729    
-                         arrival time                          -2.145    
+                         required time                         59.845    
+                         arrival time                          -2.154    
   -------------------------------------------------------------------
-                         slack                                118.584    
+                         slack                                 57.691    
 
-Slack (MET) :             118.584ns  (required time - arrival time)
+Slack (MET) :             57.691ns  (required time - arrival time)
   Source:                 pwm_counter_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Destination:            music_addres_reg[3]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            122.070ns  (clk_out1_clk_wiz_0 rise@122.070ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        2.928ns  (logic 0.766ns (26.163%)  route 2.162ns (73.837%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.039ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.392ns = ( 120.678 - 122.070 ) 
-    Source Clock Delay      (SCD):    -0.783ns
+  Requirement:            61.032ns  (clk_out1_clk_wiz_0 rise@61.032ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        2.870ns  (logic 0.766ns (26.687%)  route 2.104ns (73.313%))
+  Logic Levels:           2  (LUT6=2)
+  Clock Path Skew:        -0.107ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.394ns = ( 59.637 - 61.032 ) 
+    Source Clock Delay      (SCD):    -0.717ns
     Clock Pessimism Removal (CPR):    0.571ns
-  Clock Uncertainty:      0.314ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:      0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.625ns
+    Discrete Jitter          (DJ):    0.382ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -575,120 +513,56 @@ Slack (MET) :             118.584ns  (required time - arrival time)
                                                      -6.961    -4.269 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.608    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.729    -0.783    signal_clock_out
-    SLICE_X10Y130        FDRE                                         r  pwm_counter_reg[1]/C
+                         net (fo=34, routed)          1.795    -0.717    signal_clock_out
+    SLICE_X6Y129         FDRE                                         r  pwm_counter_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y130        FDRE (Prop_fdre_C_Q)         0.518    -0.265 r  pwm_counter_reg[1]/Q
-                         net (fo=8, routed)           0.911     0.646    pwm_counter_reg_n_0_[1]
-    SLICE_X8Y130         LUT6 (Prop_lut6_I5_O)        0.124     0.770 r  pwm_counter[7]_i_2/O
-                         net (fo=5, routed)           0.676     1.446    pwm_counter[7]_i_2_n_0
-    SLICE_X8Y129         LUT5 (Prop_lut5_I4_O)        0.124     1.570 r  music_addres[0]_i_1/O
-                         net (fo=14, routed)          0.575     2.145    music_addres
-    SLICE_X9Y128         FDRE                                         r  music_addres_reg[3]/CE
+    SLICE_X6Y129         FDRE (Prop_fdre_C_Q)         0.518    -0.199 r  pwm_counter_reg[1]/Q
+                         net (fo=8, routed)           0.893     0.695    pwm_counter_reg_n_0_[1]
+    SLICE_X6Y129         LUT6 (Prop_lut6_I3_O)        0.124     0.819 f  pwm_counter[7]_i_2/O
+                         net (fo=6, routed)           0.331     1.150    pwm_counter[7]_i_2_n_0
+    SLICE_X6Y130         LUT6 (Prop_lut6_I5_O)        0.124     1.274 r  music_addres[0]_i_1/O
+                         net (fo=14, routed)          0.880     2.154    music_addres
+    SLICE_X8Y127         FDRE                                         r  music_addres_reg[3]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
-                                                    122.070   122.070 r  
-    W5                                                0.000   122.070 r  clk (IN)
-                         net (fo=0)                   0.000   122.070    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         1.388   123.458 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162   124.620    sound_clock/inst/clk_in1_clk_wiz_0
+                                                     61.032    61.032 r  
+    W5                                                0.000    61.032 r  clk (IN)
+                         net (fo=0)                   0.000    61.032    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    62.420 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    63.581    sound_clock/inst/clk_in1_clk_wiz_0
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.217   117.403 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581   118.984    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091   119.075 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.603   120.678    signal_clock_out
-    SLICE_X9Y128         FDRE                                         r  music_addres_reg[3]/C
-                         clock pessimism              0.571   121.249    
-                         clock uncertainty           -0.314   120.934    
-    SLICE_X9Y128         FDRE (Setup_fdre_C_CE)      -0.205   120.729    music_addres_reg[3]
+                                                     -7.217    56.364 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    57.945    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    58.036 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          1.601    59.637    signal_clock_out
+    SLICE_X8Y127         FDRE                                         r  music_addres_reg[3]/C
+                         clock pessimism              0.571    60.208    
+                         clock uncertainty           -0.194    60.014    
+    SLICE_X8Y127         FDRE (Setup_fdre_C_CE)      -0.169    59.845    music_addres_reg[3]
   -------------------------------------------------------------------
-                         required time                        120.729    
-                         arrival time                          -2.145    
+                         required time                         59.845    
+                         arrival time                          -2.154    
   -------------------------------------------------------------------
-                         slack                                118.584    
+                         slack                                 57.691    
 
-Slack (MET) :             118.688ns  (required time - arrival time)
+Slack (MET) :             57.833ns  (required time - arrival time)
   Source:                 pwm_counter_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram_cooolgate_en_gate_2_cooolDelFlop/D
-                            (rising edge-triggered cell FDCE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            122.070ns  (clk_out1_clk_wiz_0 rise@122.070ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        2.986ns  (logic 0.766ns (25.657%)  route 2.220ns (74.343%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.390ns = ( 120.680 - 122.070 ) 
-    Source Clock Delay      (SCD):    -0.783ns
-    Clock Pessimism Removal (CPR):    0.571ns
-  Clock Uncertainty:      0.314ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.625ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.233     2.691    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -6.961    -4.269 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.661    -2.608    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.729    -0.783    signal_clock_out
-    SLICE_X10Y130        FDRE                                         r  pwm_counter_reg[1]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X10Y130        FDRE (Prop_fdre_C_Q)         0.518    -0.265 r  pwm_counter_reg[1]/Q
-                         net (fo=8, routed)           0.911     0.646    pwm_counter_reg_n_0_[1]
-    SLICE_X8Y130         LUT6 (Prop_lut6_I5_O)        0.124     0.770 r  pwm_counter[7]_i_2/O
-                         net (fo=5, routed)           0.676     1.446    pwm_counter[7]_i_2_n_0
-    SLICE_X8Y129         LUT5 (Prop_lut5_I4_O)        0.124     1.570 r  music_addres[0]_i_1/O
-                         net (fo=14, routed)          0.633     2.203    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/pwropt_1
-    SLICE_X8Y131         FDCE                                         r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram_cooolgate_en_gate_2_cooolDelFlop/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                    122.070   122.070 r  
-    W5                                                0.000   122.070 r  clk (IN)
-                         net (fo=0)                   0.000   122.070    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         1.388   123.458 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162   124.620    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.217   117.403 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581   118.984    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091   119.075 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.605   120.680    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
-    SLICE_X8Y131         FDCE                                         r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram_cooolgate_en_gate_2_cooolDelFlop/C
-                         clock pessimism              0.571   121.251    
-                         clock uncertainty           -0.314   120.936    
-    SLICE_X8Y131         FDCE (Setup_fdce_C_D)       -0.045   120.891    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram_cooolgate_en_gate_2_cooolDelFlop
-  -------------------------------------------------------------------
-                         required time                        120.891    
-                         arrival time                          -2.203    
-  -------------------------------------------------------------------
-                         slack                                118.688    
-
-Slack (MET) :             118.725ns  (required time - arrival time)
-  Source:                 pwm_counter_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Destination:            music_addres_reg[4]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            122.070ns  (clk_out1_clk_wiz_0 rise@122.070ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        2.788ns  (logic 0.766ns (27.476%)  route 2.022ns (72.524%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.038ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.391ns = ( 120.679 - 122.070 ) 
-    Source Clock Delay      (SCD):    -0.783ns
+  Requirement:            61.032ns  (clk_out1_clk_wiz_0 rise@61.032ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        2.730ns  (logic 0.766ns (28.054%)  route 1.964ns (71.946%))
+  Logic Levels:           2  (LUT6=2)
+  Clock Path Skew:        -0.105ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.392ns = ( 59.639 - 61.032 ) 
+    Source Clock Delay      (SCD):    -0.717ns
     Clock Pessimism Removal (CPR):    0.571ns
-  Clock Uncertainty:      0.314ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:      0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.625ns
+    Discrete Jitter          (DJ):    0.382ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -703,56 +577,56 @@ Slack (MET) :             118.725ns  (required time - arrival time)
                                                      -6.961    -4.269 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.608    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.729    -0.783    signal_clock_out
-    SLICE_X10Y130        FDRE                                         r  pwm_counter_reg[1]/C
+                         net (fo=34, routed)          1.795    -0.717    signal_clock_out
+    SLICE_X6Y129         FDRE                                         r  pwm_counter_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y130        FDRE (Prop_fdre_C_Q)         0.518    -0.265 r  pwm_counter_reg[1]/Q
-                         net (fo=8, routed)           0.911     0.646    pwm_counter_reg_n_0_[1]
-    SLICE_X8Y130         LUT6 (Prop_lut6_I5_O)        0.124     0.770 r  pwm_counter[7]_i_2/O
-                         net (fo=5, routed)           0.676     1.446    pwm_counter[7]_i_2_n_0
-    SLICE_X8Y129         LUT5 (Prop_lut5_I4_O)        0.124     1.570 r  music_addres[0]_i_1/O
-                         net (fo=14, routed)          0.435     2.005    music_addres
-    SLICE_X9Y129         FDRE                                         r  music_addres_reg[4]/CE
+    SLICE_X6Y129         FDRE (Prop_fdre_C_Q)         0.518    -0.199 r  pwm_counter_reg[1]/Q
+                         net (fo=8, routed)           0.893     0.695    pwm_counter_reg_n_0_[1]
+    SLICE_X6Y129         LUT6 (Prop_lut6_I3_O)        0.124     0.819 f  pwm_counter[7]_i_2/O
+                         net (fo=6, routed)           0.331     1.150    pwm_counter[7]_i_2_n_0
+    SLICE_X6Y130         LUT6 (Prop_lut6_I5_O)        0.124     1.274 r  music_addres[0]_i_1/O
+                         net (fo=14, routed)          0.740     2.014    music_addres
+    SLICE_X8Y128         FDRE                                         r  music_addres_reg[4]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
-                                                    122.070   122.070 r  
-    W5                                                0.000   122.070 r  clk (IN)
-                         net (fo=0)                   0.000   122.070    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         1.388   123.458 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162   124.620    sound_clock/inst/clk_in1_clk_wiz_0
+                                                     61.032    61.032 r  
+    W5                                                0.000    61.032 r  clk (IN)
+                         net (fo=0)                   0.000    61.032    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    62.420 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    63.581    sound_clock/inst/clk_in1_clk_wiz_0
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.217   117.403 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581   118.984    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091   119.075 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.604   120.679    signal_clock_out
-    SLICE_X9Y129         FDRE                                         r  music_addres_reg[4]/C
-                         clock pessimism              0.571   121.250    
-                         clock uncertainty           -0.314   120.935    
-    SLICE_X9Y129         FDRE (Setup_fdre_C_CE)      -0.205   120.730    music_addres_reg[4]
+                                                     -7.217    56.364 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    57.945    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    58.036 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          1.603    59.639    signal_clock_out
+    SLICE_X8Y128         FDRE                                         r  music_addres_reg[4]/C
+                         clock pessimism              0.571    60.210    
+                         clock uncertainty           -0.194    60.016    
+    SLICE_X8Y128         FDRE (Setup_fdre_C_CE)      -0.169    59.847    music_addres_reg[4]
   -------------------------------------------------------------------
-                         required time                        120.730    
-                         arrival time                          -2.005    
+                         required time                         59.847    
+                         arrival time                          -2.014    
   -------------------------------------------------------------------
-                         slack                                118.725    
+                         slack                                 57.833    
 
-Slack (MET) :             118.725ns  (required time - arrival time)
+Slack (MET) :             57.833ns  (required time - arrival time)
   Source:                 pwm_counter_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Destination:            music_addres_reg[5]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            122.070ns  (clk_out1_clk_wiz_0 rise@122.070ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        2.788ns  (logic 0.766ns (27.476%)  route 2.022ns (72.524%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.038ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.391ns = ( 120.679 - 122.070 ) 
-    Source Clock Delay      (SCD):    -0.783ns
+  Requirement:            61.032ns  (clk_out1_clk_wiz_0 rise@61.032ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        2.730ns  (logic 0.766ns (28.054%)  route 1.964ns (71.946%))
+  Logic Levels:           2  (LUT6=2)
+  Clock Path Skew:        -0.105ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.392ns = ( 59.639 - 61.032 ) 
+    Source Clock Delay      (SCD):    -0.717ns
     Clock Pessimism Removal (CPR):    0.571ns
-  Clock Uncertainty:      0.314ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:      0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.625ns
+    Discrete Jitter          (DJ):    0.382ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -767,56 +641,56 @@ Slack (MET) :             118.725ns  (required time - arrival time)
                                                      -6.961    -4.269 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.608    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.729    -0.783    signal_clock_out
-    SLICE_X10Y130        FDRE                                         r  pwm_counter_reg[1]/C
+                         net (fo=34, routed)          1.795    -0.717    signal_clock_out
+    SLICE_X6Y129         FDRE                                         r  pwm_counter_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y130        FDRE (Prop_fdre_C_Q)         0.518    -0.265 r  pwm_counter_reg[1]/Q
-                         net (fo=8, routed)           0.911     0.646    pwm_counter_reg_n_0_[1]
-    SLICE_X8Y130         LUT6 (Prop_lut6_I5_O)        0.124     0.770 r  pwm_counter[7]_i_2/O
-                         net (fo=5, routed)           0.676     1.446    pwm_counter[7]_i_2_n_0
-    SLICE_X8Y129         LUT5 (Prop_lut5_I4_O)        0.124     1.570 r  music_addres[0]_i_1/O
-                         net (fo=14, routed)          0.435     2.005    music_addres
-    SLICE_X9Y129         FDRE                                         r  music_addres_reg[5]/CE
+    SLICE_X6Y129         FDRE (Prop_fdre_C_Q)         0.518    -0.199 r  pwm_counter_reg[1]/Q
+                         net (fo=8, routed)           0.893     0.695    pwm_counter_reg_n_0_[1]
+    SLICE_X6Y129         LUT6 (Prop_lut6_I3_O)        0.124     0.819 f  pwm_counter[7]_i_2/O
+                         net (fo=6, routed)           0.331     1.150    pwm_counter[7]_i_2_n_0
+    SLICE_X6Y130         LUT6 (Prop_lut6_I5_O)        0.124     1.274 r  music_addres[0]_i_1/O
+                         net (fo=14, routed)          0.740     2.014    music_addres
+    SLICE_X8Y128         FDRE                                         r  music_addres_reg[5]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
-                                                    122.070   122.070 r  
-    W5                                                0.000   122.070 r  clk (IN)
-                         net (fo=0)                   0.000   122.070    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         1.388   123.458 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162   124.620    sound_clock/inst/clk_in1_clk_wiz_0
+                                                     61.032    61.032 r  
+    W5                                                0.000    61.032 r  clk (IN)
+                         net (fo=0)                   0.000    61.032    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    62.420 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    63.581    sound_clock/inst/clk_in1_clk_wiz_0
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.217   117.403 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581   118.984    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091   119.075 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.604   120.679    signal_clock_out
-    SLICE_X9Y129         FDRE                                         r  music_addres_reg[5]/C
-                         clock pessimism              0.571   121.250    
-                         clock uncertainty           -0.314   120.935    
-    SLICE_X9Y129         FDRE (Setup_fdre_C_CE)      -0.205   120.730    music_addres_reg[5]
+                                                     -7.217    56.364 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    57.945    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    58.036 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          1.603    59.639    signal_clock_out
+    SLICE_X8Y128         FDRE                                         r  music_addres_reg[5]/C
+                         clock pessimism              0.571    60.210    
+                         clock uncertainty           -0.194    60.016    
+    SLICE_X8Y128         FDRE (Setup_fdre_C_CE)      -0.169    59.847    music_addres_reg[5]
   -------------------------------------------------------------------
-                         required time                        120.730    
-                         arrival time                          -2.005    
+                         required time                         59.847    
+                         arrival time                          -2.014    
   -------------------------------------------------------------------
-                         slack                                118.725    
+                         slack                                 57.833    
 
-Slack (MET) :             118.725ns  (required time - arrival time)
+Slack (MET) :             57.833ns  (required time - arrival time)
   Source:                 pwm_counter_reg[1]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Destination:            music_addres_reg[6]/CE
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            122.070ns  (clk_out1_clk_wiz_0 rise@122.070ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        2.788ns  (logic 0.766ns (27.476%)  route 2.022ns (72.524%))
-  Logic Levels:           2  (LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.038ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    -1.391ns = ( 120.679 - 122.070 ) 
-    Source Clock Delay      (SCD):    -0.783ns
+  Requirement:            61.032ns  (clk_out1_clk_wiz_0 rise@61.032ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        2.730ns  (logic 0.766ns (28.054%)  route 1.964ns (71.946%))
+  Logic Levels:           2  (LUT6=2)
+  Clock Path Skew:        -0.105ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.392ns = ( 59.639 - 61.032 ) 
+    Source Clock Delay      (SCD):    -0.717ns
     Clock Pessimism Removal (CPR):    0.571ns
-  Clock Uncertainty:      0.314ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:      0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
-    Discrete Jitter          (DJ):    0.625ns
+    Discrete Jitter          (DJ):    0.382ns
     Phase Error              (PE):    0.000ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -831,38 +705,166 @@ Slack (MET) :             118.725ns  (required time - arrival time)
                                                      -6.961    -4.269 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           1.661    -2.608    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.729    -0.783    signal_clock_out
-    SLICE_X10Y130        FDRE                                         r  pwm_counter_reg[1]/C
+                         net (fo=34, routed)          1.795    -0.717    signal_clock_out
+    SLICE_X6Y129         FDRE                                         r  pwm_counter_reg[1]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X10Y130        FDRE (Prop_fdre_C_Q)         0.518    -0.265 r  pwm_counter_reg[1]/Q
-                         net (fo=8, routed)           0.911     0.646    pwm_counter_reg_n_0_[1]
-    SLICE_X8Y130         LUT6 (Prop_lut6_I5_O)        0.124     0.770 r  pwm_counter[7]_i_2/O
-                         net (fo=5, routed)           0.676     1.446    pwm_counter[7]_i_2_n_0
-    SLICE_X8Y129         LUT5 (Prop_lut5_I4_O)        0.124     1.570 r  music_addres[0]_i_1/O
-                         net (fo=14, routed)          0.435     2.005    music_addres
-    SLICE_X9Y129         FDRE                                         r  music_addres_reg[6]/CE
+    SLICE_X6Y129         FDRE (Prop_fdre_C_Q)         0.518    -0.199 r  pwm_counter_reg[1]/Q
+                         net (fo=8, routed)           0.893     0.695    pwm_counter_reg_n_0_[1]
+    SLICE_X6Y129         LUT6 (Prop_lut6_I3_O)        0.124     0.819 f  pwm_counter[7]_i_2/O
+                         net (fo=6, routed)           0.331     1.150    pwm_counter[7]_i_2_n_0
+    SLICE_X6Y130         LUT6 (Prop_lut6_I5_O)        0.124     1.274 r  music_addres[0]_i_1/O
+                         net (fo=14, routed)          0.740     2.014    music_addres
+    SLICE_X8Y128         FDRE                                         r  music_addres_reg[6]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
-                                                    122.070   122.070 r  
-    W5                                                0.000   122.070 r  clk (IN)
-                         net (fo=0)                   0.000   122.070    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         1.388   123.458 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           1.162   124.620    sound_clock/inst/clk_in1_clk_wiz_0
+                                                     61.032    61.032 r  
+    W5                                                0.000    61.032 r  clk (IN)
+                         net (fo=0)                   0.000    61.032    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    62.420 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    63.581    sound_clock/inst/clk_in1_clk_wiz_0
     MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -7.217   117.403 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           1.581   118.984    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091   119.075 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          1.604   120.679    signal_clock_out
-    SLICE_X9Y129         FDRE                                         r  music_addres_reg[6]/C
-                         clock pessimism              0.571   121.250    
-                         clock uncertainty           -0.314   120.935    
-    SLICE_X9Y129         FDRE (Setup_fdre_C_CE)      -0.205   120.730    music_addres_reg[6]
+                                                     -7.217    56.364 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    57.945    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    58.036 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          1.603    59.639    signal_clock_out
+    SLICE_X8Y128         FDRE                                         r  music_addres_reg[6]/C
+                         clock pessimism              0.571    60.210    
+                         clock uncertainty           -0.194    60.016    
+    SLICE_X8Y128         FDRE (Setup_fdre_C_CE)      -0.169    59.847    music_addres_reg[6]
   -------------------------------------------------------------------
-                         required time                        120.730    
-                         arrival time                          -2.005    
+                         required time                         59.847    
+                         arrival time                          -2.014    
   -------------------------------------------------------------------
-                         slack                                118.725    
+                         slack                                 57.833    
+
+Slack (MET) :             57.833ns  (required time - arrival time)
+  Source:                 pwm_counter_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Destination:            music_addres_reg[7]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            61.032ns  (clk_out1_clk_wiz_0 rise@61.032ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        2.730ns  (logic 0.766ns (28.054%)  route 1.964ns (71.946%))
+  Logic Levels:           2  (LUT6=2)
+  Clock Path Skew:        -0.105ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.392ns = ( 59.639 - 61.032 ) 
+    Source Clock Delay      (SCD):    -0.717ns
+    Clock Pessimism Removal (CPR):    0.571ns
+  Clock Uncertainty:      0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.382ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.233     2.691    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -6.961    -4.269 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.661    -2.608    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          1.795    -0.717    signal_clock_out
+    SLICE_X6Y129         FDRE                                         r  pwm_counter_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y129         FDRE (Prop_fdre_C_Q)         0.518    -0.199 r  pwm_counter_reg[1]/Q
+                         net (fo=8, routed)           0.893     0.695    pwm_counter_reg_n_0_[1]
+    SLICE_X6Y129         LUT6 (Prop_lut6_I3_O)        0.124     0.819 f  pwm_counter[7]_i_2/O
+                         net (fo=6, routed)           0.331     1.150    pwm_counter[7]_i_2_n_0
+    SLICE_X6Y130         LUT6 (Prop_lut6_I5_O)        0.124     1.274 r  music_addres[0]_i_1/O
+                         net (fo=14, routed)          0.740     2.014    music_addres
+    SLICE_X8Y128         FDRE                                         r  music_addres_reg[7]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     61.032    61.032 r  
+    W5                                                0.000    61.032 r  clk (IN)
+                         net (fo=0)                   0.000    61.032    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    62.420 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    63.581    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.217    56.364 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    57.945    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    58.036 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          1.603    59.639    signal_clock_out
+    SLICE_X8Y128         FDRE                                         r  music_addres_reg[7]/C
+                         clock pessimism              0.571    60.210    
+                         clock uncertainty           -0.194    60.016    
+    SLICE_X8Y128         FDRE (Setup_fdre_C_CE)      -0.169    59.847    music_addres_reg[7]
+  -------------------------------------------------------------------
+                         required time                         59.847    
+                         arrival time                          -2.014    
+  -------------------------------------------------------------------
+                         slack                                 57.833    
+
+Slack (MET) :             57.983ns  (required time - arrival time)
+  Source:                 pwm_counter_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Destination:            music_addres_reg[10]/CE
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            61.032ns  (clk_out1_clk_wiz_0 rise@61.032ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        2.581ns  (logic 0.766ns (29.682%)  route 1.815ns (70.318%))
+  Logic Levels:           2  (LUT6=2)
+  Clock Path Skew:        -0.104ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    -1.391ns = ( 59.640 - 61.032 ) 
+    Source Clock Delay      (SCD):    -0.717ns
+    Clock Pessimism Removal (CPR):    0.571ns
+  Clock Uncertainty:      0.194ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Discrete Jitter          (DJ):    0.382ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.233     2.691    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -6.961    -4.269 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.661    -2.608    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096    -2.512 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          1.795    -0.717    signal_clock_out
+    SLICE_X6Y129         FDRE                                         r  pwm_counter_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X6Y129         FDRE (Prop_fdre_C_Q)         0.518    -0.199 r  pwm_counter_reg[1]/Q
+                         net (fo=8, routed)           0.893     0.695    pwm_counter_reg_n_0_[1]
+    SLICE_X6Y129         LUT6 (Prop_lut6_I3_O)        0.124     0.819 f  pwm_counter[7]_i_2/O
+                         net (fo=6, routed)           0.331     1.150    pwm_counter[7]_i_2_n_0
+    SLICE_X6Y130         LUT6 (Prop_lut6_I5_O)        0.124     1.274 r  music_addres[0]_i_1/O
+                         net (fo=14, routed)          0.590     1.864    music_addres
+    SLICE_X8Y129         FDRE                                         r  music_addres_reg[10]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                     61.032    61.032 r  
+    W5                                                0.000    61.032 r  clk (IN)
+                         net (fo=0)                   0.000    61.032    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         1.388    62.420 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           1.162    63.581    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -7.217    56.364 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           1.581    57.945    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091    58.036 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          1.604    59.640    signal_clock_out
+    SLICE_X8Y129         FDRE                                         r  music_addres_reg[10]/C
+                         clock pessimism              0.571    60.211    
+                         clock uncertainty           -0.194    60.017    
+    SLICE_X8Y129         FDRE (Setup_fdre_C_CE)      -0.169    59.848    music_addres_reg[10]
+  -------------------------------------------------------------------
+                         required time                         59.848    
+                         arrival time                          -1.864    
+  -------------------------------------------------------------------
+                         slack                                 57.983    
 
 
 
@@ -870,239 +872,15 @@ Slack (MET) :             118.725ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.070ns  (arrival time - required time)
-  Source:                 music_addres_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[3]
-                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.310ns  (logic 0.141ns (45.511%)  route 0.169ns (54.489%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.056ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.738ns
-    Source Clock Delay      (SCD):    -0.545ns
-    Clock Pessimism Removal (CPR):    -0.249ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.440     0.667    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.636    -0.545    signal_clock_out
-    SLICE_X9Y128         FDRE                                         r  music_addres_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y128         FDRE (Prop_fdre_C_Q)         0.141    -0.404 r  music_addres_reg[0]/Q
-                         net (fo=3, routed)           0.169    -0.235    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addra[0]
-    RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[3]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.480     0.894    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.952    -0.738    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/clka
-    RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
-                         clock pessimism              0.249    -0.488    
-    RAMB36_X0Y25         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[3])
-                                                      0.183    -0.305    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
-  -------------------------------------------------------------------
-                         required time                          0.305    
-                         arrival time                          -0.235    
-  -------------------------------------------------------------------
-                         slack                                  0.070    
-
-Slack (MET) :             0.071ns  (arrival time - required time)
-  Source:                 music_addres_reg[4]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[7]
-                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.309ns  (logic 0.141ns (45.592%)  route 0.168ns (54.408%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.055ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.738ns
-    Source Clock Delay      (SCD):    -0.544ns
-    Clock Pessimism Removal (CPR):    -0.249ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.440     0.667    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.637    -0.544    signal_clock_out
-    SLICE_X9Y129         FDRE                                         r  music_addres_reg[4]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y129         FDRE (Prop_fdre_C_Q)         0.141    -0.403 r  music_addres_reg[4]/Q
-                         net (fo=3, routed)           0.168    -0.235    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addra[4]
-    RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[7]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.480     0.894    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.952    -0.738    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/clka
-    RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
-                         clock pessimism              0.249    -0.488    
-    RAMB36_X0Y25         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[7])
-                                                      0.183    -0.305    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
-  -------------------------------------------------------------------
-                         required time                          0.305    
-                         arrival time                          -0.235    
-  -------------------------------------------------------------------
-                         slack                                  0.071    
-
-Slack (MET) :             0.120ns  (arrival time - required time)
-  Source:                 music_addres_reg[8]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[11]
-                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.362ns  (logic 0.141ns (38.947%)  route 0.221ns (61.053%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.059ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.733ns
-    Source Clock Delay      (SCD):    -0.543ns
-    Clock Pessimism Removal (CPR):    -0.249ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.440     0.667    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.638    -0.543    signal_clock_out
-    SLICE_X9Y130         FDRE                                         r  music_addres_reg[8]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y130         FDRE (Prop_fdre_C_Q)         0.141    -0.402 r  music_addres_reg[8]/Q
-                         net (fo=3, routed)           0.221    -0.181    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/addra[8]
-    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[11]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.480     0.894    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.957    -0.733    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
-    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
-                         clock pessimism              0.249    -0.483    
-    RAMB36_X0Y26         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[11])
-                                                      0.183    -0.300    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
-  -------------------------------------------------------------------
-                         required time                          0.300    
-                         arrival time                          -0.181    
-  -------------------------------------------------------------------
-                         slack                                  0.120    
-
-Slack (MET) :             0.123ns  (arrival time - required time)
-  Source:                 music_addres_reg[10]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[13]
-                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.365ns  (logic 0.141ns (38.579%)  route 0.224ns (61.421%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.059ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.733ns
-    Source Clock Delay      (SCD):    -0.543ns
-    Clock Pessimism Removal (CPR):    -0.249ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.440     0.667    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.638    -0.543    signal_clock_out
-    SLICE_X9Y130         FDRE                                         r  music_addres_reg[10]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y130         FDRE (Prop_fdre_C_Q)         0.141    -0.402 r  music_addres_reg[10]/Q
-                         net (fo=3, routed)           0.224    -0.177    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/addra[10]
-    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[13]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.480     0.894    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.957    -0.733    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
-    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
-                         clock pessimism              0.249    -0.483    
-    RAMB36_X0Y26         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[13])
-                                                      0.183    -0.300    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
-  -------------------------------------------------------------------
-                         required time                          0.300    
-                         arrival time                          -0.177    
-  -------------------------------------------------------------------
-                         slack                                  0.123    
-
-Slack (MET) :             0.123ns  (arrival time - required time)
+Slack (MET) :             0.092ns  (arrival time - required time)
   Source:                 music_addres_reg[3]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[6]
-                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.363ns  (logic 0.141ns (38.883%)  route 0.222ns (61.117%))
+  Data Path Delay:        0.332ns  (logic 0.164ns (49.459%)  route 0.168ns (50.541%))
   Logic Levels:           0  
   Clock Path Skew:        0.056ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    -0.738ns
@@ -1121,11 +899,11 @@ Slack (MET) :             0.123ns  (arrival time - required time)
                                                      -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.636    -0.545    signal_clock_out
-    SLICE_X9Y128         FDRE                                         r  music_addres_reg[3]/C
+                         net (fo=34, routed)          0.636    -0.545    signal_clock_out
+    SLICE_X8Y127         FDRE                                         r  music_addres_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X9Y128         FDRE (Prop_fdre_C_Q)         0.141    -0.404 r  music_addres_reg[3]/Q
-                         net (fo=3, routed)           0.222    -0.182    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addra[3]
+    SLICE_X8Y127         FDRE (Prop_fdre_C_Q)         0.164    -0.381 r  music_addres_reg[3]/Q
+                         net (fo=3, routed)           0.168    -0.213    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addra[3]
     RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[6]
   -------------------------------------------------------------------    -------------------
 
@@ -1139,26 +917,194 @@ Slack (MET) :             0.123ns  (arrival time - required time)
                                                      -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.952    -0.738    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/clka
+                         net (fo=34, routed)          0.952    -0.738    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/clka
     RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
                          clock pessimism              0.249    -0.488    
     RAMB36_X0Y25         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[6])
                                                       0.183    -0.305    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
   -------------------------------------------------------------------
                          required time                          0.305    
-                         arrival time                          -0.182    
+                         arrival time                          -0.213    
   -------------------------------------------------------------------
-                         slack                                  0.123    
+                         slack                                  0.092    
 
-Slack (MET) :             0.125ns  (arrival time - required time)
-  Source:                 music_addres_reg[5]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[8]
-                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+Slack (MET) :             0.093ns  (arrival time - required time)
+  Source:                 music_addres_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[9]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.369ns  (logic 0.141ns (38.220%)  route 0.228ns (61.780%))
+  Data Path Delay:        0.333ns  (logic 0.164ns (49.262%)  route 0.169ns (50.738%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.056ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.738ns
+    Source Clock Delay      (SCD):    -0.545ns
+    Clock Pessimism Removal (CPR):    -0.249ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.667    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          0.636    -0.545    signal_clock_out
+    SLICE_X8Y128         FDRE                                         r  music_addres_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y128         FDRE (Prop_fdre_C_Q)         0.164    -0.381 r  music_addres_reg[6]/Q
+                         net (fo=3, routed)           0.169    -0.212    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addra[6]
+    RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[9]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480     0.894    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          0.952    -0.738    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/clka
+    RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
+                         clock pessimism              0.249    -0.488    
+    RAMB36_X0Y25         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[9])
+                                                      0.183    -0.305    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
+  -------------------------------------------------------------------
+                         required time                          0.305    
+                         arrival time                          -0.212    
+  -------------------------------------------------------------------
+                         slack                                  0.093    
+
+Slack (MET) :             0.094ns  (arrival time - required time)
+  Source:                 music_addres_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[5]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.333ns  (logic 0.164ns (49.245%)  route 0.169ns (50.755%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.056ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.738ns
+    Source Clock Delay      (SCD):    -0.545ns
+    Clock Pessimism Removal (CPR):    -0.249ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.667    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          0.636    -0.545    signal_clock_out
+    SLICE_X8Y127         FDRE                                         r  music_addres_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y127         FDRE (Prop_fdre_C_Q)         0.164    -0.381 r  music_addres_reg[2]/Q
+                         net (fo=3, routed)           0.169    -0.212    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addra[2]
+    RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[5]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480     0.894    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          0.952    -0.738    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/clka
+    RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
+                         clock pessimism              0.249    -0.488    
+    RAMB36_X0Y25         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[5])
+                                                      0.183    -0.305    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
+  -------------------------------------------------------------------
+                         required time                          0.305    
+                         arrival time                          -0.212    
+  -------------------------------------------------------------------
+                         slack                                  0.094    
+
+Slack (MET) :             0.149ns  (arrival time - required time)
+  Source:                 music_addres_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[3]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.389ns  (logic 0.164ns (42.193%)  route 0.225ns (57.807%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.056ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.738ns
+    Source Clock Delay      (SCD):    -0.545ns
+    Clock Pessimism Removal (CPR):    -0.249ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.667    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          0.636    -0.545    signal_clock_out
+    SLICE_X8Y127         FDRE                                         r  music_addres_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y127         FDRE (Prop_fdre_C_Q)         0.164    -0.381 r  music_addres_reg[0]/Q
+                         net (fo=3, routed)           0.225    -0.156    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addra[0]
+    RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[3]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480     0.894    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          0.952    -0.738    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/clka
+    RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
+                         clock pessimism              0.249    -0.488    
+    RAMB36_X0Y25         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[3])
+                                                      0.183    -0.305    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
+  -------------------------------------------------------------------
+                         required time                          0.305    
+                         arrival time                          -0.156    
+  -------------------------------------------------------------------
+                         slack                                  0.149    
+
+Slack (MET) :             0.149ns  (arrival time - required time)
+  Source:                 music_addres_reg[10]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[13]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.393ns  (logic 0.164ns (41.757%)  route 0.229ns (58.243%))
   Logic Levels:           0  
   Clock Path Skew:        0.060ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    -0.733ns
@@ -1177,12 +1123,12 @@ Slack (MET) :             0.125ns  (arrival time - required time)
                                                      -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.637    -0.544    signal_clock_out
-    SLICE_X9Y129         FDRE                                         r  music_addres_reg[5]/C
+                         net (fo=34, routed)          0.637    -0.544    signal_clock_out
+    SLICE_X8Y129         FDRE                                         r  music_addres_reg[10]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X9Y129         FDRE (Prop_fdre_C_Q)         0.141    -0.403 r  music_addres_reg[5]/Q
-                         net (fo=3, routed)           0.228    -0.175    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/addra[5]
-    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[8]
+    SLICE_X8Y129         FDRE (Prop_fdre_C_Q)         0.164    -0.380 r  music_addres_reg[10]/Q
+                         net (fo=3, routed)           0.229    -0.151    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/addra[10]
+    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[13]
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
@@ -1195,29 +1141,199 @@ Slack (MET) :             0.125ns  (arrival time - required time)
                                                      -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.957    -0.733    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
+                         net (fo=34, routed)          0.957    -0.733    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
     RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
                          clock pessimism              0.249    -0.483    
-    RAMB36_X0Y26         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[8])
+    RAMB36_X0Y26         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[13])
                                                       0.183    -0.300    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
   -------------------------------------------------------------------
                          required time                          0.300    
-                         arrival time                          -0.175    
+                         arrival time                          -0.151    
   -------------------------------------------------------------------
-                         slack                                  0.125    
+                         slack                                  0.149    
 
-Slack (MET) :             0.129ns  (arrival time - required time)
-  Source:                 music_addres_reg[11]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[14]
-                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+Slack (MET) :             0.150ns  (arrival time - required time)
+  Source:                 music_addres_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[4]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.371ns  (logic 0.141ns (37.965%)  route 0.230ns (62.035%))
+  Data Path Delay:        0.389ns  (logic 0.164ns (42.107%)  route 0.225ns (57.893%))
   Logic Levels:           0  
-  Clock Path Skew:        0.059ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.733ns
+  Clock Path Skew:        0.056ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.738ns
+    Source Clock Delay      (SCD):    -0.545ns
+    Clock Pessimism Removal (CPR):    -0.249ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.667    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          0.636    -0.545    signal_clock_out
+    SLICE_X8Y127         FDRE                                         r  music_addres_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y127         FDRE (Prop_fdre_C_Q)         0.164    -0.381 r  music_addres_reg[1]/Q
+                         net (fo=3, routed)           0.225    -0.155    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/addra[1]
+    RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[4]
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480     0.894    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          0.952    -0.738    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/clka
+    RAMB36_X0Y25         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
+                         clock pessimism              0.249    -0.488    
+    RAMB36_X0Y25         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[4])
+                                                      0.183    -0.305    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
+  -------------------------------------------------------------------
+                         required time                          0.305    
+                         arrival time                          -0.155    
+  -------------------------------------------------------------------
+                         slack                                  0.150    
+
+Slack (MET) :             0.178ns  (arrival time - required time)
+  Source:                 pwm_counter_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Destination:            pwm_counter_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.322ns  (logic 0.189ns (58.778%)  route 0.133ns (41.222%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.752ns
+    Source Clock Delay      (SCD):    -0.516ns
+    Clock Pessimism Removal (CPR):    -0.249ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.667    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          0.665    -0.516    signal_clock_out
+    SLICE_X7Y129         FDRE                                         r  pwm_counter_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y129         FDRE (Prop_fdre_C_Q)         0.141    -0.375 r  pwm_counter_reg[0]/Q
+                         net (fo=10, routed)          0.133    -0.242    pwm_counter_reg_n_0_[0]
+    SLICE_X6Y129         LUT3 (Prop_lut3_I1_O)        0.048    -0.194 r  pwm_counter[2]_i_1/O
+                         net (fo=1, routed)           0.000    -0.194    pwm_counter[2]
+    SLICE_X6Y129         FDRE                                         r  pwm_counter_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480     0.894    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          0.937    -0.752    signal_clock_out
+    SLICE_X6Y129         FDRE                                         r  pwm_counter_reg[2]/C
+                         clock pessimism              0.249    -0.503    
+    SLICE_X6Y129         FDRE (Hold_fdre_C_D)         0.131    -0.372    pwm_counter_reg[2]
+  -------------------------------------------------------------------
+                         required time                          0.372    
+                         arrival time                          -0.194    
+  -------------------------------------------------------------------
+                         slack                                  0.178    
+
+Slack (MET) :             0.186ns  (arrival time - required time)
+  Source:                 pwm_counter_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Destination:            pwm_counter_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.319ns  (logic 0.186ns (58.389%)  route 0.133ns (41.611%))
+  Logic Levels:           1  (LUT5=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.752ns
+    Source Clock Delay      (SCD):    -0.516ns
+    Clock Pessimism Removal (CPR):    -0.249ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.440     0.667    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          0.665    -0.516    signal_clock_out
+    SLICE_X7Y129         FDRE                                         r  pwm_counter_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y129         FDRE (Prop_fdre_C_Q)         0.141    -0.375 r  pwm_counter_reg[0]/Q
+                         net (fo=10, routed)          0.133    -0.242    pwm_counter_reg_n_0_[0]
+    SLICE_X6Y129         LUT5 (Prop_lut5_I4_O)        0.045    -0.197 r  pwm_counter[1]_i_1/O
+                         net (fo=1, routed)           0.000    -0.197    pwm_counter[1]
+    SLICE_X6Y129         FDRE                                         r  pwm_counter_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk_out1_clk_wiz_0 rise edge)
+                                                      0.000     0.000 r  
+    W5                                                0.000     0.000 r  clk (IN)
+                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  sound_clock/inst/clkin1_ibufg/O
+                         net (fo=1, routed)           0.480     0.894    sound_clock/inst/clk_in1_clk_wiz_0
+    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
+                                                     -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+                         net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
+                         net (fo=34, routed)          0.937    -0.752    signal_clock_out
+    SLICE_X6Y129         FDRE                                         r  pwm_counter_reg[1]/C
+                         clock pessimism              0.249    -0.503    
+    SLICE_X6Y129         FDRE (Hold_fdre_C_D)         0.120    -0.383    pwm_counter_reg[1]
+  -------------------------------------------------------------------
+                         required time                          0.383    
+                         arrival time                          -0.197    
+  -------------------------------------------------------------------
+                         slack                                  0.186    
+
+Slack (MET) :             0.189ns  (arrival time - required time)
+  Source:                 sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[0]/D
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Path Group:             clk_out1_clk_wiz_0
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
+  Data Path Delay:        0.272ns  (logic 0.141ns (51.841%)  route 0.131ns (48.159%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    -0.779ns
     Source Clock Delay      (SCD):    -0.543ns
     Clock Pessimism Removal (CPR):    -0.249ns
 
@@ -1233,12 +1349,12 @@ Slack (MET) :             0.129ns  (arrival time - required time)
                                                      -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.638    -0.543    signal_clock_out
-    SLICE_X9Y130         FDRE                                         r  music_addres_reg[11]/C
+                         net (fo=34, routed)          0.638    -0.543    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/clka
+    SLICE_X9Y130         FDRE                                         r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X9Y130         FDRE (Prop_fdre_C_Q)         0.141    -0.402 r  music_addres_reg[11]/Q
-                         net (fo=3, routed)           0.230    -0.171    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/addra[11]
-    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[14]
+    SLICE_X9Y130         FDRE (Prop_fdre_C_Q)         0.141    -0.402 r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/Q
+                         net (fo=3, routed)           0.131    -0.271    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/sel_pipe
+    SLICE_X9Y129         FDRE                                         r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[0]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
@@ -1251,26 +1367,25 @@ Slack (MET) :             0.129ns  (arrival time - required time)
                                                      -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.957    -0.733    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
-    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
-                         clock pessimism              0.249    -0.483    
-    RAMB36_X0Y26         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[14])
-                                                      0.183    -0.300    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
+                         net (fo=34, routed)          0.910    -0.779    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/clka
+    SLICE_X9Y129         FDRE                                         r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[0]/C
+                         clock pessimism              0.249    -0.530    
+    SLICE_X9Y129         FDRE (Hold_fdre_C_D)         0.070    -0.460    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_norm_sel2.has_mem_regs.WITHOUT_ECC_PIPE.ce_pri.sel_pipe_d1_reg[0]
   -------------------------------------------------------------------
-                         required time                          0.300    
-                         arrival time                          -0.171    
+                         required time                          0.460    
+                         arrival time                          -0.271    
   -------------------------------------------------------------------
-                         slack                                  0.129    
+                         slack                                  0.189    
 
-Slack (MET) :             0.171ns  (arrival time - required time)
-  Source:                 music_addres_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[3]
-                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
+Slack (MET) :             0.193ns  (arrival time - required time)
+  Source:                 music_addres_reg[3]/C
+                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
+  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[6]
+                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@30.516ns period=61.032ns})
   Path Group:             clk_out1_clk_wiz_0
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.416ns  (logic 0.141ns (33.909%)  route 0.275ns (66.091%))
+  Data Path Delay:        0.438ns  (logic 0.164ns (37.478%)  route 0.274ns (62.522%))
   Logic Levels:           0  
   Clock Path Skew:        0.061ns (DCD - SCD - CPR)
     Destination Clock Delay (DCD):    -0.733ns
@@ -1289,68 +1404,12 @@ Slack (MET) :             0.171ns  (arrival time - required time)
                                                      -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.636    -0.545    signal_clock_out
-    SLICE_X9Y128         FDRE                                         r  music_addres_reg[0]/C
+                         net (fo=34, routed)          0.636    -0.545    signal_clock_out
+    SLICE_X8Y127         FDRE                                         r  music_addres_reg[3]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X9Y128         FDRE (Prop_fdre_C_Q)         0.141    -0.404 r  music_addres_reg[0]/Q
-                         net (fo=3, routed)           0.275    -0.129    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/addra[0]
-    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[3]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.480     0.894    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.957    -0.733    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
-    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
-                         clock pessimism              0.249    -0.483    
-    RAMB36_X0Y26         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[3])
-                                                      0.183    -0.300    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
-  -------------------------------------------------------------------
-                         required time                          0.300    
-                         arrival time                          -0.129    
-  -------------------------------------------------------------------
-                         slack                                  0.171    
-
-Slack (MET) :             0.172ns  (arrival time - required time)
-  Source:                 music_addres_reg[4]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[7]
-                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.415ns  (logic 0.141ns (33.954%)  route 0.274ns (66.046%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.060ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.733ns
-    Source Clock Delay      (SCD):    -0.544ns
-    Clock Pessimism Removal (CPR):    -0.249ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.440     0.667    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.637    -0.544    signal_clock_out
-    SLICE_X9Y129         FDRE                                         r  music_addres_reg[4]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y129         FDRE (Prop_fdre_C_Q)         0.141    -0.403 r  music_addres_reg[4]/Q
-                         net (fo=3, routed)           0.274    -0.129    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/addra[4]
-    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[7]
+    SLICE_X8Y127         FDRE (Prop_fdre_C_Q)         0.164    -0.381 r  music_addres_reg[3]/Q
+                         net (fo=3, routed)           0.274    -0.107    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/addra[3]
+    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[6]
   -------------------------------------------------------------------    -------------------
 
                          (clock clk_out1_clk_wiz_0 rise edge)
@@ -1363,72 +1422,16 @@ Slack (MET) :             0.172ns  (arrival time - required time)
                                                      -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
                          net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
     BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.957    -0.733    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
+                         net (fo=34, routed)          0.957    -0.733    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
     RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
                          clock pessimism              0.249    -0.483    
-    RAMB36_X0Y26         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[7])
+    RAMB36_X0Y26         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[6])
                                                       0.183    -0.300    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
   -------------------------------------------------------------------
                          required time                          0.300    
-                         arrival time                          -0.129    
+                         arrival time                          -0.107    
   -------------------------------------------------------------------
-                         slack                                  0.172    
-
-Slack (MET) :             0.177ns  (arrival time - required time)
-  Source:                 music_addres_reg[7]/C
-                            (rising edge-triggered cell FDRE clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Destination:            sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[10]
-                            (rising edge-triggered cell RAMB36E1 clocked by clk_out1_clk_wiz_0  {rise@0.000ns fall@61.035ns period=122.070ns})
-  Path Group:             clk_out1_clk_wiz_0
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk_out1_clk_wiz_0 rise@0.000ns - clk_out1_clk_wiz_0 rise@0.000ns)
-  Data Path Delay:        0.421ns  (logic 0.141ns (33.503%)  route 0.280ns (66.497%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.060ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    -0.733ns
-    Source Clock Delay      (SCD):    -0.544ns
-    Clock Pessimism Removal (CPR):    -0.249ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.440     0.667    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -2.360    -1.693 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.486    -1.207    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026    -1.181 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.637    -0.544    signal_clock_out
-    SLICE_X9Y129         FDRE                                         r  music_addres_reg[7]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X9Y129         FDRE (Prop_fdre_C_Q)         0.141    -0.403 r  music_addres_reg[7]/Q
-                         net (fo=3, routed)           0.280    -0.123    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/addra[7]
-    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/ADDRARDADDR[10]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk_out1_clk_wiz_0 rise edge)
-                                                      0.000     0.000 r  
-    W5                                                0.000     0.000 r  clk (IN)
-                         net (fo=0)                   0.000     0.000    sound_clock/inst/clk_in1
-    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  sound_clock/inst/clkin1_ibufg/O
-                         net (fo=1, routed)           0.480     0.894    sound_clock/inst/clk_in1_clk_wiz_0
-    MMCME2_ADV_X1Y0      MMCME2_ADV (Prop_mmcme2_adv_CLKIN1_CLKOUT0)
-                                                     -3.142    -2.248 r  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-                         net (fo=1, routed)           0.530    -1.718    sound_clock/inst/clk_out1_clk_wiz_0
-    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029    -1.689 r  sound_clock/inst/clkout1_buf/O
-                         net (fo=33, routed)          0.957    -0.733    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/clka
-    RAMB36_X0Y26         RAMB36E1                                     r  sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
-                         clock pessimism              0.249    -0.483    
-    RAMB36_X0Y26         RAMB36E1 (Hold_ramb36e1_CLKARDCLK_ADDRARDADDR[10])
-                                                      0.183    -0.300    sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram
-  -------------------------------------------------------------------
-                         required time                          0.300    
-                         arrival time                          -0.123    
-  -------------------------------------------------------------------
-                         slack                                  0.177    
+                         slack                                  0.193    
 
 
 
@@ -1437,42 +1440,42 @@ Slack (MET) :             0.177ns  (arrival time - required time)
 Pulse Width Checks
 --------------------------------------------------------------------------------------
 Clock Name:         clk_out1_clk_wiz_0
-Waveform(ns):       { 0.000 61.035 }
-Period(ns):         122.070
+Waveform(ns):       { 0.000 30.516 }
+Period(ns):         61.032
 Sources:            { sound_clock/inst/mmcm_adv_inst/CLKOUT0 }
 
 Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
-Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         122.070     119.494    RAMB36_X0Y25     sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
-Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         122.070     119.494    RAMB36_X0Y25     sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKBWRCLK
-Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         122.070     119.494    RAMB36_X0Y26     sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
-Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         122.070     119.494    RAMB36_X0Y26     sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKBWRCLK
-Min Period        n/a     BUFG/I              n/a            2.155         122.070     119.915    BUFGCTRL_X0Y0    sound_clock/inst/clkout1_buf/I
-Min Period        n/a     MMCME2_ADV/CLKOUT0  n/a            1.249         122.070     120.821    MMCME2_ADV_X1Y0  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-Min Period        n/a     FDRE/C              n/a            1.000         122.070     121.070    SLICE_X8Y129     clk_counter_reg[0]/C
-Min Period        n/a     FDRE/C              n/a            1.000         122.070     121.070    SLICE_X8Y129     clk_counter_reg[1]/C
-Min Period        n/a     FDRE/C              n/a            1.000         122.070     121.070    SLICE_X9Y128     music_addres_reg[0]/C
-Min Period        n/a     FDRE/C              n/a            1.000         122.070     121.070    SLICE_X9Y130     music_addres_reg[10]/C
-Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       122.070     91.290     MMCME2_ADV_X1Y0  sound_clock/inst/mmcm_adv_inst/CLKOUT0
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X9Y128     music_addres_reg[0]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X9Y128     music_addres_reg[1]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X9Y128     music_addres_reg[2]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X9Y128     music_addres_reg[3]/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X8Y129     clk_counter_reg[0]/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X8Y129     clk_counter_reg[1]/C
-Low Pulse Width   Slow    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X9Y131     music_addres_reg[12]/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X9Y131     music_addres_reg[12]/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X8Y129     pwm_counter_reg[6]/C
-Low Pulse Width   Fast    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X8Y129     pwm_counter_reg[7]/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X8Y129     clk_counter_reg[0]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X8Y129     clk_counter_reg[0]/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X8Y129     clk_counter_reg[1]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X8Y129     clk_counter_reg[1]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X9Y128     music_addres_reg[0]/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X9Y130     music_addres_reg[10]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X9Y130     music_addres_reg[10]/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X9Y130     music_addres_reg[11]/C
-High Pulse Width  Fast    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X9Y130     music_addres_reg[11]/C
-High Pulse Width  Slow    FDRE/C              n/a            0.500         61.035      60.535     SLICE_X9Y131     music_addres_reg[12]/C
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         61.032      58.456     RAMB36_X0Y25     sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         61.032      58.456     RAMB36_X0Y25     sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[1].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKBWRCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         61.032      58.456     RAMB36_X0Y26     sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKBWRCLK  n/a            2.576         61.032      58.456     RAMB36_X0Y26     sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/prim_init.ram/DEVICE_7SERIES.NO_BMM_INFO.SP.SIMPLE_PRIM36.ram/CLKBWRCLK
+Min Period        n/a     BUFG/I              n/a            2.155         61.032      58.876     BUFGCTRL_X0Y0    sound_clock/inst/clkout1_buf/I
+Min Period        n/a     MMCME2_ADV/CLKOUT0  n/a            1.249         61.032      59.783     MMCME2_ADV_X1Y0  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+Min Period        n/a     FDRE/C              n/a            1.000         61.032      60.032     SLICE_X6Y130     clk_counter_reg[0]/C
+Min Period        n/a     FDRE/C              n/a            1.000         61.032      60.032     SLICE_X6Y130     clk_counter_reg[1]/C
+Min Period        n/a     FDRE/C              n/a            1.000         61.032      60.032     SLICE_X6Y130     clk_counter_reg[2]/C
+Min Period        n/a     FDRE/C              n/a            1.000         61.032      60.032     SLICE_X8Y127     music_addres_reg[0]/C
+Max Period        n/a     MMCME2_ADV/CLKOUT0  n/a            213.360       61.032      152.328    MMCME2_ADV_X1Y0  sound_clock/inst/mmcm_adv_inst/CLKOUT0
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X8Y127     music_addres_reg[0]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X8Y130     music_addres_reg[12]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X8Y127     music_addres_reg[1]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X8Y127     music_addres_reg[2]/C
+Low Pulse Width   Slow    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X8Y127     music_addres_reg[3]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X8Y128     music_addres_reg[4]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X8Y128     music_addres_reg[5]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X8Y128     music_addres_reg[6]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X8Y128     music_addres_reg[7]/C
+Low Pulse Width   Fast    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X9Y130     sound_memory/U0/inst_blk_mem_gen/gnbram.gnativebmg.native_blk_mem_gen/valid.cstr/has_mux_a.A/no_softecc_sel_reg.ce_pri.sel_pipe_reg[0]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X6Y130     clk_counter_reg[0]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X6Y130     clk_counter_reg[1]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X6Y130     clk_counter_reg[2]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X8Y127     music_addres_reg[0]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X8Y130     music_addres_reg[12]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X6Y129     pwm_counter_reg[2]/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X6Y129     pwm_counter_reg[2]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X5Y129     pwm_counter_reg[3]/C
+High Pulse Width  Fast    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X5Y129     pwm_counter_reg[3]/C
+High Pulse Width  Slow    FDRE/C              n/a            0.500         30.516      30.016     SLICE_X5Y129     pwm_counter_reg[4]/C
 
 
 
@@ -1482,23 +1485,23 @@ From Clock:  clkfbout_clk_wiz_0
 
 Setup :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
 Hold  :           NA  Failing Endpoints,  Worst Slack           NA  ,  Total Violation           NA
-PW    :            0  Failing Endpoints,  Worst Slack       20.000ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack       47.845ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Pulse Width Checks
 --------------------------------------------------------------------------------------
 Clock Name:         clkfbout_clk_wiz_0
-Waveform(ns):       { 0.000 40.000 }
-Period(ns):         80.000
+Waveform(ns):       { 0.000 25.000 }
+Period(ns):         50.000
 Sources:            { sound_clock/inst/mmcm_adv_inst/CLKFBOUT }
 
 Check Type  Corner  Lib Pin              Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location         Pin
-Min Period  n/a     BUFG/I               n/a            2.155         80.000      77.845     BUFGCTRL_X0Y1    sound_clock/inst/clkf_buf/I
-Min Period  n/a     MMCME2_ADV/CLKFBOUT  n/a            1.249         80.000      78.751     MMCME2_ADV_X1Y0  sound_clock/inst/mmcm_adv_inst/CLKFBOUT
-Min Period  n/a     MMCME2_ADV/CLKFBIN   n/a            1.249         80.000      78.751     MMCME2_ADV_X1Y0  sound_clock/inst/mmcm_adv_inst/CLKFBIN
-Max Period  n/a     MMCME2_ADV/CLKFBIN   n/a            100.000       80.000      20.000     MMCME2_ADV_X1Y0  sound_clock/inst/mmcm_adv_inst/CLKFBIN
-Max Period  n/a     MMCME2_ADV/CLKFBOUT  n/a            213.360       80.000      133.360    MMCME2_ADV_X1Y0  sound_clock/inst/mmcm_adv_inst/CLKFBOUT
+Min Period  n/a     BUFG/I               n/a            2.155         50.000      47.845     BUFGCTRL_X0Y1    sound_clock/inst/clkf_buf/I
+Min Period  n/a     MMCME2_ADV/CLKFBOUT  n/a            1.249         50.000      48.751     MMCME2_ADV_X1Y0  sound_clock/inst/mmcm_adv_inst/CLKFBOUT
+Min Period  n/a     MMCME2_ADV/CLKFBIN   n/a            1.249         50.000      48.751     MMCME2_ADV_X1Y0  sound_clock/inst/mmcm_adv_inst/CLKFBIN
+Max Period  n/a     MMCME2_ADV/CLKFBIN   n/a            100.000       50.000      50.000     MMCME2_ADV_X1Y0  sound_clock/inst/mmcm_adv_inst/CLKFBIN
+Max Period  n/a     MMCME2_ADV/CLKFBOUT  n/a            213.360       50.000      163.360    MMCME2_ADV_X1Y0  sound_clock/inst/mmcm_adv_inst/CLKFBOUT
 
 
 

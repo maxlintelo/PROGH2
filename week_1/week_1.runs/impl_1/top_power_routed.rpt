@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Fri Feb  4 10:36:45 2022
+| Date             : Fri Feb  4 11:47:05 2022
 | Host             : DEKSTOP-MAX running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.176        |
+| Total On-Chip Power (W)  | 0.185        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.104        |
+| Dynamic (W)              | 0.113        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.1         |
@@ -53,17 +53,17 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |    <0.001 |        5 |       --- |             --- |
-| Slice Logic    |    <0.001 |       80 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       20 |     20800 |            0.10 |
+| Slice Logic    |    <0.001 |       84 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       22 |     20800 |            0.11 |
 |   CARRY4       |    <0.001 |        5 |      8150 |            0.06 |
-|   Register     |    <0.001 |       29 |     41600 |            0.07 |
+|   Register     |    <0.001 |       30 |     41600 |            0.07 |
 |   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |    <0.001 |       62 |       --- |             --- |
+| Signals        |    <0.001 |       66 |       --- |             --- |
 | Block RAM      |    <0.001 |        2 |        50 |            4.00 |
-| MMCM           |     0.104 |        1 |         5 |           20.00 |
+| MMCM           |     0.112 |        1 |         5 |           20.00 |
 | I/O            |    <0.001 |        2 |       106 |            1.89 |
 | Static Power   |     0.072 |          |           |                 |
-| Total          |     0.176 |          |           |                 |
+| Total          |     0.185 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -73,8 +73,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.010 |       0.000 |      0.010 |
-| Vccaux    |       1.800 |     0.070 |       0.058 |      0.013 |
+| Vccint    |       1.000 |     0.010 |       0.001 |      0.010 |
+| Vccaux    |       1.800 |     0.075 |       0.062 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -130,8 +130,8 @@ Table of Contents
 | Clock              | Domain                              | Constraint (ns) |
 +--------------------+-------------------------------------+-----------------+
 | clk                | clk                                 |            10.0 |
-| clk_out1_clk_wiz_0 | sound_clock/inst/clk_out1_clk_wiz_0 |           122.1 |
-| clkfbout_clk_wiz_0 | sound_clock/inst/clkfbout_clk_wiz_0 |            80.0 |
+| clk_out1_clk_wiz_0 | sound_clock/inst/clk_out1_clk_wiz_0 |            61.0 |
+| clkfbout_clk_wiz_0 | sound_clock/inst/clkfbout_clk_wiz_0 |            50.0 |
 +--------------------+-------------------------------------+-----------------+
 
 
@@ -144,9 +144,9 @@ Table of Contents
 +---------------+-----------+
 | Name          | Power (W) |
 +---------------+-----------+
-| top           |     0.104 |
-|   sound_clock |     0.104 |
-|     inst      |     0.104 |
+| top           |     0.113 |
+|   sound_clock |     0.113 |
+|     inst      |     0.113 |
 +---------------+-----------+
 
 

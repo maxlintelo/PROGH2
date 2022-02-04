@@ -60,15 +60,12 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 
 start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 6
-  set_param synth.incrementalSynthesisCache C:/Users/Max/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-27044-DEKSTOP-MAX/incrSyn
   set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
@@ -81,7 +78,7 @@ set rc [catch {
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   add_files -quiet C:/Development/PROGH2/week_1/week_1.runs/synth_1/top.dcp
   read_ip -quiet C:/Development/PROGH2/week_1/week_1.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0.xci
-  read_ip -quiet c:/Development/PROGH2/week_1/week_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+  read_ip -quiet C:/Development/PROGH2/week_1/week_1.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
   read_xdc C:/Development/PROGH2/week_1/week_1.srcs/constrs_1/new/const1.xdc
   link_design -top top -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb

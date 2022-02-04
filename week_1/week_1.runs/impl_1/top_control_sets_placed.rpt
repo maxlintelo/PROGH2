@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Fri Feb  4 10:36:25 2022
+| Date         : Fri Feb  4 11:46:44 2022
 | Host         : DEKSTOP-MAX running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |     3 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    11 |
+| Unused register locations in slices containing registers |    10 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -46,8 +46,8 @@ Table of Contents
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     1 |
-| >= 14 to < 16      |     1 |
-| >= 16              |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     1 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,7 +58,7 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              15 |            5 |
+| No           | No                    | No                     |              16 |            7 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               1 |            1 |
 | Yes          | No                    | No                     |              13 |            4 |
@@ -75,7 +75,7 @@ Table of Contents
 +----------------------------+---------------+------------------+------------------+----------------+
 |  sound_clock/inst/clk_out1 |               | p_0_in           |                1 |              1 |
 |  sound_clock/inst/clk_out1 | music_addres  |                  |                4 |             13 |
-|  sound_clock/inst/clk_out1 |               |                  |                5 |             15 |
+|  sound_clock/inst/clk_out1 |               |                  |                7 |             16 |
 +----------------------------+---------------+------------------+------------------+----------------+
 
 

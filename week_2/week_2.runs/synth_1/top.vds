@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Feb 14 19:11:38 2022
-# Process ID: 988
+# Start of session at: Tue Feb 15 11:34:56 2022
+# Process ID: 18608
 # Current directory: C:/Development/PROGH2/week_2/week_2.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/Development/PROGH2/week_2/week_2.runs/synth_1/top.vds
@@ -16,33 +16,36 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9372 
+INFO: Helper process launched with PID 12764 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 721.457 ; gain = 177.102
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 721.828 ; gain = 178.336
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'top' [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/top.vhd:17]
-INFO: [Synth 8-3491] module 'ps2_keyboard' declared at 'C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/ps2_keyboard.vhd:5' bound to instance 'my_keyboard' of component 'ps2_keyboard' [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/top.vhd:35]
+INFO: [Synth 8-3491] module 'ps2_keyboard' declared at 'C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/ps2_keyboard.vhd:5' bound to instance 'my_keyboard' of component 'ps2_keyboard' [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/top.vhd:55]
 INFO: [Synth 8-638] synthesizing module 'ps2_keyboard' [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/ps2_keyboard.vhd:15]
 INFO: [Synth 8-256] done synthesizing module 'ps2_keyboard' (1#1) [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/ps2_keyboard.vhd:15]
-WARNING: [Synth 8-6014] Unused sequential element ff0_reg was removed.  [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/top.vhd:48]
-WARNING: [Synth 8-3848] Net segments in module/entity top does not have driver. [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/top.vhd:11]
-WARNING: [Synth 8-3848] Net anodes in module/entity top does not have driver. [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/top.vhd:12]
+INFO: [Synth 8-3491] module 'seven_segment_display' declared at 'C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/seven_segment_display.vhd:5' bound to instance 'my_display' of component 'seven_segment_display' [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/top.vhd:64]
+INFO: [Synth 8-638] synthesizing module 'seven_segment_display' [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/seven_segment_display.vhd:18]
+WARNING: [Synth 8-614] signal 'active_leds' is read in the process but is not in the sensitivity list [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/seven_segment_display.vhd:38]
+WARNING: [Synth 8-614] signal 'number0' is read in the process but is not in the sensitivity list [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/seven_segment_display.vhd:38]
+WARNING: [Synth 8-614] signal 'number1' is read in the process but is not in the sensitivity list [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/seven_segment_display.vhd:38]
+WARNING: [Synth 8-614] signal 'number2' is read in the process but is not in the sensitivity list [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/seven_segment_display.vhd:38]
+WARNING: [Synth 8-614] signal 'number3' is read in the process but is not in the sensitivity list [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/seven_segment_display.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'seven_segment_display' (2#1) [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/seven_segment_display.vhd:18]
+WARNING: [Synth 8-3848] Net l1 in module/entity top does not have driver. [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/top.vhd:10]
 WARNING: [Synth 8-3848] Net new_code in module/entity top does not have driver. [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/top.vhd:13]
-INFO: [Synth 8-256] done synthesizing module 'top' (2#1) [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/top.vhd:17]
-WARNING: [Synth 8-3331] design top has unconnected port segments[6]
-WARNING: [Synth 8-3331] design top has unconnected port segments[5]
-WARNING: [Synth 8-3331] design top has unconnected port segments[4]
-WARNING: [Synth 8-3331] design top has unconnected port segments[3]
-WARNING: [Synth 8-3331] design top has unconnected port segments[2]
-WARNING: [Synth 8-3331] design top has unconnected port segments[1]
-WARNING: [Synth 8-3331] design top has unconnected port segments[0]
-WARNING: [Synth 8-3331] design top has unconnected port anodes[3]
-WARNING: [Synth 8-3331] design top has unconnected port anodes[2]
-WARNING: [Synth 8-3331] design top has unconnected port anodes[1]
-WARNING: [Synth 8-3331] design top has unconnected port anodes[0]
+INFO: [Synth 8-256] done synthesizing module 'top' (3#1) [C:/Development/PROGH2/week_2/week_2.srcs/sources_1/new/top.vhd:17]
+WARNING: [Synth 8-3331] design top has unconnected port l1[7]
+WARNING: [Synth 8-3331] design top has unconnected port l1[6]
+WARNING: [Synth 8-3331] design top has unconnected port l1[5]
+WARNING: [Synth 8-3331] design top has unconnected port l1[4]
+WARNING: [Synth 8-3331] design top has unconnected port l1[3]
+WARNING: [Synth 8-3331] design top has unconnected port l1[2]
+WARNING: [Synth 8-3331] design top has unconnected port l1[1]
+WARNING: [Synth 8-3331] design top has unconnected port l1[0]
 WARNING: [Synth 8-3331] design top has unconnected port new_code
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 786.078 ; gain = 241.723
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 786.609 ; gain = 243.117
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -55,10 +58,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 786.078 ; gain = 241.723
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 786.609 ; gain = 243.117
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 786.078 ; gain = 241.723
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 786.609 ; gain = 243.117
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -76,28 +79,29 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 885.641 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 901.156 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 885.641 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 901.156 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 885.641 ; gain = 341.285
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 901.156 ; gain = 357.664
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 885.641 ; gain = 341.285
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 901.156 ; gain = 357.664
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 885.641 ; gain = 341.285
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 901.156 ; gain = 357.664
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'ps2_keyboard'
+INFO: [Synth 8-5546] ROM "n3" won't be mapped to RAM because it is too sparse
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -107,7 +111,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg_reg' in module 'p
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg_reg' using encoding 'one-hot' in module 'ps2_keyboard'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 885.641 ; gain = 341.285
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 901.156 ; gain = 357.664
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -122,13 +126,17 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input      4 Bit       Adders := 1     
 +---Registers : 
+	               32 Bit    Registers := 4     
 	               11 Bit    Registers := 1     
 	                8 Bit    Registers := 2     
 	                4 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
 +---Muxes : 
 	   3 Input     11 Bit        Muxes := 1     
+	  11 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
 	   3 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 2     
 	   2 Input      1 Bit        Muxes := 2     
 	   3 Input      1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
@@ -141,7 +149,11 @@ Hierarchical RTL Component report
 Module top 
 Detailed RTL Component Info : 
 +---Registers : 
+	               32 Bit    Registers := 4     
 	                8 Bit    Registers := 2     
++---Muxes : 
+	  11 Input      5 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
 Module ps2_keyboard 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -155,6 +167,10 @@ Detailed RTL Component Info :
 	   3 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
 	   3 Input      1 Bit        Muxes := 3     
+Module seven_segment_display 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input      4 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -171,20 +187,18 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-WARNING: [Synth 8-3331] design top has unconnected port segments[6]
-WARNING: [Synth 8-3331] design top has unconnected port segments[5]
-WARNING: [Synth 8-3331] design top has unconnected port segments[4]
-WARNING: [Synth 8-3331] design top has unconnected port segments[3]
-WARNING: [Synth 8-3331] design top has unconnected port segments[2]
-WARNING: [Synth 8-3331] design top has unconnected port segments[1]
-WARNING: [Synth 8-3331] design top has unconnected port segments[0]
-WARNING: [Synth 8-3331] design top has unconnected port anodes[3]
-WARNING: [Synth 8-3331] design top has unconnected port anodes[2]
-WARNING: [Synth 8-3331] design top has unconnected port anodes[1]
-WARNING: [Synth 8-3331] design top has unconnected port anodes[0]
+INFO: [Synth 8-5587] ROM size for "n3" is below threshold of ROM address width. It will be mapped to LUTs
+WARNING: [Synth 8-3331] design top has unconnected port l1[7]
+WARNING: [Synth 8-3331] design top has unconnected port l1[6]
+WARNING: [Synth 8-3331] design top has unconnected port l1[5]
+WARNING: [Synth 8-3331] design top has unconnected port l1[4]
+WARNING: [Synth 8-3331] design top has unconnected port l1[3]
+WARNING: [Synth 8-3331] design top has unconnected port l1[2]
+WARNING: [Synth 8-3331] design top has unconnected port l1[1]
+WARNING: [Synth 8-3331] design top has unconnected port l1[0]
 WARNING: [Synth 8-3331] design top has unconnected port new_code
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 885.641 ; gain = 341.285
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 901.156 ; gain = 357.664
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -196,13 +210,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 885.641 ; gain = 341.285
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 901.156 ; gain = 357.664
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 885.641 ; gain = 341.285
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 901.156 ; gain = 357.664
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -214,7 +228,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 896.773 ; gain = 352.418
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 901.156 ; gain = 357.664
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -238,7 +252,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 901.586 ; gain = 357.230
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 904.473 ; gain = 360.980
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -251,7 +265,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 901.586 ; gain = 357.230
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 904.473 ; gain = 360.980
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -263,25 +277,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 901.586 ; gain = 357.230
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 904.473 ; gain = 360.980
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 901.586 ; gain = 357.230
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 904.473 ; gain = 360.980
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 901.586 ; gain = 357.230
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 904.473 ; gain = 360.980
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 901.586 ; gain = 357.230
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 904.473 ; gain = 360.980
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -294,48 +308,53 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+------+------+
-|      |Cell  |Count |
-+------+------+------+
-|1     |BUFG  |     1|
-|2     |LUT2  |     1|
-|3     |LUT3  |     2|
-|4     |LUT4  |     9|
-|5     |LUT5  |     1|
-|6     |LUT6  |     7|
-|7     |FDRE  |    35|
-|8     |IBUF  |     3|
-|9     |OBUF  |     8|
-|10    |OBUFT |    12|
-+------+------+------+
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |BUFG   |     2|
+|2     |CARRY4 |     5|
+|3     |LUT1   |     1|
+|4     |LUT2   |     6|
+|5     |LUT3   |     3|
+|6     |LUT4   |    13|
+|7     |LUT5   |     1|
+|8     |LUT6   |    16|
+|9     |FDRE   |    71|
+|10    |IBUF   |     3|
+|11    |OBUF   |    11|
+|12    |OBUFT  |     9|
++------+-------+------+
 
 Report Instance Areas: 
-+------+--------------+-------------+------+
-|      |Instance      |Module       |Cells |
-+------+--------------+-------------+------+
-|1     |top           |             |    79|
-|2     |  my_keyboard |ps2_keyboard |    37|
-+------+--------------+-------------+------+
++------+--------------+----------------------+------+
+|      |Instance      |Module                |Cells |
++------+--------------+----------------------+------+
+|1     |top           |                      |   141|
+|2     |  my_display  |seven_segment_display |    41|
+|3     |  my_keyboard |ps2_keyboard          |    32|
++------+--------------+----------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 901.586 ; gain = 357.230
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 904.473 ; gain = 360.980
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 901.586 ; gain = 257.668
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 901.586 ; gain = 357.230
+Synthesis finished with 0 errors, 0 critical warnings and 9 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 904.473 ; gain = 246.434
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 904.473 ; gain = 360.980
 INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 915.660 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 918.523 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-17 Infos, 30 Warnings, 2 Critical Warnings and 0 Errors encountered.
+24 Infos, 27 Warnings, 2 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 915.660 ; gain = 621.410
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 915.660 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 918.523 ; gain = 617.430
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 918.523 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Development/PROGH2/week_2/week_2.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Feb 14 19:12:02 2022...
+INFO: [Common 17-206] Exiting Vivado at Tue Feb 15 11:35:24 2022...

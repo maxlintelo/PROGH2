@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Mon Feb 14 19:12:50 2022
-| Host             : DESKTOP-5PCB5FN running 64-bit major release  (build 9200)
+| Date             : Tue Feb 15 11:36:15 2022
+| Host             : DEKSTOP-MAX running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
 | Device           : xc7a35tcpg236-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.555        |
+| Total On-Chip Power (W)  | 3.626        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 1.480        |
-| Device Static (W)        | 0.075        |
+| Dynamic (W)              | 3.543        |
+| Device Static (W)        | 0.083        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 77.2         |
-| Junction Temperature (C) | 32.8         |
+| Max Ambient (C)          | 66.9         |
+| Junction Temperature (C) | 43.1         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,15 +52,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     0.032 |       60 |       --- |             --- |
-|   LUT as Logic |     0.024 |       15 |     20800 |            0.07 |
-|   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Register     |     0.002 |       35 |     41600 |            0.08 |
-|   Others       |     0.000 |        4 |       --- |             --- |
-| Signals        |     0.066 |       51 |       --- |             --- |
-| I/O            |     1.382 |       23 |       106 |           21.70 |
-| Static Power   |     0.075 |          |           |                 |
-| Total          |     1.555 |          |           |                 |
+| Slice Logic    |     0.066 |      124 |       --- |             --- |
+|   LUT as Logic |     0.039 |       31 |     20800 |            0.15 |
+|   CARRY4       |     0.010 |        5 |      8150 |            0.06 |
+|   Register     |     0.009 |       71 |     41600 |            0.17 |
+|   BUFG         |     0.008 |        2 |        32 |            6.25 |
+|   Others       |     0.000 |        6 |       --- |             --- |
+| Signals        |     0.109 |      107 |       --- |             --- |
+| I/O            |     3.368 |       23 |       106 |           21.70 |
+| Static Power   |     0.083 |          |           |                 |
+| Total          |     3.626 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,9 +71,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.123 |       0.110 |      0.013 |
-| Vccaux    |       1.800 |     0.063 |       0.050 |      0.013 |
-| Vcco33    |       3.300 |     0.389 |       0.388 |      0.001 |
+| Vccint    |       1.000 |     0.206 |       0.187 |      0.019 |
+| Vccaux    |       1.800 |     0.136 |       0.123 |      0.013 |
+| Vcco33    |       3.300 |     0.951 |       0.950 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -137,8 +138,9 @@ Table of Contents
 +---------------+-----------+
 | Name          | Power (W) |
 +---------------+-----------+
-| top           |     1.480 |
-|   my_keyboard |     0.050 |
+| top           |     3.543 |
+|   my_display  |     0.083 |
+|   my_keyboard |     0.047 |
 +---------------+-----------+
 
 

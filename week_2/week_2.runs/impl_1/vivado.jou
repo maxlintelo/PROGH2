@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Tue Feb 15 11:44:59 2022
-# Process ID: 17328
+# Start of session at: Tue Feb 15 22:11:38 2022
+# Process ID: 6904
 # Current directory: C:/Development/PROGH2/week_2/week_2.runs/impl_1
 # Command line: vivado.exe -log top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
 # Log file: C:/Development/PROGH2/week_2/week_2.runs/impl_1/top.vdi

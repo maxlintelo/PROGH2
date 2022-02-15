@@ -68,7 +68,7 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 6
-  set_param synth.incrementalSynthesisCache C:/Users/Max/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-6900-DEKSTOP-MAX/incrSyn
+  set_param synth.incrementalSynthesisCache C:/Users/Max/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-9508-DEKSTOP-MAX/incrSyn
   set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
@@ -79,7 +79,7 @@ set rc [catch {
   set_property ip_output_repo C:/Development/PROGH2/week_2/week_2.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   add_files -quiet C:/Development/PROGH2/week_2/week_2.runs/synth_1/top.dcp
-  read_xdc C:/Development/PROGH2/week_2/week_2.srcs/constrs_1/new/constraints.xdc
+  read_xdc C:/Development/PROGH2/week_2/week_2.srcs/constrs_1/new/constr1.xdc
   link_design -top top -part xc7a35tcpg236-1
   close_msg_db -file init_design.pb
 } RESULT]

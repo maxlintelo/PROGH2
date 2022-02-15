@@ -1,32 +1,31 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
---use IEEE.NUMERIC_STD.ALL;
 
 entity top is
-Port(    
-    PS2_clock : in STD_LOGIC;
-    i_data_key : in STD_LOGIC;
-    clk: in STD_LOGIC;
-    l1: out STD_LOGIC_VECTOR(7 downto 0);
-    segments: out STD_LOGIC_VECTOR(6 downto 0);
-    anodes: out STD_LOGIC_VECTOR(3 downto 0);
-    new_code: out STD_LOGIC
+    port(
+        clk : in STD_LOGIC;
+        reset : in STD_LOGIC;
+        ps2_clock : in STD_LOGIC;
+        ps2_data : in STD_LOGIC;
+        segments : out STD_LOGIC_VECTOR(6 downto 0);
+        anodes : out STD_LOGIC_VECTOR(3 downto 0)
     );
 end top;
 
 architecture Behavioral of top is
     component ps2_keyboard is
         port (
-            clk, reset: in std_logic;              -- System clock and reset
-            ps2d, ps2c: in std_logic;              -- PS/2 data and clock signals
-            rx_en: in std_logic;                   -- Receiver enabled/disabled signal
-            rx_done: out std_logic;                -- End of transmission signal
-            dout: out std_logic_vector(7 downto 0) -- Output buffer
+            clk : in STD_LOGIC;
+            reset : in STD_LOGIC;
+            ps2_data : in STD_LOGIC;
+            ps2_clk : in STD_LOGIC;
+            new_data : out STD_LOGIC;
+            data : out STD_LOGIC_VECTOR(7 downto 0)
         );
     end component ps2_keyboard;
     
     component seven_segment_display is
-        Port (
+        port (
             clk : in STD_LOGIC;
             reset : in STD_LOGIC;
             number0 : in INTEGER range 0 to 10;
@@ -54,16 +53,15 @@ architecture Behavioral of top is
 begin
     my_keyboard : ps2_keyboard port map (
         clk => clk,
-        reset => '0',
-        ps2d => i_data_key,
-        ps2c => ps2_clock,
-        rx_en => '1',
-        rx_done => ps2_new_code,
-        dout => ps2_current_code
+        reset => reset,
+        ps2_data => ps2_data,
+        ps2_clk => ps2_clock,
+        new_data => ps2_new_code,
+        data => ps2_current_code
     );
     my_display : seven_segment_display port map (
         clk => clk,
-        reset => '0',
+        reset => reset,
         segments => segments,
         anode => anodes,
         number0 => n0,

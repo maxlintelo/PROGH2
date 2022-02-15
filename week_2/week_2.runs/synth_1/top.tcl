@@ -18,7 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 6
-set_param synth.incrementalSynthesisCache C:/Users/Max/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-6900-DEKSTOP-MAX/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/Max/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-9508-DEKSTOP-MAX/incrSyn
 set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -47,8 +47,8 @@ read_vhdl -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Development/PROGH2/week_2/week_2.srcs/constrs_1/new/constraints.xdc
-set_property used_in_implementation false [get_files C:/Development/PROGH2/week_2/week_2.srcs/constrs_1/new/constraints.xdc]
+read_xdc C:/Development/PROGH2/week_2/week_2.srcs/constrs_1/new/constr1.xdc
+set_property used_in_implementation false [get_files C:/Development/PROGH2/week_2/week_2.srcs/constrs_1/new/constr1.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

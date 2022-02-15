@@ -67,8 +67,8 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 6
-  set_param synth.incrementalSynthesisCache C:/Development/PROGH2/week_2/.Xil/Vivado-28432-DEKSTOP-MAX/incrSyn
+  set_param chipscope.maxJobs 3
+  set_param synth.incrementalSynthesisCache C:/Users/Max/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-15088-DESKTOP-5PCB5FN/incrSyn
   set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]

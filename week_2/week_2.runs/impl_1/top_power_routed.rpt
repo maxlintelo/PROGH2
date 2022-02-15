@@ -1,8 +1,8 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Fri Feb  4 16:28:13 2022
-| Host             : DEKSTOP-MAX running 64-bit major release  (build 9200)
+| Date             : Mon Feb 14 19:12:50 2022
+| Host             : DESKTOP-5PCB5FN running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
 | Device           : xc7a35tcpg236-1
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 4.934        |
+| Total On-Chip Power (W)  | 1.555        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 4.845        |
-| Device Static (W)        | 0.089        |
+| Dynamic (W)              | 1.480        |
+| Device Static (W)        | 0.075        |
 | Effective TJA (C/W)      | 5.0          |
-| Max Ambient (C)          | 60.3         |
-| Junction Temperature (C) | 49.7         |
+| Max Ambient (C)          | 77.2         |
+| Junction Temperature (C) | 32.8         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -49,21 +49,19 @@ Table of Contents
 1.1 On-Chip Components
 ----------------------
 
-+-------------------------+-----------+----------+-----------+-----------------+
-| On-Chip                 | Power (W) | Used     | Available | Utilization (%) |
-+-------------------------+-----------+----------+-----------+-----------------+
-| Slice Logic             |     0.092 |      115 |       --- |             --- |
-|   LUT as Logic          |     0.057 |       27 |     20800 |            0.13 |
-|   Register              |     0.014 |       66 |     41600 |            0.16 |
-|   CARRY4                |     0.012 |        5 |      8150 |            0.06 |
-|   BUFG                  |     0.006 |        1 |        32 |            3.13 |
-|   LUT as Shift Register |     0.002 |        1 |      9600 |            0.01 |
-|   Others                |     0.000 |        8 |       --- |             --- |
-| Signals                 |     0.189 |      104 |       --- |             --- |
-| I/O                     |     4.564 |       23 |       106 |           21.70 |
-| Static Power            |     0.089 |          |           |                 |
-| Total                   |     4.934 |          |           |                 |
-+-------------------------+-----------+----------+-----------+-----------------+
++----------------+-----------+----------+-----------+-----------------+
+| On-Chip        | Power (W) | Used     | Available | Utilization (%) |
++----------------+-----------+----------+-----------+-----------------+
+| Slice Logic    |     0.032 |       60 |       --- |             --- |
+|   LUT as Logic |     0.024 |       15 |     20800 |            0.07 |
+|   BUFG         |     0.006 |        1 |        32 |            3.13 |
+|   Register     |     0.002 |       35 |     41600 |            0.08 |
+|   Others       |     0.000 |        4 |       --- |             --- |
+| Signals        |     0.066 |       51 |       --- |             --- |
+| I/O            |     1.382 |       23 |       106 |           21.70 |
+| Static Power   |     0.075 |          |           |                 |
+| Total          |     1.555 |          |           |                 |
++----------------+-----------+----------+-----------+-----------------+
 
 
 1.2 Power Supply Summary
@@ -72,9 +70,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.317 |       0.293 |      0.024 |
-| Vccaux    |       1.800 |     0.181 |       0.167 |      0.014 |
-| Vcco33    |       3.300 |     1.289 |       1.288 |      0.001 |
+| Vccint    |       1.000 |     0.123 |       0.110 |      0.013 |
+| Vccaux    |       1.800 |     0.063 |       0.050 |      0.013 |
+| Vcco33    |       3.300 |     0.389 |       0.388 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -136,13 +134,11 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-------------+-----------+
-| Name        | Power (W) |
-+-------------+-----------+
-| top         |     4.845 |
-|   PS2_read1 |     0.112 |
-|   display   |     0.111 |
-|   meta_fix1 |     0.018 |
-+-------------+-----------+
++---------------+-----------+
+| Name          | Power (W) |
++---------------+-----------+
+| top           |     1.480 |
+|   my_keyboard |     0.050 |
++---------------+-----------+
 
 

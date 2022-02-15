@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
 -- Date        : Tue Feb  1 16:19:23 2022
 -- Host        : DEKSTOP-MAX running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Development/PROGH2/week_1/week_1.srcs/sources_1/ip/blk_mem_gen_0/blk_mem_gen_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top blk_mem_gen_0 -prefix
+--               blk_mem_gen_0_ blk_mem_gen_0_stub.vhdl
 -- Design      : blk_mem_gen_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a35tcpg236-1

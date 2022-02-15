@@ -29,10 +29,10 @@ architecture Behavioral of top is
         Port (
             clk : in STD_LOGIC;
             reset : in STD_LOGIC;
-            number0 : in INTEGER range 0 to 9;
-            number1 : in INTEGER range 0 to 9;
-            number2 : in INTEGER range 0 to 9;
-            number3 : in INTEGER range 0 to 9;
+            number0 : in INTEGER range 0 to 10;
+            number1 : in INTEGER range 0 to 10;
+            number2 : in INTEGER range 0 to 10;
+            number3 : in INTEGER range 0 to 10;
             segments : out STD_LOGIC_VECTOR (6 downto 0);
             anode : out STD_LOGIC_VECTOR (3 downto 0)
         );
@@ -47,10 +47,10 @@ architecture Behavioral of top is
     
     signal temp : STD_LOGIC_VECTOR(7 downto 0);
     
-    signal n0 : integer;
-    signal n1 : integer;
-    signal n2 : integer;
-    signal n3 : integer;
+    signal n0 : integer range 0 to 10;
+    signal n1 : integer range 0 to 10;
+    signal n2 : integer range 0 to 10;
+    signal n3 : integer range 0 to 10;
 begin
     my_keyboard : ps2_keyboard port map (
         clk => clk,
@@ -75,6 +75,14 @@ begin
     process(ps2_new_code) is
     begin
         if rising_edge(ps2_new_code) then
+            ff0 <= ff1;
+            ff1 <= ps2_current_code;
+        end if;
+    end process;
+
+    process(ps2_new_code) is
+    begin
+        if falling_edge(ps2_new_code) then
             if ff1 /= "11110000" then
                 if ff0 /= "11110000" then
                     n0 <= n1;
@@ -102,20 +110,10 @@ begin
                         when "01000110" =>
                             n3 <= 9;
                         when others =>
-                            n3 <= 9;
+                            n3 <= 10;
                     end case;
                 end if;
             end if;
-            
-            ff0 <= ff1;
-            ff1 <= ps2_current_code;
         end if;
     end process;
-
---    process(ps2_new_code) is
---    begin
---        if rising_edge(ps2_new_code) then
-            
---        end if;
---    end process;
 end Behavioral;

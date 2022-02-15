@@ -6,10 +6,10 @@ entity seven_segment_display is
     Port (
         clk : in STD_LOGIC;
         reset : in STD_LOGIC;
-        number0 : in INTEGER range 0 to 9;
-        number1 : in INTEGER range 0 to 9;
-        number2 : in INTEGER range 0 to 9;
-        number3 : in INTEGER range 0 to 9;
+        number0 : in INTEGER range 0 to 10;
+        number1 : in INTEGER range 0 to 10;
+        number2 : in INTEGER range 0 to 10;
+        number3 : in INTEGER range 0 to 10;
         segments : out STD_LOGIC_VECTOR (6 downto 0);
         anode : out STD_LOGIC_VECTOR (3 downto 0)
     );
@@ -19,7 +19,7 @@ architecture Behavioral of seven_segment_display is
 
 signal refresh_counter : STD_LOGIC_VECTOR(19 downto 0);
 signal active_leds : STD_LOGIC_VECTOR(1 downto 0);
-signal led_integer : INTEGER range 0 to 9;
+signal led_integer : INTEGER range 0 to 10;
 
 begin
     active_leds <= refresh_counter(19 downto 18);
@@ -75,6 +75,8 @@ begin
             segments <= "0000000";
         when 9 =>
             segments <= "0000100";
+        when 10 =>
+            segments <= "1111110";
         end case;
     end process conversion_process;
 end Behavioral;

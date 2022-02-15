@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Tue Feb 15 11:35:55 2022
+| Date         : Tue Feb 15 11:45:22 2022
 | Host         : DEKSTOP-MAX running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -61,7 +61,7 @@ Table of Contents
 | No           | No                    | No                     |              42 |           13 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |              29 |            7 |
+| Yes          | No                    | No                     |              29 |            9 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -76,7 +76,7 @@ Table of Contents
 |  clk_IBUF_BUFG     | my_keyboard/counter_next |                  |                1 |              4 |
 |  clk_IBUF_BUFG     | my_keyboard/buf_next     |                  |                3 |              9 |
 |  ps2_new_code_BUFG |                          |                  |                5 |             16 |
-|  ps2_new_code_BUFG | n0                       |                  |                3 |             16 |
+| ~ps2_new_code_BUFG | n0                       |                  |                5 |             16 |
 |  clk_IBUF_BUFG     |                          |                  |                8 |             26 |
 +--------------------+--------------------------+------------------+------------------+----------------+
 

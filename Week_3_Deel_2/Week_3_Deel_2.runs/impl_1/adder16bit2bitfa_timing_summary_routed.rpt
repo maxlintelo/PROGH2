@@ -1,0 +1,1574 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
+| Date         : Thu Feb 17 14:01:52 2022
+| Host         : LAPTOP-T2099UT1 running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -file adder16bit2bitfa_timing_summary_routed.rpt -pb adder16bit2bitfa_timing_summary_routed.pb -rpx adder16bit2bitfa_timing_summary_routed.rpx -warn_on_violation
+| Design       : adder16bit2bitfa
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 32 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 17 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     -2.015       -8.251                      7                   81        0.015        0.000                      0                   81        2.000        0.000                       0                   114  
+
+
+Timing constraints are not met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock   Waveform(ns)         Period(ns)      Frequency(MHz)
+-----   ------------         ----------      --------------
+sysclk  {0.000 2.500}        5.000           200.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+sysclk             -2.015       -8.251                      7                   81        0.015        0.000                      0                   81        2.000        0.000                       0                   114  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  sysclk
+  To Clock:  sysclk
+
+Setup :            7  Failing Endpoints,  Worst Slack       -2.015ns,  Total Violation       -8.251ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.015ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        2.000ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (VIOLATED) :        -2.015ns  (required time - arrival time)
+  Source:                 B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            CO_FF/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sysclk rise@5.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        6.823ns  (logic 2.502ns (36.668%)  route 4.321ns (63.332%))
+  Logic Levels:           16  (LUT3=16)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.789ns = ( 9.789 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.086ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.565     5.086    B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/CLK
+    SLICE_X30Y45         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y45         FDRE (Prop_fdre_C_Q)         0.518     5.604 r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/Q
+                         net (fo=2, routed)           0.442     6.047    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/B
+    SLICE_X31Y45         LUT3 (Prop_lut3_I0_O)        0.124     6.171 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     6.334    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X31Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.458 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.318     6.776    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.900 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.173     7.073    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     7.197 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.311     7.509    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y46         LUT3 (Prop_lut3_I2_O)        0.124     7.633 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.321     7.954    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.078 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.310     8.387    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.511 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     8.675    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.799 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.166     8.965    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.089 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.462     9.551    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.675 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.335    10.010    Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.134 r  Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.170    10.304    Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.428 r  Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.173    10.601    Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.725 r  Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.352    11.077    Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y47         LUT3 (Prop_lut3_I2_O)        0.124    11.201 r  Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.160    11.361    Gen_1[14].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y47         LUT3 (Prop_lut3_I2_O)        0.124    11.485 r  Gen_1[14].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.301    11.786    Gen_1[14].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y48         LUT3 (Prop_lut3_I2_O)        0.124    11.910 r  Gen_1[14].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=1, routed)           0.000    11.910    CO_FF/D
+    SLICE_X29Y48         FDRE                                         r  CO_FF/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     5.000     5.000 r  
+    W5                                                0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.388     6.388 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.862     8.250    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     8.341 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.448     9.789    CO_FF/CLK
+    SLICE_X29Y48         FDRE                                         r  CO_FF/Q_reg/C
+                         clock pessimism              0.260    10.049    
+                         clock uncertainty           -0.185     9.864    
+    SLICE_X29Y48         FDRE (Setup_fdre_C_D)        0.031     9.895    CO_FF/Q_reg
+  -------------------------------------------------------------------
+                         required time                          9.895    
+                         arrival time                         -11.910    
+  -------------------------------------------------------------------
+                         slack                                 -2.015    
+
+Slack (VIOLATED) :        -1.883ns  (required time - arrival time)
+  Source:                 B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            S_FF/generate_ff[15].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sysclk rise@5.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        6.689ns  (logic 2.502ns (37.403%)  route 4.187ns (62.597%))
+  Logic Levels:           16  (LUT3=16)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.789ns = ( 9.789 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.086ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.565     5.086    B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/CLK
+    SLICE_X30Y45         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y45         FDRE (Prop_fdre_C_Q)         0.518     5.604 r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/Q
+                         net (fo=2, routed)           0.442     6.047    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/B
+    SLICE_X31Y45         LUT3 (Prop_lut3_I0_O)        0.124     6.171 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     6.334    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X31Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.458 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.318     6.776    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.900 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.173     7.073    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     7.197 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.311     7.509    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y46         LUT3 (Prop_lut3_I2_O)        0.124     7.633 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.321     7.954    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.078 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.310     8.387    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.511 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     8.675    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.799 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.166     8.965    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.089 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.462     9.551    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.675 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.335    10.010    Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.134 r  Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.170    10.304    Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.428 r  Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.173    10.601    Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.725 r  Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.352    11.077    Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y47         LUT3 (Prop_lut3_I2_O)        0.124    11.201 r  Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.160    11.361    Gen_1[14].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y47         LUT3 (Prop_lut3_I2_O)        0.124    11.485 r  Gen_1[14].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.167    11.652    Gen_1[14].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y47         LUT3 (Prop_lut3_I2_O)        0.124    11.776 r  Gen_1[14].Gen_2.fulladder2bitgen/fulladder1bit1/S_INST_0/O
+                         net (fo=1, routed)           0.000    11.776    S_FF/generate_ff[15].ff0/D
+    SLICE_X29Y47         FDRE                                         r  S_FF/generate_ff[15].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     5.000     5.000 r  
+    W5                                                0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.388     6.388 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.862     8.250    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     8.341 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.448     9.789    S_FF/generate_ff[15].ff0/CLK
+    SLICE_X29Y47         FDRE                                         r  S_FF/generate_ff[15].ff0/Q_reg/C
+                         clock pessimism              0.260    10.049    
+                         clock uncertainty           -0.185     9.864    
+    SLICE_X29Y47         FDRE (Setup_fdre_C_D)        0.029     9.893    S_FF/generate_ff[15].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                          9.893    
+                         arrival time                         -11.776    
+  -------------------------------------------------------------------
+                         slack                                 -1.883    
+
+Slack (VIOLATED) :        -1.594ns  (required time - arrival time)
+  Source:                 B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            S_FF/generate_ff[14].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sysclk rise@5.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        6.404ns  (logic 2.378ns (37.135%)  route 4.026ns (62.865%))
+  Logic Levels:           15  (LUT3=15)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.789ns = ( 9.789 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.086ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.565     5.086    B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/CLK
+    SLICE_X30Y45         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y45         FDRE (Prop_fdre_C_Q)         0.518     5.604 r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/Q
+                         net (fo=2, routed)           0.442     6.047    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/B
+    SLICE_X31Y45         LUT3 (Prop_lut3_I0_O)        0.124     6.171 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     6.334    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X31Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.458 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.318     6.776    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.900 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.173     7.073    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     7.197 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.311     7.509    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y46         LUT3 (Prop_lut3_I2_O)        0.124     7.633 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.321     7.954    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.078 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.310     8.387    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.511 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     8.675    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.799 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.166     8.965    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.089 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.462     9.551    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.675 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.335    10.010    Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.134 r  Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.170    10.304    Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.428 r  Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.173    10.601    Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.725 r  Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.352    11.077    Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y47         LUT3 (Prop_lut3_I2_O)        0.124    11.201 r  Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.165    11.366    Gen_1[14].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y47         LUT3 (Prop_lut3_I2_O)        0.124    11.490 r  Gen_1[14].Gen_2.fulladder2bitgen/fulladder1bit0/S_INST_0/O
+                         net (fo=1, routed)           0.000    11.490    S_FF/generate_ff[14].ff0/D
+    SLICE_X29Y47         FDRE                                         r  S_FF/generate_ff[14].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     5.000     5.000 r  
+    W5                                                0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.388     6.388 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.862     8.250    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     8.341 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.448     9.789    S_FF/generate_ff[14].ff0/CLK
+    SLICE_X29Y47         FDRE                                         r  S_FF/generate_ff[14].ff0/Q_reg/C
+                         clock pessimism              0.260    10.049    
+                         clock uncertainty           -0.185     9.864    
+    SLICE_X29Y47         FDRE (Setup_fdre_C_D)        0.032     9.896    S_FF/generate_ff[14].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                          9.896    
+                         arrival time                         -11.490    
+  -------------------------------------------------------------------
+                         slack                                 -1.594    
+
+Slack (VIOLATED) :        -1.248ns  (required time - arrival time)
+  Source:                 B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            S_FF/generate_ff[13].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sysclk rise@5.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        6.069ns  (logic 2.254ns (37.138%)  route 3.815ns (62.862%))
+  Logic Levels:           14  (LUT3=14)
+  Clock Path Skew:        -0.024ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.787ns = ( 9.787 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.086ns
+    Clock Pessimism Removal (CPR):    0.275ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.565     5.086    B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/CLK
+    SLICE_X30Y45         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y45         FDRE (Prop_fdre_C_Q)         0.518     5.604 r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/Q
+                         net (fo=2, routed)           0.442     6.047    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/B
+    SLICE_X31Y45         LUT3 (Prop_lut3_I0_O)        0.124     6.171 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     6.334    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X31Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.458 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.318     6.776    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.900 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.173     7.073    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     7.197 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.311     7.509    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y46         LUT3 (Prop_lut3_I2_O)        0.124     7.633 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.321     7.954    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.078 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.310     8.387    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.511 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     8.675    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.799 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.166     8.965    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.089 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.462     9.551    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.675 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.335    10.010    Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.134 r  Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.170    10.304    Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.428 r  Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.173    10.601    Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.725 r  Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.307    11.032    Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X31Y47         LUT3 (Prop_lut3_I2_O)        0.124    11.156 r  Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit1/S_INST_0/O
+                         net (fo=1, routed)           0.000    11.156    S_FF/generate_ff[13].ff0/D
+    SLICE_X31Y47         FDRE                                         r  S_FF/generate_ff[13].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     5.000     5.000 r  
+    W5                                                0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.388     6.388 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.862     8.250    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     8.341 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.446     9.787    S_FF/generate_ff[13].ff0/CLK
+    SLICE_X31Y47         FDRE                                         r  S_FF/generate_ff[13].ff0/Q_reg/C
+                         clock pessimism              0.275    10.062    
+                         clock uncertainty           -0.185     9.877    
+    SLICE_X31Y47         FDRE (Setup_fdre_C_D)        0.031     9.908    S_FF/generate_ff[13].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                          9.908    
+                         arrival time                         -11.156    
+  -------------------------------------------------------------------
+                         slack                                 -1.248    
+
+Slack (VIOLATED) :        -0.959ns  (required time - arrival time)
+  Source:                 B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            S_FF/generate_ff[12].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sysclk rise@5.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        5.768ns  (logic 2.130ns (36.931%)  route 3.638ns (63.069%))
+  Logic Levels:           13  (LUT3=13)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.789ns = ( 9.789 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.086ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.565     5.086    B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/CLK
+    SLICE_X30Y45         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y45         FDRE (Prop_fdre_C_Q)         0.518     5.604 r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/Q
+                         net (fo=2, routed)           0.442     6.047    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/B
+    SLICE_X31Y45         LUT3 (Prop_lut3_I0_O)        0.124     6.171 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     6.334    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X31Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.458 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.318     6.776    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.900 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.173     7.073    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     7.197 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.311     7.509    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y46         LUT3 (Prop_lut3_I2_O)        0.124     7.633 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.321     7.954    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.078 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.310     8.387    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.511 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     8.675    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.799 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.166     8.965    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.089 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.462     9.551    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.675 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.335    10.010    Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.134 r  Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.170    10.304    Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.428 r  Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.302    10.730    Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y49         LUT3 (Prop_lut3_I2_O)        0.124    10.854 r  Gen_1[12].Gen_2.fulladder2bitgen/fulladder1bit0/S_INST_0/O
+                         net (fo=1, routed)           0.000    10.854    S_FF/generate_ff[12].ff0/D
+    SLICE_X29Y49         FDRE                                         r  S_FF/generate_ff[12].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     5.000     5.000 r  
+    W5                                                0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.388     6.388 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.862     8.250    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     8.341 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.448     9.789    S_FF/generate_ff[12].ff0/CLK
+    SLICE_X29Y49         FDRE                                         r  S_FF/generate_ff[12].ff0/Q_reg/C
+                         clock pessimism              0.260    10.049    
+                         clock uncertainty           -0.185     9.864    
+    SLICE_X29Y49         FDRE (Setup_fdre_C_D)        0.031     9.895    S_FF/generate_ff[12].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                          9.895    
+                         arrival time                         -10.854    
+  -------------------------------------------------------------------
+                         slack                                 -0.959    
+
+Slack (VIOLATED) :        -0.538ns  (required time - arrival time)
+  Source:                 B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            S_FF/generate_ff[11].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sysclk rise@5.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        5.344ns  (logic 2.006ns (37.535%)  route 3.338ns (62.465%))
+  Logic Levels:           12  (LUT3=12)
+  Clock Path Skew:        -0.037ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.789ns = ( 9.789 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.086ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.565     5.086    B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/CLK
+    SLICE_X30Y45         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y45         FDRE (Prop_fdre_C_Q)         0.518     5.604 r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/Q
+                         net (fo=2, routed)           0.442     6.047    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/B
+    SLICE_X31Y45         LUT3 (Prop_lut3_I0_O)        0.124     6.171 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     6.334    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X31Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.458 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.318     6.776    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.900 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.173     7.073    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     7.197 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.311     7.509    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y46         LUT3 (Prop_lut3_I2_O)        0.124     7.633 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.321     7.954    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.078 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.310     8.387    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.511 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     8.675    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.799 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.166     8.965    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.089 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.462     9.551    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.675 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.335    10.010    Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.134 r  Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.173    10.307    Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y47         LUT3 (Prop_lut3_I2_O)        0.124    10.431 r  Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit1/S_INST_0/O
+                         net (fo=1, routed)           0.000    10.431    S_FF/generate_ff[11].ff0/D
+    SLICE_X28Y47         FDRE                                         r  S_FF/generate_ff[11].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     5.000     5.000 r  
+    W5                                                0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.388     6.388 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.862     8.250    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     8.341 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.448     9.789    S_FF/generate_ff[11].ff0/CLK
+    SLICE_X28Y47         FDRE                                         r  S_FF/generate_ff[11].ff0/Q_reg/C
+                         clock pessimism              0.260    10.049    
+                         clock uncertainty           -0.185     9.864    
+    SLICE_X28Y47         FDRE (Setup_fdre_C_D)        0.029     9.893    S_FF/generate_ff[11].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                          9.893    
+                         arrival time                         -10.431    
+  -------------------------------------------------------------------
+                         slack                                 -0.538    
+
+Slack (VIOLATED) :        -0.015ns  (required time - arrival time)
+  Source:                 B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            S_FF/generate_ff[10].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sysclk rise@5.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        4.886ns  (logic 1.882ns (38.517%)  route 3.004ns (61.483%))
+  Logic Levels:           11  (LUT3=11)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.786ns = ( 9.786 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.086ns
+    Clock Pessimism Removal (CPR):    0.275ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.565     5.086    B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/CLK
+    SLICE_X30Y45         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y45         FDRE (Prop_fdre_C_Q)         0.518     5.604 r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/Q
+                         net (fo=2, routed)           0.442     6.047    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/B
+    SLICE_X31Y45         LUT3 (Prop_lut3_I0_O)        0.124     6.171 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     6.334    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X31Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.458 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.318     6.776    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.900 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.173     7.073    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     7.197 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.311     7.509    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y46         LUT3 (Prop_lut3_I2_O)        0.124     7.633 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.321     7.954    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.078 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.310     8.387    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.511 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     8.675    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.799 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.166     8.965    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.089 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.462     9.551    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.675 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.174     9.848    Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.972 r  Gen_1[10].Gen_2.fulladder2bitgen/fulladder1bit0/S_INST_0/O
+                         net (fo=1, routed)           0.000     9.972    S_FF/generate_ff[10].ff0/D
+    SLICE_X30Y46         FDRE                                         r  S_FF/generate_ff[10].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     5.000     5.000 r  
+    W5                                                0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.388     6.388 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.862     8.250    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     8.341 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.445     9.786    S_FF/generate_ff[10].ff0/CLK
+    SLICE_X30Y46         FDRE                                         r  S_FF/generate_ff[10].ff0/Q_reg/C
+                         clock pessimism              0.275    10.061    
+                         clock uncertainty           -0.185     9.876    
+    SLICE_X30Y46         FDRE (Setup_fdre_C_D)        0.081     9.957    S_FF/generate_ff[10].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                          9.957    
+                         arrival time                          -9.972    
+  -------------------------------------------------------------------
+                         slack                                 -0.015    
+
+Slack (MET) :             0.270ns  (required time - arrival time)
+  Source:                 B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            S_FF/generate_ff[9].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sysclk rise@5.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        4.598ns  (logic 1.758ns (38.232%)  route 2.840ns (61.768%))
+  Logic Levels:           10  (LUT3=10)
+  Clock Path Skew:        -0.025ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.786ns = ( 9.786 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.086ns
+    Clock Pessimism Removal (CPR):    0.275ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.565     5.086    B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/CLK
+    SLICE_X30Y45         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y45         FDRE (Prop_fdre_C_Q)         0.518     5.604 r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/Q
+                         net (fo=2, routed)           0.442     6.047    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/B
+    SLICE_X31Y45         LUT3 (Prop_lut3_I0_O)        0.124     6.171 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     6.334    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X31Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.458 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.318     6.776    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.900 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.173     7.073    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     7.197 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.311     7.509    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y46         LUT3 (Prop_lut3_I2_O)        0.124     7.633 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.321     7.954    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.078 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.310     8.387    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.511 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     8.675    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.799 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.166     8.965    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.089 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.472     9.561    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     9.685 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit1/S_INST_0/O
+                         net (fo=1, routed)           0.000     9.685    S_FF/generate_ff[9].ff0/D
+    SLICE_X30Y46         FDRE                                         r  S_FF/generate_ff[9].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     5.000     5.000 r  
+    W5                                                0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.388     6.388 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.862     8.250    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     8.341 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.445     9.786    S_FF/generate_ff[9].ff0/CLK
+    SLICE_X30Y46         FDRE                                         r  S_FF/generate_ff[9].ff0/Q_reg/C
+                         clock pessimism              0.275    10.061    
+                         clock uncertainty           -0.185     9.876    
+    SLICE_X30Y46         FDRE (Setup_fdre_C_D)        0.079     9.955    S_FF/generate_ff[9].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                          9.955    
+                         arrival time                          -9.685    
+  -------------------------------------------------------------------
+                         slack                                  0.270    
+
+Slack (MET) :             0.661ns  (required time - arrival time)
+  Source:                 B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            S_FF/generate_ff[8].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sysclk rise@5.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        4.147ns  (logic 1.634ns (39.402%)  route 2.513ns (60.598%))
+  Logic Levels:           9  (LUT3=9)
+  Clock Path Skew:        -0.038ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.788ns = ( 9.788 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.086ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.565     5.086    B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/CLK
+    SLICE_X30Y45         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y45         FDRE (Prop_fdre_C_Q)         0.518     5.604 r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/Q
+                         net (fo=2, routed)           0.442     6.047    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/B
+    SLICE_X31Y45         LUT3 (Prop_lut3_I0_O)        0.124     6.171 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     6.334    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X31Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.458 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.318     6.776    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.900 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.173     7.073    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     7.197 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.311     7.509    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y46         LUT3 (Prop_lut3_I2_O)        0.124     7.633 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.321     7.954    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.078 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.310     8.387    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.511 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     8.675    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.799 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.310     9.109    Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     9.233 r  Gen_1[8].Gen_2.fulladder2bitgen/fulladder1bit0/S_INST_0/O
+                         net (fo=1, routed)           0.000     9.233    S_FF/generate_ff[8].ff0/D
+    SLICE_X28Y45         FDRE                                         r  S_FF/generate_ff[8].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     5.000     5.000 r  
+    W5                                                0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.388     6.388 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.862     8.250    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     8.341 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.447     9.788    S_FF/generate_ff[8].ff0/CLK
+    SLICE_X28Y45         FDRE                                         r  S_FF/generate_ff[8].ff0/Q_reg/C
+                         clock pessimism              0.260    10.048    
+                         clock uncertainty           -0.185     9.863    
+    SLICE_X28Y45         FDRE (Setup_fdre_C_D)        0.031     9.894    S_FF/generate_ff[8].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                          9.894    
+                         arrival time                          -9.233    
+  -------------------------------------------------------------------
+                         slack                                  0.661    
+
+Slack (MET) :             0.676ns  (required time - arrival time)
+  Source:                 B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            S_FF/generate_ff[7].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            5.000ns  (sysclk rise@5.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        4.132ns  (logic 1.510ns (36.543%)  route 2.622ns (63.457%))
+  Logic Levels:           8  (LUT3=8)
+  Clock Path Skew:        -0.038ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.788ns = ( 9.788 - 5.000 ) 
+    Source Clock Delay      (SCD):    5.086ns
+    Clock Pessimism Removal (CPR):    0.260ns
+  Clock Uncertainty:      0.185ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.458     1.458 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.967     3.425    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.096     3.521 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.565     5.086    B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/CLK
+    SLICE_X30Y45         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y45         FDRE (Prop_fdre_C_Q)         0.518     5.604 r  B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/Q
+                         net (fo=2, routed)           0.442     6.047    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/B
+    SLICE_X31Y45         LUT3 (Prop_lut3_I0_O)        0.124     6.171 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.164     6.334    Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X31Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.458 r  Gen_1[0].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.318     6.776    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     6.900 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.173     7.073    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X28Y45         LUT3 (Prop_lut3_I2_O)        0.124     7.197 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.311     7.509    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X28Y46         LUT3 (Prop_lut3_I2_O)        0.124     7.633 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.321     7.954    Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X30Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.078 r  Gen_1[4].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=2, routed)           0.310     8.387    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CI
+    SLICE_X29Y46         LUT3 (Prop_lut3_I2_O)        0.124     8.511 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit0/CO_INST_0/O
+                         net (fo=2, routed)           0.583     9.094    Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/CI
+    SLICE_X29Y44         LUT3 (Prop_lut3_I2_O)        0.124     9.218 r  Gen_1[6].Gen_2.fulladder2bitgen/fulladder1bit1/S_INST_0/O
+                         net (fo=1, routed)           0.000     9.218    S_FF/generate_ff[7].ff0/D
+    SLICE_X29Y44         FDRE                                         r  S_FF/generate_ff[7].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     5.000     5.000 r  
+    W5                                                0.000     5.000 r  CLK (IN)
+                         net (fo=0)                   0.000     5.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         1.388     6.388 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           1.862     8.250    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.091     8.341 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         1.447     9.788    S_FF/generate_ff[7].ff0/CLK
+    SLICE_X29Y44         FDRE                                         r  S_FF/generate_ff[7].ff0/Q_reg/C
+                         clock pessimism              0.260    10.048    
+                         clock uncertainty           -0.185     9.863    
+    SLICE_X29Y44         FDRE (Setup_fdre_C_D)        0.031     9.894    S_FF/generate_ff[7].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                          9.894    
+                         arrival time                          -9.218    
+  -------------------------------------------------------------------
+                         slack                                  0.676    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.015ns  (arrival time - required time)
+  Source:                 B_FF/generate_ff[0].gen_ff0/generate_ff[3].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            B_FF/generate_ff[1].gen_ff0/generate_ff[3].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sysclk rise@0.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        0.241ns  (logic 0.141ns (58.505%)  route 0.100ns (41.495%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.959ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.497ns
+  Clock Uncertainty:      0.150ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.563     1.446    B_FF/generate_ff[0].gen_ff0/generate_ff[3].ff0/CLK
+    SLICE_X33Y46         FDRE                                         r  B_FF/generate_ff[0].gen_ff0/generate_ff[3].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y46         FDRE (Prop_fdre_C_Q)         0.141     1.587 r  B_FF/generate_ff[0].gen_ff0/generate_ff[3].ff0/Q_reg/Q
+                         net (fo=1, routed)           0.100     1.687    B_FF/generate_ff[1].gen_ff0/generate_ff[3].ff0/D
+    SLICE_X30Y46         FDRE                                         r  B_FF/generate_ff[1].gen_ff0/generate_ff[3].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.832     1.959    B_FF/generate_ff[1].gen_ff0/generate_ff[3].ff0/CLK
+    SLICE_X30Y46         FDRE                                         r  B_FF/generate_ff[1].gen_ff0/generate_ff[3].ff0/Q_reg/C
+                         clock pessimism             -0.497     1.462    
+                         clock uncertainty            0.150     1.612    
+    SLICE_X30Y46         FDRE (Hold_fdre_C_D)         0.060     1.672    B_FF/generate_ff[1].gen_ff0/generate_ff[3].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                         -1.672    
+                         arrival time                           1.687    
+  -------------------------------------------------------------------
+                         slack                                  0.015    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 B_FF/generate_ff[1].gen_ff0/generate_ff[1].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            B_FF/generate_ff[2].gen_ff0/generate_ff[1].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sysclk rise@0.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        0.242ns  (logic 0.141ns (58.248%)  route 0.101ns (41.752%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.959ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.497ns
+  Clock Uncertainty:      0.150ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.563     1.446    B_FF/generate_ff[1].gen_ff0/generate_ff[1].ff0/CLK
+    SLICE_X32Y46         FDRE                                         r  B_FF/generate_ff[1].gen_ff0/generate_ff[1].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y46         FDRE (Prop_fdre_C_Q)         0.141     1.587 r  B_FF/generate_ff[1].gen_ff0/generate_ff[1].ff0/Q_reg/Q
+                         net (fo=1, routed)           0.101     1.688    B_FF/generate_ff[2].gen_ff0/generate_ff[1].ff0/D
+    SLICE_X30Y45         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[1].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.832     1.959    B_FF/generate_ff[2].gen_ff0/generate_ff[1].ff0/CLK
+    SLICE_X30Y45         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[1].ff0/Q_reg/C
+                         clock pessimism             -0.497     1.462    
+                         clock uncertainty            0.150     1.612    
+    SLICE_X30Y45         FDRE (Hold_fdre_C_D)         0.052     1.664    B_FF/generate_ff[2].gen_ff0/generate_ff[1].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                         -1.664    
+                         arrival time                           1.688    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.028ns  (arrival time - required time)
+  Source:                 B_FF/generate_ff[2].gen_ff0/generate_ff[15].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            CO_FF/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sysclk rise@0.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        0.283ns  (logic 0.186ns (65.694%)  route 0.097ns (34.306%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.961ns
+    Source Clock Delay      (SCD):    1.447ns
+    Clock Pessimism Removal (CPR):    0.501ns
+  Clock Uncertainty:      0.150ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.564     1.447    B_FF/generate_ff[2].gen_ff0/generate_ff[15].ff0/CLK
+    SLICE_X28Y48         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[15].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X28Y48         FDRE (Prop_fdre_C_Q)         0.141     1.588 r  B_FF/generate_ff[2].gen_ff0/generate_ff[15].ff0/Q_reg/Q
+                         net (fo=2, routed)           0.097     1.685    Gen_1[14].Gen_2.fulladder2bitgen/fulladder1bit1/B
+    SLICE_X29Y48         LUT3 (Prop_lut3_I0_O)        0.045     1.730 r  Gen_1[14].Gen_2.fulladder2bitgen/fulladder1bit1/CO_INST_0/O
+                         net (fo=1, routed)           0.000     1.730    CO_FF/D
+    SLICE_X29Y48         FDRE                                         r  CO_FF/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.834     1.961    CO_FF/CLK
+    SLICE_X29Y48         FDRE                                         r  CO_FF/Q_reg/C
+                         clock pessimism             -0.501     1.460    
+                         clock uncertainty            0.150     1.610    
+    SLICE_X29Y48         FDRE (Hold_fdre_C_D)         0.092     1.702    CO_FF/Q_reg
+  -------------------------------------------------------------------
+                         required time                         -1.702    
+                         arrival time                           1.730    
+  -------------------------------------------------------------------
+                         slack                                  0.028    
+
+Slack (MET) :             0.035ns  (arrival time - required time)
+  Source:                 A_FF/generate_ff[0].gen_ff0/generate_ff[14].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            A_FF/generate_ff[1].gen_ff0/generate_ff[14].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sysclk rise@0.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        0.257ns  (logic 0.141ns (54.828%)  route 0.116ns (45.172%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.958ns
+    Source Clock Delay      (SCD):    1.445ns
+    Clock Pessimism Removal (CPR):    0.500ns
+  Clock Uncertainty:      0.150ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.562     1.445    A_FF/generate_ff[0].gen_ff0/generate_ff[14].ff0/CLK
+    SLICE_X35Y46         FDRE                                         r  A_FF/generate_ff[0].gen_ff0/generate_ff[14].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X35Y46         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  A_FF/generate_ff[0].gen_ff0/generate_ff[14].ff0/Q_reg/Q
+                         net (fo=1, routed)           0.116     1.702    A_FF/generate_ff[1].gen_ff0/generate_ff[14].ff0/D
+    SLICE_X34Y46         FDRE                                         r  A_FF/generate_ff[1].gen_ff0/generate_ff[14].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.831     1.958    A_FF/generate_ff[1].gen_ff0/generate_ff[14].ff0/CLK
+    SLICE_X34Y46         FDRE                                         r  A_FF/generate_ff[1].gen_ff0/generate_ff[14].ff0/Q_reg/C
+                         clock pessimism             -0.500     1.458    
+                         clock uncertainty            0.150     1.608    
+    SLICE_X34Y46         FDRE (Hold_fdre_C_D)         0.059     1.667    A_FF/generate_ff[1].gen_ff0/generate_ff[14].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                         -1.667    
+                         arrival time                           1.702    
+  -------------------------------------------------------------------
+                         slack                                  0.035    
+
+Slack (MET) :             0.048ns  (arrival time - required time)
+  Source:                 B_FF/generate_ff[1].gen_ff0/generate_ff[6].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            B_FF/generate_ff[2].gen_ff0/generate_ff[6].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sysclk rise@0.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        0.304ns  (logic 0.141ns (46.356%)  route 0.163ns (53.644%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.036ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.960ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.478ns
+  Clock Uncertainty:      0.150ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.563     1.446    B_FF/generate_ff[1].gen_ff0/generate_ff[6].ff0/CLK
+    SLICE_X32Y46         FDRE                                         r  B_FF/generate_ff[1].gen_ff0/generate_ff[6].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y46         FDRE (Prop_fdre_C_Q)         0.141     1.587 r  B_FF/generate_ff[1].gen_ff0/generate_ff[6].ff0/Q_reg/Q
+                         net (fo=1, routed)           0.163     1.750    B_FF/generate_ff[2].gen_ff0/generate_ff[6].ff0/D
+    SLICE_X28Y46         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[6].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.833     1.960    B_FF/generate_ff[2].gen_ff0/generate_ff[6].ff0/CLK
+    SLICE_X28Y46         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[6].ff0/Q_reg/C
+                         clock pessimism             -0.478     1.482    
+                         clock uncertainty            0.150     1.632    
+    SLICE_X28Y46         FDRE (Hold_fdre_C_D)         0.070     1.702    B_FF/generate_ff[2].gen_ff0/generate_ff[6].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                         -1.702    
+                         arrival time                           1.750    
+  -------------------------------------------------------------------
+                         slack                                  0.048    
+
+Slack (MET) :             0.048ns  (arrival time - required time)
+  Source:                 B_FF/generate_ff[0].gen_ff0/generate_ff[13].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            B_FF/generate_ff[1].gen_ff0/generate_ff[13].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sysclk rise@0.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        0.245ns  (logic 0.141ns (57.511%)  route 0.104ns (42.489%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.961ns
+    Source Clock Delay      (SCD):    1.447ns
+    Clock Pessimism Removal (CPR):    0.514ns
+  Clock Uncertainty:      0.150ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.564     1.447    B_FF/generate_ff[0].gen_ff0/generate_ff[13].ff0/CLK
+    SLICE_X29Y49         FDRE                                         r  B_FF/generate_ff[0].gen_ff0/generate_ff[13].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X29Y49         FDRE (Prop_fdre_C_Q)         0.141     1.588 r  B_FF/generate_ff[0].gen_ff0/generate_ff[13].ff0/Q_reg/Q
+                         net (fo=1, routed)           0.104     1.692    B_FF/generate_ff[1].gen_ff0/generate_ff[13].ff0/D
+    SLICE_X29Y49         FDRE                                         r  B_FF/generate_ff[1].gen_ff0/generate_ff[13].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.834     1.961    B_FF/generate_ff[1].gen_ff0/generate_ff[13].ff0/CLK
+    SLICE_X29Y49         FDRE                                         r  B_FF/generate_ff[1].gen_ff0/generate_ff[13].ff0/Q_reg/C
+                         clock pessimism             -0.514     1.447    
+                         clock uncertainty            0.150     1.597    
+    SLICE_X29Y49         FDRE (Hold_fdre_C_D)         0.047     1.644    B_FF/generate_ff[1].gen_ff0/generate_ff[13].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                         -1.644    
+                         arrival time                           1.692    
+  -------------------------------------------------------------------
+                         slack                                  0.048    
+
+Slack (MET) :             0.049ns  (arrival time - required time)
+  Source:                 B_FF/generate_ff[1].gen_ff0/generate_ff[12].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            B_FF/generate_ff[2].gen_ff0/generate_ff[12].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sysclk rise@0.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        0.274ns  (logic 0.164ns (59.853%)  route 0.110ns (40.147%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.960ns
+    Source Clock Delay      (SCD):    1.447ns
+    Clock Pessimism Removal (CPR):    0.497ns
+  Clock Uncertainty:      0.150ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.564     1.447    B_FF/generate_ff[1].gen_ff0/generate_ff[12].ff0/CLK
+    SLICE_X30Y49         FDRE                                         r  B_FF/generate_ff[1].gen_ff0/generate_ff[12].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y49         FDRE (Prop_fdre_C_Q)         0.164     1.611 r  B_FF/generate_ff[1].gen_ff0/generate_ff[12].ff0/Q_reg/Q
+                         net (fo=1, routed)           0.110     1.721    B_FF/generate_ff[2].gen_ff0/generate_ff[12].ff0/D
+    SLICE_X30Y48         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[12].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.833     1.960    B_FF/generate_ff[2].gen_ff0/generate_ff[12].ff0/CLK
+    SLICE_X30Y48         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[12].ff0/Q_reg/C
+                         clock pessimism             -0.497     1.463    
+                         clock uncertainty            0.150     1.613    
+    SLICE_X30Y48         FDRE (Hold_fdre_C_D)         0.059     1.672    B_FF/generate_ff[2].gen_ff0/generate_ff[12].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                         -1.672    
+                         arrival time                           1.721    
+  -------------------------------------------------------------------
+                         slack                                  0.049    
+
+Slack (MET) :             0.053ns  (arrival time - required time)
+  Source:                 B_FF/generate_ff[2].gen_ff0/generate_ff[2].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            S_FF/generate_ff[2].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sysclk rise@0.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        0.311ns  (logic 0.186ns (59.873%)  route 0.125ns (40.127%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.960ns
+    Source Clock Delay      (SCD):    1.446ns
+    Clock Pessimism Removal (CPR):    0.498ns
+  Clock Uncertainty:      0.150ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.563     1.446    B_FF/generate_ff[2].gen_ff0/generate_ff[2].ff0/CLK
+    SLICE_X29Y45         FDRE                                         r  B_FF/generate_ff[2].gen_ff0/generate_ff[2].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X29Y45         FDRE (Prop_fdre_C_Q)         0.141     1.587 r  B_FF/generate_ff[2].gen_ff0/generate_ff[2].ff0/Q_reg/Q
+                         net (fo=2, routed)           0.125     1.712    Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/B
+    SLICE_X28Y44         LUT3 (Prop_lut3_I1_O)        0.045     1.757 r  Gen_1[2].Gen_2.fulladder2bitgen/fulladder1bit0/S_INST_0/O
+                         net (fo=1, routed)           0.000     1.757    S_FF/generate_ff[2].ff0/D
+    SLICE_X28Y44         FDRE                                         r  S_FF/generate_ff[2].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.833     1.960    S_FF/generate_ff[2].ff0/CLK
+    SLICE_X28Y44         FDRE                                         r  S_FF/generate_ff[2].ff0/Q_reg/C
+                         clock pessimism             -0.498     1.462    
+                         clock uncertainty            0.150     1.612    
+    SLICE_X28Y44         FDRE (Hold_fdre_C_D)         0.092     1.704    S_FF/generate_ff[2].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                         -1.704    
+                         arrival time                           1.757    
+  -------------------------------------------------------------------
+                         slack                                  0.053    
+
+Slack (MET) :             0.057ns  (arrival time - required time)
+  Source:                 A_FF/generate_ff[0].gen_ff0/generate_ff[11].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            A_FF/generate_ff[1].gen_ff0/generate_ff[11].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sysclk rise@0.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        0.318ns  (logic 0.141ns (44.385%)  route 0.177ns (55.615%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.036ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.961ns
+    Source Clock Delay      (SCD):    1.447ns
+    Clock Pessimism Removal (CPR):    0.478ns
+  Clock Uncertainty:      0.150ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.564     1.447    A_FF/generate_ff[0].gen_ff0/generate_ff[11].ff0/CLK
+    SLICE_X31Y47         FDRE                                         r  A_FF/generate_ff[0].gen_ff0/generate_ff[11].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X31Y47         FDRE (Prop_fdre_C_Q)         0.141     1.588 r  A_FF/generate_ff[0].gen_ff0/generate_ff[11].ff0/Q_reg/Q
+                         net (fo=1, routed)           0.177     1.765    A_FF/generate_ff[1].gen_ff0/generate_ff[11].ff0/D
+    SLICE_X29Y47         FDRE                                         r  A_FF/generate_ff[1].gen_ff0/generate_ff[11].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.834     1.961    A_FF/generate_ff[1].gen_ff0/generate_ff[11].ff0/CLK
+    SLICE_X29Y47         FDRE                                         r  A_FF/generate_ff[1].gen_ff0/generate_ff[11].ff0/Q_reg/C
+                         clock pessimism             -0.478     1.483    
+                         clock uncertainty            0.150     1.633    
+    SLICE_X29Y47         FDRE (Hold_fdre_C_D)         0.075     1.708    A_FF/generate_ff[1].gen_ff0/generate_ff[11].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                         -1.708    
+                         arrival time                           1.765    
+  -------------------------------------------------------------------
+                         slack                                  0.057    
+
+Slack (MET) :             0.058ns  (arrival time - required time)
+  Source:                 A_FF/generate_ff[0].gen_ff0/generate_ff[9].ff0/Q_reg/C
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Destination:            A_FF/generate_ff[1].gen_ff0/generate_ff[9].ff0/Q_reg/D
+                            (rising edge-triggered cell FDRE clocked by sysclk  {rise@0.000ns fall@2.500ns period=5.000ns})
+  Path Group:             sysclk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sysclk rise@0.000ns - sysclk rise@0.000ns)
+  Data Path Delay:        0.314ns  (logic 0.141ns (44.849%)  route 0.173ns (55.151%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.036ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.959ns
+    Source Clock Delay      (SCD):    1.445ns
+    Clock Pessimism Removal (CPR):    0.478ns
+  Clock Uncertainty:      0.150ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE + UU
+    Total System Jitter     (TSJ):    0.000ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+    User Uncertainty         (UU):    0.150ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.226     0.226 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.631     0.858    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.026     0.884 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.562     1.445    A_FF/generate_ff[0].gen_ff0/generate_ff[9].ff0/CLK
+    SLICE_X35Y46         FDRE                                         r  A_FF/generate_ff[0].gen_ff0/generate_ff[9].ff0/Q_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X35Y46         FDRE (Prop_fdre_C_Q)         0.141     1.586 r  A_FF/generate_ff[0].gen_ff0/generate_ff[9].ff0/Q_reg/Q
+                         net (fo=1, routed)           0.173     1.760    A_FF/generate_ff[1].gen_ff0/generate_ff[9].ff0/D
+    SLICE_X33Y46         FDRE                                         r  A_FF/generate_ff[1].gen_ff0/generate_ff[9].ff0/Q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sysclk rise edge)     0.000     0.000 r  
+    W5                                                0.000     0.000 r  CLK (IN)
+                         net (fo=0)                   0.000     0.000    CLK
+    W5                   IBUF (Prop_ibuf_I_O)         0.414     0.414 r  CLK_IBUF_inst/O
+                         net (fo=1, routed)           0.685     1.099    CLK_IBUF
+    BUFGCTRL_X0Y0        BUFG (Prop_bufg_I_O)         0.029     1.128 r  CLK_IBUF_BUFG_inst/O
+                         net (fo=113, routed)         0.832     1.959    A_FF/generate_ff[1].gen_ff0/generate_ff[9].ff0/CLK
+    SLICE_X33Y46         FDRE                                         r  A_FF/generate_ff[1].gen_ff0/generate_ff[9].ff0/Q_reg/C
+                         clock pessimism             -0.478     1.481    
+                         clock uncertainty            0.150     1.631    
+    SLICE_X33Y46         FDRE (Hold_fdre_C_D)         0.070     1.701    A_FF/generate_ff[1].gen_ff0/generate_ff[9].ff0/Q_reg
+  -------------------------------------------------------------------
+                         required time                         -1.701    
+                         arrival time                           1.760    
+  -------------------------------------------------------------------
+                         slack                                  0.058    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         sysclk
+Waveform(ns):       { 0.000 2.500 }
+Period(ns):         5.000
+Sources:            { CLK }
+
+Check Type        Corner  Lib Pin  Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location       Pin
+Min Period        n/a     BUFG/I   n/a            2.155         5.000       2.845      BUFGCTRL_X0Y0  CLK_IBUF_BUFG_inst/I
+Min Period        n/a     FDRE/C   n/a            1.000         5.000       4.000      SLICE_X29Y41   A_FF/generate_ff[0].gen_ff0/generate_ff[0].ff0/Q_reg/C
+Min Period        n/a     FDRE/C   n/a            1.000         5.000       4.000      SLICE_X36Y47   A_FF/generate_ff[0].gen_ff0/generate_ff[10].ff0/Q_reg/C
+Min Period        n/a     FDRE/C   n/a            1.000         5.000       4.000      SLICE_X31Y47   A_FF/generate_ff[0].gen_ff0/generate_ff[11].ff0/Q_reg/C
+Min Period        n/a     FDRE/C   n/a            1.000         5.000       4.000      SLICE_X35Y46   A_FF/generate_ff[0].gen_ff0/generate_ff[12].ff0/Q_reg/C
+Min Period        n/a     FDRE/C   n/a            1.000         5.000       4.000      SLICE_X36Y46   A_FF/generate_ff[0].gen_ff0/generate_ff[13].ff0/Q_reg/C
+Min Period        n/a     FDRE/C   n/a            1.000         5.000       4.000      SLICE_X35Y46   A_FF/generate_ff[0].gen_ff0/generate_ff[14].ff0/Q_reg/C
+Min Period        n/a     FDRE/C   n/a            1.000         5.000       4.000      SLICE_X28Y48   A_FF/generate_ff[0].gen_ff0/generate_ff[15].ff0/Q_reg/C
+Min Period        n/a     FDRE/C   n/a            1.000         5.000       4.000      SLICE_X28Y41   A_FF/generate_ff[0].gen_ff0/generate_ff[1].ff0/Q_reg/C
+Min Period        n/a     FDRE/C   n/a            1.000         5.000       4.000      SLICE_X28Y41   A_FF/generate_ff[0].gen_ff0/generate_ff[2].ff0/Q_reg/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X29Y41   A_FF/generate_ff[0].gen_ff0/generate_ff[0].ff0/Q_reg/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X36Y47   A_FF/generate_ff[0].gen_ff0/generate_ff[10].ff0/Q_reg/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X36Y47   A_FF/generate_ff[0].gen_ff0/generate_ff[10].ff0/Q_reg/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X31Y47   A_FF/generate_ff[0].gen_ff0/generate_ff[11].ff0/Q_reg/C
+Low Pulse Width   Fast    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X31Y47   A_FF/generate_ff[0].gen_ff0/generate_ff[11].ff0/Q_reg/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X36Y46   A_FF/generate_ff[0].gen_ff0/generate_ff[13].ff0/Q_reg/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X28Y41   A_FF/generate_ff[0].gen_ff0/generate_ff[1].ff0/Q_reg/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X28Y41   A_FF/generate_ff[0].gen_ff0/generate_ff[2].ff0/Q_reg/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X28Y41   A_FF/generate_ff[0].gen_ff0/generate_ff[3].ff0/Q_reg/C
+Low Pulse Width   Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X29Y43   A_FF/generate_ff[0].gen_ff0/generate_ff[4].ff0/Q_reg/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X28Y48   A_FF/generate_ff[0].gen_ff0/generate_ff[15].ff0/Q_reg/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X29Y47   A_FF/generate_ff[1].gen_ff0/generate_ff[11].ff0/Q_reg/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X28Y52   B_FF/generate_ff[0].gen_ff0/generate_ff[10].ff0/Q_reg/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X28Y52   B_FF/generate_ff[0].gen_ff0/generate_ff[11].ff0/Q_reg/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X28Y52   B_FF/generate_ff[0].gen_ff0/generate_ff[12].ff0/Q_reg/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X29Y49   B_FF/generate_ff[0].gen_ff0/generate_ff[13].ff0/Q_reg/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X28Y49   B_FF/generate_ff[0].gen_ff0/generate_ff[14].ff0/Q_reg/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X28Y49   B_FF/generate_ff[0].gen_ff0/generate_ff[15].ff0/Q_reg/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X30Y52   B_FF/generate_ff[0].gen_ff0/generate_ff[4].ff0/Q_reg/C
+High Pulse Width  Slow    FDRE/C   n/a            0.500         2.500       2.000      SLICE_X28Y49   B_FF/generate_ff[0].gen_ff0/generate_ff[8].ff0/Q_reg/C
+
+
+

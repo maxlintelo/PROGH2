@@ -1,0 +1,33 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Feb 17 13:10:40 2022
+# Process ID: 2244
+# Current directory: C:/Users/lenna/Documents/Github/PROGH2/Week_3
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent2436 C:\Users\lenna\Documents\Github\PROGH2\Week_3\Week_3.xpr
+# Log file: C:/Users/lenna/Documents/Github/PROGH2/Week_3/vivado.log
+# Journal file: C:/Users/lenna/Documents/Github/PROGH2/Week_3\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/lenna/Documents/Github/PROGH2/Week_3/Week_3.xpr
+link_design -name netlist_1
+report_clock_interaction -delay_type min_max -significant_digits 3 -name timing_1
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -routable_nets -name timing_2
+get_property IS_LOC_FIXED [get_cells clkgen/mmcm_adv_inst]
+startgroup
+place_cell clkgen/mmcm_adv_inst MMCME2_ADV_X1Y0/MMCME2_ADV
+endgroup
+undo
+startgroup
+place_cell clkgen/mmcm_adv_inst MMCME2_ADV_X1Y0/MMCME2_ADV
+endgroup
+get_property IS_LOC_FIXED [get_cells clkgen/mmcm_adv_inst]
+save_constraints
+startgroup
+set_property prohibit 1 [get_bels [list IOB_X1Y34/PAD IOB_X1Y34/PAD]]
+set_property prohibit 1 [get_sites AA8]
+endgroup
+undo
+save_constraints

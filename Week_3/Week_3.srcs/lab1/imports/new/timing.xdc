@@ -84,3 +84,7 @@ set_output_delay -clock [get_clocks sysClk] -max -add_delay 1.100 [get_ports phy
 set_false_path -from [get_ports *GTPRESET_IN*]
 set_multicycle_path -through [get_pins cpuEngine/or1200_cpu/or1200_alu/*] 2
 set_multicycle_path -hold -through [get_pins cpuEngine/or1200_cpu/or1200_alu/*] 1
+
+set_property BEL MMCME2_ADV [get_cells clkgen/mmcm_adv_inst]
+set_property LOC MMCME2_ADV_X1Y0 [get_cells clkgen/mmcm_adv_inst]
+set_property PROHIBIT true [get_bels IOB_X1Y34/PAD]

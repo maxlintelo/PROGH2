@@ -54,7 +54,7 @@ set_property used_in_implementation false [get_files C:/Users/lenna/Documents/Gi
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
-synth_design -top adder16bit2bitfa -part xc7a35tcpg236-1 -flatten_hierarchy none
+synth_design -top adder16bit2bitfa -part xc7a35tcpg236-1 -flatten_hierarchy full
 
 
 # disable binary constraint mode for synth run checkpoints

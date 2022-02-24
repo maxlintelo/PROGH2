@@ -1,0 +1,34 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Feb 24 14:18:22 2022
+# Process ID: 10080
+# Current directory: C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7100 C:\Users\lenna\Documents\Github\PROGH2\Week_3_Deel_2\Week_3_Deel_2.xpr
+# Log file: C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2/vivado.log
+# Journal file: C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2/Week_3_Deel_2.xpr
+update_compile_order -fileset sources_1
+check_timing
+open_run synth_1 -name synth_1
+open_run synth_1 -name synth_1
+open_run impl_1
+check_timing
+reset_run synth_1
+launch_runs impl_1 -jobs 12
+wait_on_run impl_1
+refresh_design
+report_utilization -name utilization_1
+set_property STEPS.SYNTH_DESIGN.ARGS.FLATTEN_HIERARCHY full [get_runs synth_1]
+set_property STEPS.OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
+set_property STEPS.PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
+set_property STEPS.PHYS_OPT_DESIGN.IS_ENABLED false [get_runs impl_1]
+set_property STEPS.POST_ROUTE_PHYS_OPT_DESIGN.IS_ENABLED true [get_runs impl_1]
+reset_run synth_1
+launch_runs impl_1 -jobs 12
+wait_on_run impl_1
+refresh_design
+report_utilization -name utilization_1

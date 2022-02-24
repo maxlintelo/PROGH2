@@ -12,8 +12,8 @@ end adder16bit2bitfa;
 
 architecture Behavioral of adder16bit2bitfa is
 
-attribute keep_hierarchy : string;
-attribute keep_hierarchy of Behavioral: architecture is "yes";
+--attribute keep_hierarchy : string;
+--attribute keep_hierarchy of Behavioral: architecture is "yes";
 
 component fulladder2bit is
     Port ( A : in STD_LOGIC_VECTOR (1 downto 0);

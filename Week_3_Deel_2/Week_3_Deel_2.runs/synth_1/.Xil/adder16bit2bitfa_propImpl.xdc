@@ -1,7 +1,7 @@
 set_property SRC_FILE_INFO {cfile:C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2/Week_3_Deel_2.srcs/constrs_1/imports/constraints/adder16bit2bitfa.xdc rfile:../../../Week_3_Deel_2.srcs/constrs_1/imports/constraints/adder16bit2bitfa.xdc id:1} [current_design]
 set_property SRC_FILE_INFO {cfile:C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2/Week_3_Deel_2.srcs/constrs_1/imports/constraints/io.xdc rfile:../../../Week_3_Deel_2.srcs/constrs_1/imports/constraints/io.xdc id:2} [current_design]
 set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]
-set_clock_uncertainty 0.15 [get_clocks sysclk]
+set_clock_uncertainty 0.150 [get_clocks sysclk]
 set_property src_info {type:XDC file:2 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN W5 [get_ports CLK]
 set_property src_info {type:XDC file:2 line:6 export:INPUT save:INPUT read:READ} [current_design]

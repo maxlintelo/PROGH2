@@ -2,23 +2,23 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Feb 17 14:00:38 2022
-# Process ID: 14772
+# Start of session at: Thu Feb 24 15:01:40 2022
+# Process ID: 22336
 # Current directory: C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2/Week_3_Deel_2.runs/synth_1
 # Command line: vivado.exe -log adder16bit2bitfa.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source adder16bit2bitfa.tcl
 # Log file: C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2/Week_3_Deel_2.runs/synth_1/adder16bit2bitfa.vds
 # Journal file: C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2/Week_3_Deel_2.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source adder16bit2bitfa.tcl -notrace
-Command: synth_design -top adder16bit2bitfa -part xc7a35tcpg236-1 -flatten_hierarchy none
+Command: synth_design -top adder16bit2bitfa -part xc7a35tcpg236-1 -flatten_hierarchy full
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9008 
+INFO: Helper process launched with PID 10388 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 721.133 ; gain = 177.035
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 721.473 ; gain = 176.980
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'adder16bit2bitfa' [C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2/Week_3_Deel_2.srcs/sources_1/imports/hdl/adder16bit2bitfa.vhd:13]
 	Parameter N bound to: 16 - type: integer 
@@ -78,7 +78,7 @@ INFO: [Synth 8-3491] module 'ff' declared at 'C:/Users/lenna/Documents/Github/PR
 INFO: [Synth 8-256] done synthesizing module 'adder16bit2bitfa' (6#1) [C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2/Week_3_Deel_2.srcs/sources_1/imports/hdl/adder16bit2bitfa.vhd:13]
 WARNING: [Synth 8-3331] design adder16bit2bitfa has unconnected port RESET
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 785.531 ; gain = 241.434
+Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 785.953 ; gain = 241.461
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -91,10 +91,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 785.531 ; gain = 241.434
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 785.953 ; gain = 241.461
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 785.531 ; gain = 241.434
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 785.953 ; gain = 241.461
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -110,29 +110,29 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/adder16bit2bitfa_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 911.047 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 913.062 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 911.047 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 913.062 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 911.047 ; gain = 366.949
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 913.062 ; gain = 368.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 911.047 ; gain = 366.949
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 913.062 ; gain = 368.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 911.047 ; gain = 366.949
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 913.062 ; gain = 368.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 911.047 ; gain = 366.949
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 913.062 ; gain = 368.570
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -175,7 +175,7 @@ Start Cross Boundary and Area Optimization
 Warning: Parallel synthesis criteria is not met 
 WARNING: [Synth 8-3331] design adder16bit2bitfa has unconnected port RESET
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 911.047 ; gain = 366.949
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 913.062 ; gain = 368.570
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -187,13 +187,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 911.047 ; gain = 366.949
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 913.062 ; gain = 368.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 911.047 ; gain = 366.949
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 913.062 ; gain = 368.570
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -205,7 +205,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 911.047 ; gain = 366.949
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 913.062 ; gain = 368.570
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -217,13 +217,19 @@ Report RTL Partitions:
 Start IO Insertion
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 911.047 ; gain = 366.949
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 913.062 ; gain = 368.570
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -236,7 +242,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 911.047 ; gain = 366.949
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 913.062 ; gain = 368.570
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -248,7 +254,7 @@ Report RTL Partitions:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 911.047 ; gain = 366.949
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 913.062 ; gain = 368.570
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -265,184 +271,42 @@ Report Cell Usage:
 |      |Cell |Count |
 +------+-----+------+
 |1     |BUFG |     1|
-|2     |LUT3 |    32|
-|3     |FDRE |   113|
-|4     |IBUF |    33|
-|5     |OBUF |    17|
+|2     |LUT2 |     1|
+|3     |LUT3 |     8|
+|4     |LUT4 |     1|
+|5     |LUT5 |    12|
+|6     |LUT6 |     2|
+|7     |FDRE |   113|
+|8     |IBUF |    33|
+|9     |OBUF |    17|
 +------+-----+------+
 
 Report Instance Areas: 
-+------+-------------------------------------+------------------+------+
-|      |Instance                             |Module            |Cells |
-+------+-------------------------------------+------------------+------+
-|1     |top                                  |                  |   196|
-|2     |  A_FF                               |gen_sync_ff__1    |    48|
-|3     |    \generate_ff[0].gen_ff0          |gen_ff__6         |    16|
-|4     |      \generate_ff[0].ff0            |ff__112           |     1|
-|5     |      \generate_ff[1].ff0            |ff__111           |     1|
-|6     |      \generate_ff[2].ff0            |ff__110           |     1|
-|7     |      \generate_ff[3].ff0            |ff__109           |     1|
-|8     |      \generate_ff[4].ff0            |ff__108           |     1|
-|9     |      \generate_ff[5].ff0            |ff__107           |     1|
-|10    |      \generate_ff[6].ff0            |ff__106           |     1|
-|11    |      \generate_ff[7].ff0            |ff__105           |     1|
-|12    |      \generate_ff[8].ff0            |ff__104           |     1|
-|13    |      \generate_ff[9].ff0            |ff__103           |     1|
-|14    |      \generate_ff[10].ff0           |ff__102           |     1|
-|15    |      \generate_ff[11].ff0           |ff__101           |     1|
-|16    |      \generate_ff[12].ff0           |ff__100           |     1|
-|17    |      \generate_ff[13].ff0           |ff__99            |     1|
-|18    |      \generate_ff[14].ff0           |ff__98            |     1|
-|19    |      \generate_ff[15].ff0           |ff__97            |     1|
-|20    |    \generate_ff[1].gen_ff0          |gen_ff__5         |    16|
-|21    |      \generate_ff[0].ff0            |ff__96            |     1|
-|22    |      \generate_ff[1].ff0            |ff__95            |     1|
-|23    |      \generate_ff[2].ff0            |ff__94            |     1|
-|24    |      \generate_ff[3].ff0            |ff__93            |     1|
-|25    |      \generate_ff[4].ff0            |ff__92            |     1|
-|26    |      \generate_ff[5].ff0            |ff__91            |     1|
-|27    |      \generate_ff[6].ff0            |ff__90            |     1|
-|28    |      \generate_ff[7].ff0            |ff__89            |     1|
-|29    |      \generate_ff[8].ff0            |ff__88            |     1|
-|30    |      \generate_ff[9].ff0            |ff__87            |     1|
-|31    |      \generate_ff[10].ff0           |ff__86            |     1|
-|32    |      \generate_ff[11].ff0           |ff__85            |     1|
-|33    |      \generate_ff[12].ff0           |ff__84            |     1|
-|34    |      \generate_ff[13].ff0           |ff__83            |     1|
-|35    |      \generate_ff[14].ff0           |ff__82            |     1|
-|36    |      \generate_ff[15].ff0           |ff__81            |     1|
-|37    |    \generate_ff[2].gen_ff0          |gen_ff__4         |    16|
-|38    |      \generate_ff[0].ff0            |ff__80            |     1|
-|39    |      \generate_ff[1].ff0            |ff__79            |     1|
-|40    |      \generate_ff[2].ff0            |ff__78            |     1|
-|41    |      \generate_ff[3].ff0            |ff__77            |     1|
-|42    |      \generate_ff[4].ff0            |ff__76            |     1|
-|43    |      \generate_ff[5].ff0            |ff__75            |     1|
-|44    |      \generate_ff[6].ff0            |ff__74            |     1|
-|45    |      \generate_ff[7].ff0            |ff__73            |     1|
-|46    |      \generate_ff[8].ff0            |ff__72            |     1|
-|47    |      \generate_ff[9].ff0            |ff__71            |     1|
-|48    |      \generate_ff[10].ff0           |ff__70            |     1|
-|49    |      \generate_ff[11].ff0           |ff__69            |     1|
-|50    |      \generate_ff[12].ff0           |ff__68            |     1|
-|51    |      \generate_ff[13].ff0           |ff__67            |     1|
-|52    |      \generate_ff[14].ff0           |ff__66            |     1|
-|53    |      \generate_ff[15].ff0           |ff__65            |     1|
-|54    |  B_FF                               |gen_sync_ff       |    48|
-|55    |    \generate_ff[0].gen_ff0          |gen_ff__1         |    16|
-|56    |      \generate_ff[0].ff0            |ff__32            |     1|
-|57    |      \generate_ff[1].ff0            |ff__31            |     1|
-|58    |      \generate_ff[2].ff0            |ff__30            |     1|
-|59    |      \generate_ff[3].ff0            |ff__29            |     1|
-|60    |      \generate_ff[4].ff0            |ff__28            |     1|
-|61    |      \generate_ff[5].ff0            |ff__27            |     1|
-|62    |      \generate_ff[6].ff0            |ff__26            |     1|
-|63    |      \generate_ff[7].ff0            |ff__25            |     1|
-|64    |      \generate_ff[8].ff0            |ff__24            |     1|
-|65    |      \generate_ff[9].ff0            |ff__23            |     1|
-|66    |      \generate_ff[10].ff0           |ff__22            |     1|
-|67    |      \generate_ff[11].ff0           |ff__21            |     1|
-|68    |      \generate_ff[12].ff0           |ff__20            |     1|
-|69    |      \generate_ff[13].ff0           |ff__19            |     1|
-|70    |      \generate_ff[14].ff0           |ff__18            |     1|
-|71    |      \generate_ff[15].ff0           |ff__17            |     1|
-|72    |    \generate_ff[1].gen_ff0          |gen_ff__2         |    16|
-|73    |      \generate_ff[0].ff0            |ff__48            |     1|
-|74    |      \generate_ff[1].ff0            |ff__47            |     1|
-|75    |      \generate_ff[2].ff0            |ff__46            |     1|
-|76    |      \generate_ff[3].ff0            |ff__45            |     1|
-|77    |      \generate_ff[4].ff0            |ff__44            |     1|
-|78    |      \generate_ff[5].ff0            |ff__43            |     1|
-|79    |      \generate_ff[6].ff0            |ff__42            |     1|
-|80    |      \generate_ff[7].ff0            |ff__41            |     1|
-|81    |      \generate_ff[8].ff0            |ff__40            |     1|
-|82    |      \generate_ff[9].ff0            |ff__39            |     1|
-|83    |      \generate_ff[10].ff0           |ff__38            |     1|
-|84    |      \generate_ff[11].ff0           |ff__37            |     1|
-|85    |      \generate_ff[12].ff0           |ff__36            |     1|
-|86    |      \generate_ff[13].ff0           |ff__35            |     1|
-|87    |      \generate_ff[14].ff0           |ff__34            |     1|
-|88    |      \generate_ff[15].ff0           |ff__33            |     1|
-|89    |    \generate_ff[2].gen_ff0          |gen_ff__3         |    16|
-|90    |      \generate_ff[0].ff0            |ff__64            |     1|
-|91    |      \generate_ff[1].ff0            |ff__63            |     1|
-|92    |      \generate_ff[2].ff0            |ff__62            |     1|
-|93    |      \generate_ff[3].ff0            |ff__61            |     1|
-|94    |      \generate_ff[4].ff0            |ff__60            |     1|
-|95    |      \generate_ff[5].ff0            |ff__59            |     1|
-|96    |      \generate_ff[6].ff0            |ff__58            |     1|
-|97    |      \generate_ff[7].ff0            |ff__57            |     1|
-|98    |      \generate_ff[8].ff0            |ff__56            |     1|
-|99    |      \generate_ff[9].ff0            |ff__55            |     1|
-|100   |      \generate_ff[10].ff0           |ff__54            |     1|
-|101   |      \generate_ff[11].ff0           |ff__53            |     1|
-|102   |      \generate_ff[12].ff0           |ff__52            |     1|
-|103   |      \generate_ff[13].ff0           |ff__51            |     1|
-|104   |      \generate_ff[14].ff0           |ff__50            |     1|
-|105   |      \generate_ff[15].ff0           |ff__49            |     1|
-|106   |  S_FF                               |gen_ff            |    16|
-|107   |    \generate_ff[0].ff0              |ff__1             |     1|
-|108   |    \generate_ff[1].ff0              |ff__2             |     1|
-|109   |    \generate_ff[2].ff0              |ff__3             |     1|
-|110   |    \generate_ff[3].ff0              |ff__4             |     1|
-|111   |    \generate_ff[4].ff0              |ff__5             |     1|
-|112   |    \generate_ff[5].ff0              |ff__6             |     1|
-|113   |    \generate_ff[6].ff0              |ff__7             |     1|
-|114   |    \generate_ff[7].ff0              |ff__8             |     1|
-|115   |    \generate_ff[8].ff0              |ff__9             |     1|
-|116   |    \generate_ff[9].ff0              |ff__10            |     1|
-|117   |    \generate_ff[10].ff0             |ff__11            |     1|
-|118   |    \generate_ff[11].ff0             |ff__12            |     1|
-|119   |    \generate_ff[12].ff0             |ff__13            |     1|
-|120   |    \generate_ff[13].ff0             |ff__14            |     1|
-|121   |    \generate_ff[14].ff0             |ff__15            |     1|
-|122   |    \generate_ff[15].ff0             |ff__16            |     1|
-|123   |  CO_FF                              |ff                |     1|
-|124   |  \Gen_1[0].Gen_2.fulladder2bitgen   |fulladder2bit__1  |     4|
-|125   |    fulladder1bit0                   |fulladder1bit__3  |     2|
-|126   |    fulladder1bit1                   |fulladder1bit__2  |     2|
-|127   |  \Gen_1[2].Gen_2.fulladder2bitgen   |fulladder2bit__2  |     4|
-|128   |    fulladder1bit0                   |fulladder1bit__5  |     2|
-|129   |    fulladder1bit1                   |fulladder1bit__4  |     2|
-|130   |  \Gen_1[4].Gen_2.fulladder2bitgen   |fulladder2bit__3  |     4|
-|131   |    fulladder1bit0                   |fulladder1bit__7  |     2|
-|132   |    fulladder1bit1                   |fulladder1bit__6  |     2|
-|133   |  \Gen_1[6].Gen_2.fulladder2bitgen   |fulladder2bit__4  |     4|
-|134   |    fulladder1bit0                   |fulladder1bit__9  |     2|
-|135   |    fulladder1bit1                   |fulladder1bit__8  |     2|
-|136   |  \Gen_1[8].Gen_2.fulladder2bitgen   |fulladder2bit__5  |     4|
-|137   |    fulladder1bit0                   |fulladder1bit__11 |     2|
-|138   |    fulladder1bit1                   |fulladder1bit__10 |     2|
-|139   |  \Gen_1[10].Gen_2.fulladder2bitgen  |fulladder2bit__6  |     4|
-|140   |    fulladder1bit0                   |fulladder1bit__13 |     2|
-|141   |    fulladder1bit1                   |fulladder1bit__12 |     2|
-|142   |  \Gen_1[12].Gen_2.fulladder2bitgen  |fulladder2bit__7  |     4|
-|143   |    fulladder1bit0                   |fulladder1bit__15 |     2|
-|144   |    fulladder1bit1                   |fulladder1bit__14 |     2|
-|145   |  \Gen_1[14].Gen_2.fulladder2bitgen  |fulladder2bit     |     4|
-|146   |    fulladder1bit0                   |fulladder1bit__1  |     2|
-|147   |    fulladder1bit1                   |fulladder1bit     |     2|
-+------+-------------------------------------+------------------+------+
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |   188|
++------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 911.047 ; gain = 366.949
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 913.062 ; gain = 368.570
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 911.047 ; gain = 241.434
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 911.047 ; gain = 366.949
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:16 . Memory (MB): peak = 913.062 ; gain = 241.461
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 913.062 ; gain = 368.570
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 913.523 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 914.051 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
 56 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:23 . Memory (MB): peak = 913.523 ; gain = 612.797
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 913.523 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 914.051 ; gain = 619.305
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 914.051 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2/Week_3_Deel_2.runs/synth_1/adder16bit2bitfa.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file adder16bit2bitfa_utilization_synth.rpt -pb adder16bit2bitfa_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Feb 17 14:01:03 2022...
+INFO: [Common 17-206] Exiting Vivado at Thu Feb 24 15:02:05 2022...

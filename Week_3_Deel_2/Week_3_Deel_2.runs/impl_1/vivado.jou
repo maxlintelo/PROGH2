@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Feb 17 14:01:10 2022
-# Process ID: 5324
+# Start of session at: Thu Feb 24 15:02:12 2022
+# Process ID: 12256
 # Current directory: C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2/Week_3_Deel_2.runs/impl_1
 # Command line: vivado.exe -log adder16bit2bitfa.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source adder16bit2bitfa.tcl -notrace
 # Log file: C:/Users/lenna/Documents/Github/PROGH2/Week_3_Deel_2/Week_3_Deel_2.runs/impl_1/adder16bit2bitfa.vdi

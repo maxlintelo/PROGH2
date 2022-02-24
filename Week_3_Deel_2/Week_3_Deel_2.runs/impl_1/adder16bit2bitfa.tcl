@@ -88,6 +88,23 @@ if {$rc} {
   unset ACTIVE_STEP 
 }
 
+start_step opt_design
+set ACTIVE_STEP opt_design
+set rc [catch {
+  create_msg_db opt_design.pb
+  opt_design 
+  write_checkpoint -force adder16bit2bitfa_opt.dcp
+  create_report "impl_1_opt_report_drc_0" "report_drc -file adder16bit2bitfa_drc_opted.rpt -pb adder16bit2bitfa_drc_opted.pb -rpx adder16bit2bitfa_drc_opted.rpx"
+  close_msg_db -file opt_design.pb
+} RESULT]
+if {$rc} {
+  step_failed opt_design
+  return -code error $RESULT
+} else {
+  end_step opt_design
+  unset ACTIVE_STEP 
+}
+
 start_step place_design
 set ACTIVE_STEP place_design
 set rc [catch {
@@ -110,6 +127,7 @@ if {$rc} {
   unset ACTIVE_STEP 
 }
 
+  set_msg_config -source 4 -id {Route 35-39} -severity "critical warning" -new_severity warning
 start_step route_design
 set ACTIVE_STEP route_design
 set rc [catch {
@@ -120,7 +138,7 @@ set rc [catch {
   create_report "impl_1_route_report_methodology_0" "report_methodology -file adder16bit2bitfa_methodology_drc_routed.rpt -pb adder16bit2bitfa_methodology_drc_routed.pb -rpx adder16bit2bitfa_methodology_drc_routed.rpx"
   create_report "impl_1_route_report_power_0" "report_power -file adder16bit2bitfa_power_routed.rpt -pb adder16bit2bitfa_power_summary_routed.pb -rpx adder16bit2bitfa_power_routed.rpx"
   create_report "impl_1_route_report_route_status_0" "report_route_status -file adder16bit2bitfa_route_status.rpt -pb adder16bit2bitfa_route_status.pb"
-  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file adder16bit2bitfa_timing_summary_routed.rpt -pb adder16bit2bitfa_timing_summary_routed.pb -rpx adder16bit2bitfa_timing_summary_routed.rpx -warn_on_violation "
+  create_report "impl_1_route_report_timing_summary_0" "report_timing_summary -max_paths 10 -file adder16bit2bitfa_timing_summary_routed.rpt -pb adder16bit2bitfa_timing_summary_routed.pb -rpx adder16bit2bitfa_timing_summary_routed.rpx"
   create_report "impl_1_route_report_incremental_reuse_0" "report_incremental_reuse -file adder16bit2bitfa_incremental_reuse_routed.rpt"
   create_report "impl_1_route_report_clock_utilization_0" "report_clock_utilization -file adder16bit2bitfa_clock_utilization_routed.rpt"
   create_report "impl_1_route_report_bus_skew_0" "report_bus_skew -warn_on_violation -file adder16bit2bitfa_bus_skew_routed.rpt -pb adder16bit2bitfa_bus_skew_routed.pb -rpx adder16bit2bitfa_bus_skew_routed.rpx"
@@ -132,6 +150,28 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
+  unset ACTIVE_STEP 
+}
+
+start_step post_route_phys_opt_design
+set ACTIVE_STEP post_route_phys_opt_design
+set rc [catch {
+  set tool_flow [get_property -quiet TOOL_FLOW [current_project -quiet]]
+  if {$tool_flow eq {SDx}} {send_msg_id {101-1} {status} {Starting optional post-route physical design optimization.} }
+  create_msg_db post_route_phys_opt_design.pb
+  phys_opt_design 
+  write_checkpoint -force adder16bit2bitfa_postroute_physopt.dcp
+  create_report "impl_1_post_route_phys_opt_report_timing_summary_0" "report_timing_summary -max_paths 10 -warn_on_violation -file adder16bit2bitfa_timing_summary_postroute_physopted.rpt -pb adder16bit2bitfa_timing_summary_postroute_physopted.pb -rpx adder16bit2bitfa_timing_summary_postroute_physopted.rpx"
+  create_report "impl_1_post_route_phys_opt_report_bus_skew_0" "report_bus_skew -warn_on_violation -file adder16bit2bitfa_bus_skew_postroute_physopted.rpt -pb adder16bit2bitfa_bus_skew_postroute_physopted.pb -rpx adder16bit2bitfa_bus_skew_postroute_physopted.rpx"
+  close_msg_db -file post_route_phys_opt_design.pb
+  set tool_flow [get_property TOOL_FLOW [current_project]]
+  if {$tool_flow eq {SDx}} {send_msg_id {101-1} {status} {Finished optional post-route physical design optimization.} }
+} RESULT]
+if {$rc} {
+  step_failed post_route_phys_opt_design
+  return -code error $RESULT
+} else {
+  end_step post_route_phys_opt_design
   unset ACTIVE_STEP 
 }
 

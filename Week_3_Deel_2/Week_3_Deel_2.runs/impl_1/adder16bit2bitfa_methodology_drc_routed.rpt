@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Feb 17 14:01:52 2022
+| Date         : Thu Feb 24 15:02:56 2022
 | Host         : LAPTOP-T2099UT1 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file adder16bit2bitfa_methodology_drc_routed.rpt -pb adder16bit2bitfa_methodology_drc_routed.pb -rpx adder16bit2bitfa_methodology_drc_routed.rpx
 | Design       : adder16bit2bitfa
@@ -23,36 +23,15 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 53
+             Violations found: 49
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| TIMING-16 | Warning  | Large setup violation         | 4          |
 | TIMING-18 | Warning  | Missing input or output delay | 49         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-TIMING-16#1 Warning
-Large setup violation  
-There is a large setup violation of -1.248 ns between B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C (clocked by sysclk) and S_FF/generate_ff[13].ff0/Q_reg/D (clocked by sysclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#2 Warning
-Large setup violation  
-There is a large setup violation of -1.594 ns between B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C (clocked by sysclk) and S_FF/generate_ff[14].ff0/Q_reg/D (clocked by sysclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#3 Warning
-Large setup violation  
-There is a large setup violation of -1.883 ns between B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C (clocked by sysclk) and S_FF/generate_ff[15].ff0/Q_reg/D (clocked by sysclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#4 Warning
-Large setup violation  
-There is a large setup violation of -2.015 ns between B_FF/generate_ff[2].gen_ff0/generate_ff[0].ff0/Q_reg/C (clocked by sysclk) and CO_FF/Q_reg/D (clocked by sysclk). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
 TIMING-18#1 Warning
 Missing input or output delay  
 An input delay is missing on A[0] relative to clock(s) sysclk

@@ -11,8 +11,8 @@ end fulladder2bit;
 
 architecture Behavioral of fulladder2bit is
 
-attribute keep_hierarchy : string;
-attribute keep_hierarchy of Behavioral: architecture is "yes";
+--attribute keep_hierarchy : string;
+--attribute keep_hierarchy of Behavioral: architecture is "yes";
 
 component fulladder1bit is
     Port ( A : in STD_LOGIC;

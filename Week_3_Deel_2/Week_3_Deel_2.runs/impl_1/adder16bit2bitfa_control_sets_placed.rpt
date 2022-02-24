@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Feb 17 14:01:34 2022
+| Date         : Thu Feb 24 15:02:38 2022
 | Host         : LAPTOP-T2099UT1 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file adder16bit2bitfa_control_sets_placed.rpt
 | Design       : adder16bit2bitfa
@@ -58,7 +58,7 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             113 |           33 |
+| No           | No                    | No                     |             113 |           29 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |               0 |            0 |
 | Yes          | No                    | No                     |               0 |            0 |
@@ -73,7 +73,7 @@ Table of Contents
 +----------------+---------------+------------------+------------------+----------------+
 |  Clock Signal  | Enable Signal | Set/Reset Signal | Slice Load Count | Bel Load Count |
 +----------------+---------------+------------------+------------------+----------------+
-|  CLK_IBUF_BUFG |               |                  |               33 |            113 |
+|  CLK_IBUF_BUFG |               |                  |               29 |            113 |
 +----------------+---------------+------------------+------------------+----------------+
 
 

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Feb 17 14:01:03 2022
+| Date         : Thu Feb 24 15:02:05 2022
 | Host         : LAPTOP-T2099UT1 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file adder16bit2bitfa_utilization_synth.rpt -pb adder16bit2bitfa_utilization_synth.pb
 | Design       : adder16bit2bitfa
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |   32 |     0 |     20800 |  0.15 |
-|   LUT as Logic          |   32 |     0 |     20800 |  0.15 |
+| Slice LUTs*             |   16 |     0 |     20800 |  0.08 |
+|   LUT as Logic          |   16 |     0 |     20800 |  0.08 |
 |   LUT as Memory         |    0 |     0 |      9600 |  0.00 |
 | Slice Registers         |  113 |     0 |     41600 |  0.27 |
 |   Register as Flip Flop |  113 |     0 |     41600 |  0.27 |
@@ -151,8 +151,12 @@ Table of Contents
 +----------+------+---------------------+
 | FDRE     |  113 |        Flop & Latch |
 | IBUF     |   33 |                  IO |
-| LUT3     |   32 |                 LUT |
 | OBUF     |   17 |                  IO |
+| LUT5     |   12 |                 LUT |
+| LUT3     |    8 |                 LUT |
+| LUT6     |    2 |                 LUT |
+| LUT4     |    1 |                 LUT |
+| LUT2     |    1 |                 LUT |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 

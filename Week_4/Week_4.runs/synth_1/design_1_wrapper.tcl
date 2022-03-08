@@ -17,6 +17,7 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
+set_param chipscope.maxJobs 3
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -33,36 +34,33 @@ set_property ip_output_repo c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4
 set_property ip_cache_permissions {read write} [current_project]
 read_vhdl -library xil_defaultlib C:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.vhd
 add_files C:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/design_1.bd
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_2/design_1_axi_uartlite_0_2_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_2/design_1_axi_uartlite_0_2_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_2/design_1_axi_uartlite_0_2.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0_ooc_debug.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/design_1_microblaze_0_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0/design_1_dlmb_v10_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0/design_1_ilmb_v10_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0/design_1_dlmb_bram_if_cntlr_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0/design_1_ilmb_bram_if_cntlr_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_0/design_1_lmb_bram_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0/design_1_mdm_1_0_ooc_trace.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0/design_1_rst_clk_wiz_0_100M_0_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_xbar_0/design_1_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0_1/design_1_axi_gpio_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0_1/design_1_axi_gpio_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_gpio_0_0_1/design_1_axi_gpio_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0_1/design_1_clk_wiz_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_axi_uartlite_0_0/design_1_axi_uartlite_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0_1/design_1_microblaze_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0_1/design_1_microblaze_0_0_ooc_debug.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0_1/design_1_microblaze_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0_1/design_1_dlmb_v10_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_dlmb_v10_0_1/design_1_dlmb_v10_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0_1/design_1_ilmb_v10_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_ilmb_v10_0_1/design_1_ilmb_v10_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_dlmb_bram_if_cntlr_0_1/design_1_dlmb_bram_if_cntlr_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_ilmb_bram_if_cntlr_0_1/design_1_ilmb_bram_if_cntlr_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_lmb_bram_0_1/design_1_lmb_bram_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0_1/design_1_mdm_1_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_mdm_1_0_1/design_1_mdm_1_0_ooc_trace.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0_1/design_1_rst_clk_wiz_0_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0_1/design_1_rst_clk_wiz_0_100M_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_rst_clk_wiz_0_100M_0_1/design_1_rst_clk_wiz_0_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_xbar_0_1/design_1_xbar_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all C:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/design_1_ooc.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0/data/mb_bootloop_le.elf]
+set_property used_in_implementation false [get_files -all c:/Users/lenna/Documents/Github/PROGH2/Week_4/Week_4.srcs/sources_1/bd/design_1/ip/design_1_microblaze_0_0_1/data/mb_bootloop_le.elf]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

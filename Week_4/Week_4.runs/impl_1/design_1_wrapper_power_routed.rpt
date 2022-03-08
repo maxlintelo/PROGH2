@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Thu Feb 24 15:31:05 2022
+| Date             : Tue Mar  8 11:15:12 2022
 | Host             : LAPTOP-T2099UT1 running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.197        |
+| Total On-Chip Power (W)  | 0.196        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.125        |
+| Dynamic (W)              | 0.124        |
 | Device Static (W)        | 0.072        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 84.0         |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.009 |        7 |       --- |             --- |
-| Slice Logic              |     0.003 |     4110 |       --- |             --- |
-|   LUT as Logic           |     0.002 |     1425 |     20800 |            6.85 |
+| Clocks                   |     0.008 |        7 |       --- |             --- |
+| Slice Logic              |     0.003 |     3956 |       --- |             --- |
+|   LUT as Logic           |     0.002 |     1356 |     20800 |            6.52 |
 |   LUT as Distributed RAM |    <0.001 |       64 |      9600 |            0.67 |
-|   Register               |    <0.001 |     1591 |     41600 |            3.82 |
 |   CARRY4                 |    <0.001 |       38 |      8150 |            0.47 |
+|   Register               |    <0.001 |     1518 |     41600 |            3.65 |
 |   F7/F8 Muxes            |    <0.001 |      111 |     32600 |            0.34 |
 |   LUT as Shift Register  |    <0.001 |       74 |      9600 |            0.77 |
-|   Others                 |    <0.001 |      456 |       --- |             --- |
-| Signals                  |     0.005 |     2895 |       --- |             --- |
+|   Others                 |    <0.001 |      447 |       --- |             --- |
+| Signals                  |     0.005 |     2741 |       --- |             --- |
 | Block RAM                |     0.002 |        8 |        50 |           16.00 |
 | MMCM                     |     0.106 |        1 |         5 |           20.00 |
-| I/O                      |    <0.001 |       40 |       106 |           37.74 |
+| I/O                      |    <0.001 |       36 |       106 |           33.96 |
 | Static Power             |     0.072 |          |           |                 |
-| Total                    |     0.197 |          |           |                 |
+| Total                    |     0.196 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.029 |       0.019 |      0.010 |
+| Vccint    |       1.000 |     0.028 |       0.019 |      0.010 |
 | Vccaux    |       1.800 |     0.071 |       0.059 |      0.013 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -149,9 +149,9 @@ Table of Contents
 +-------------------------------+-----------+
 | Name                          | Power (W) |
 +-------------------------------+-----------+
-| design_1_wrapper              |     0.125 |
+| design_1_wrapper              |     0.124 |
 |   design_1_i                  |     0.124 |
-|     axi_gpio_1                |     0.001 |
+|     axi_gpio_0                |     0.001 |
 |       U0                      |     0.001 |
 |     clk_wiz_0                 |     0.106 |
 |       inst                    |     0.106 |

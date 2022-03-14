@@ -1,0 +1,7 @@
+set_property SRC_FILE_INFO {cfile:C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/constrs_3/new/top.xdc rfile:../../../eindopdracht.srcs/constrs_3/new/top.xdc id:1} [current_design]
+set_property src_info {type:XDC file:1 line:5 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN A15 [get_ports top_pwm]
+set_property src_info {type:XDC file:1 line:6 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN C17 [get_ports top_ps2_clk]
+set_property src_info {type:XDC file:1 line:7 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN B17 [get_ports top_ps2_data]

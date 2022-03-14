@@ -2,11 +2,11 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Fri Mar 11 10:14:26 2022
-# Process ID: 10972
+# Start of session at: Mon Mar 14 12:06:58 2022
+# Process ID: 14464
 # Current directory: C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1
-# Command line: vivado.exe -log microblaze_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source microblaze_wrapper.tcl
-# Log file: C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/microblaze_wrapper.vds
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/top.vds
 # Journal file: C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source microblaze_wrapper.tcl -notrace
+source top.tcl -notrace

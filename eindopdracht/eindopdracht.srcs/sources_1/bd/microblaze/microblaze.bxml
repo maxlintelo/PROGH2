@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="37">
   <CompositeFile CompositeFileTopName="microblaze" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1646989552"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1646989552"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1646989552"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1646989552"/>
+    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1647252025"/>
+    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1647252025"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1647252025"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1647252025"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\microblaze_axi_gpio_0_0\microblaze_axi_gpio_0_0.xci" Type="IP">
         <Instance HierarchyPath="axi_gpio_0"/>
@@ -119,6 +119,14 @@
       <File Name="sim\microblaze.vhd" Type="VHDL">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="eindopdracht"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\microblaze_axi_gpio_1_1\microblaze_axi_gpio_1_1.xci" Type="IP">
+        <Instance HierarchyPath="axi_gpio_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="eindopdracht"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="microblaze.bmm" Type="BMM">

@@ -17,8 +17,8 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 6
-set_param synth.incrementalSynthesisCache C:/Users/Max/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-20984-DEKSTOP-MAX/incrSyn
+set_param chipscope.maxJobs 3
+set_param synth.incrementalSynthesisCache C:/Users/Max/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-4612-DESKTOP-5PCB5FN/incrSyn
 set_param xicom.use_bs_reader 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -36,7 +36,8 @@ set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
 set_property ip_output_repo c:/Development/PROGH2/eindopdracht/eindopdracht.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files c:/Development/PROGH2/eindopdracht/notenbalk.coe
+add_files C:/Development/PROGH2/eindopdracht/notenbalk.coe
+add_files c:/Development/PROGH2/eindopdracht/noot.coe
 read_vhdl -library eindopdracht {
   C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/constants.vhd
   C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd
@@ -77,18 +78,21 @@ set_property used_in_implementation false [get_files -all c:/Development/PROGH2/
 set_property used_in_implementation false [get_files -all C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/microblaze_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_microblaze_0_2/data/mb_bootloop_le.elf]
 
-read_ip -quiet c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_sound/clk_wiz_sound.xci
+read_ip -quiet C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_sound/clk_wiz_sound.xci
 set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_sound/clk_wiz_sound_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_sound/clk_wiz_sound.xdc]
 set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_sound/clk_wiz_sound_ooc.xdc]
 
-read_ip -quiet c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_vga/clk_wiz_vga.xci
+read_ip -quiet C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_vga/clk_wiz_vga.xci
 set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_vga/clk_wiz_vga_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_vga/clk_wiz_vga.xdc]
 set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_vga/clk_wiz_vga_ooc.xdc]
 
-read_ip -quiet c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk.xci
+read_ip -quiet C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk.xci
 set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_ooc.xdc]
+
+read_ip -quiet c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_noot/blk_mem_noot.xci
+set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_noot/blk_mem_noot_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

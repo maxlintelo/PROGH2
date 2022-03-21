@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Sun Mar 20 15:55:12 2022
-// Host        : DEKSTOP-MAX running 64-bit major release  (build 9200)
+// Date        : Mon Mar 21 10:53:35 2022
+// Host        : DESKTOP-5PCB5FN running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_sound/clk_wiz_sound_sim_netlist.v
+//               C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_sound/clk_wiz_sound_sim_netlist.v
 // Design      : clk_wiz_sound
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.

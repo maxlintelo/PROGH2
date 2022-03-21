@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1647812898">
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1647873905">
   <File Type="PA-TCL" Name="top.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="top_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="top_reports.tcl"/>
@@ -60,6 +60,12 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/noot.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="top"/>
@@ -85,7 +91,9 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
+      <Desc>Vivado Synthesis Defaults</Desc>
+    </StratHandle>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="microblaze_axi_uartlite_0_0"/>
@@ -104,4 +112,5 @@
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_sound"/>
   <BlockFileSet Type="BlockSrcs" Name="clk_wiz_vga"/>
   <BlockFileSet Type="BlockSrcs" Name="blk_mem_notenbalk"/>
+  <BlockFileSet Type="BlockSrcs" Name="blk_mem_noot"/>
 </GenRun>

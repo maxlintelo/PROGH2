@@ -1,0 +1,6 @@
+verilog eindopdracht  \
+"../../../../eindopdracht.srcs/sources_1/ip/blk_mem_noot/sim/blk_mem_noot.v" \
+
+verilog eindopdracht "glbl.v"
+
+nosort

@@ -9,6 +9,9 @@ package constants is
     constant balk_width : integer := 980;
     constant balk_height : integer := 720;
     
+    constant c_noot_height : integer := 113;
+    constant c_noot_width : integer := 209;
+    
     type balk_t is array (balk_width * balk_height - 1 downto 0) of std_logic;
     constant balk : balk_t := ('1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1',
 '1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1','1',

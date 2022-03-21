@@ -17,11 +17,6 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 6
-set_param synth.incrementalSynthesisCache C:/Users/Max/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-20984-DEKSTOP-MAX/incrSyn
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 set_param project.vivado.isBlockSynthRun true
 set_msg_config -msgmgr_mode ooc_run
 create_project -in_memory -part xc7a35tcpg236-1
@@ -38,7 +33,7 @@ set_property target_language VHDL [current_project]
 set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
 set_property ip_output_repo c:/Development/PROGH2/eindopdracht/eindopdracht.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-read_ip -quiet c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk.xci
+read_ip -quiet C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk.xci
 set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -94,32 +89,32 @@ write_checkpoint -force -noxdef blk_mem_notenbalk.dcp
 create_report "blk_mem_notenbalk_synth_1_synth_report_utilization_0" "report_utilization -file blk_mem_notenbalk_utilization_synth.rpt -pb blk_mem_notenbalk_utilization_synth.pb"
 
 if { [catch {
-  file copy -force C:/Development/PROGH2/eindopdracht/eindopdracht.runs/blk_mem_notenbalk_synth_1/blk_mem_notenbalk.dcp c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk.dcp
+  file copy -force C:/Development/PROGH2/eindopdracht/eindopdracht.runs/blk_mem_notenbalk_synth_1/blk_mem_notenbalk.dcp C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  write_verilog -force -mode synth_stub c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_stub.v
+  write_verilog -force -mode synth_stub C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode synth_stub c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_stub.vhdl
+  write_vhdl -force -mode synth_stub C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_verilog -force -mode funcsim c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_sim_netlist.v
+  write_verilog -force -mode funcsim C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  write_vhdl -force -mode funcsim c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_sim_netlist.vhdl
+  write_vhdl -force -mode funcsim C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -129,32 +124,32 @@ if { [catch {
 
 
 if { [catch {
-  file copy -force C:/Development/PROGH2/eindopdracht/eindopdracht.runs/blk_mem_notenbalk_synth_1/blk_mem_notenbalk.dcp c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk.dcp
+  file copy -force C:/Development/PROGH2/eindopdracht/eindopdracht.runs/blk_mem_notenbalk_synth_1/blk_mem_notenbalk.dcp C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk.dcp
 } _RESULT ] } { 
   send_msg_id runtcl-3 error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
   error "ERROR: Unable to successfully create or copy the sub-design checkpoint file."
 }
 
 if { [catch {
-  file rename -force C:/Development/PROGH2/eindopdracht/eindopdracht.runs/blk_mem_notenbalk_synth_1/blk_mem_notenbalk_stub.v c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_stub.v
+  file rename -force C:/Development/PROGH2/eindopdracht/eindopdracht.runs/blk_mem_notenbalk_synth_1/blk_mem_notenbalk_stub.v C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_stub.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a Verilog synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Development/PROGH2/eindopdracht/eindopdracht.runs/blk_mem_notenbalk_synth_1/blk_mem_notenbalk_stub.vhdl c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_stub.vhdl
+  file rename -force C:/Development/PROGH2/eindopdracht/eindopdracht.runs/blk_mem_notenbalk_synth_1/blk_mem_notenbalk_stub.vhdl C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_stub.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create a VHDL synthesis stub for the sub-design. This may lead to errors in top level synthesis of the design. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Development/PROGH2/eindopdracht/eindopdracht.runs/blk_mem_notenbalk_synth_1/blk_mem_notenbalk_sim_netlist.v c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_sim_netlist.v
+  file rename -force C:/Development/PROGH2/eindopdracht/eindopdracht.runs/blk_mem_notenbalk_synth_1/blk_mem_notenbalk_sim_netlist.v C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_sim_netlist.v
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the Verilog functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
 
 if { [catch {
-  file rename -force C:/Development/PROGH2/eindopdracht/eindopdracht.runs/blk_mem_notenbalk_synth_1/blk_mem_notenbalk_sim_netlist.vhdl c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_sim_netlist.vhdl
+  file rename -force C:/Development/PROGH2/eindopdracht/eindopdracht.runs/blk_mem_notenbalk_synth_1/blk_mem_notenbalk_sim_netlist.vhdl C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_sim_netlist.vhdl
 } _RESULT ] } { 
   puts "CRITICAL WARNING: Unable to successfully create the VHDL functional simulation sub-design file. Post-Synthesis Functional Simulation with this file may not be possible or may give incorrect results. Error reported: $_RESULT"
 }
@@ -163,13 +158,13 @@ if { [catch {
 
 if {[file isdir C:/Development/PROGH2/eindopdracht/eindopdracht.ip_user_files/ip/blk_mem_notenbalk]} {
   catch { 
-    file copy -force c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_stub.v C:/Development/PROGH2/eindopdracht/eindopdracht.ip_user_files/ip/blk_mem_notenbalk
+    file copy -force C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_stub.v C:/Development/PROGH2/eindopdracht/eindopdracht.ip_user_files/ip/blk_mem_notenbalk
   }
 }
 
 if {[file isdir C:/Development/PROGH2/eindopdracht/eindopdracht.ip_user_files/ip/blk_mem_notenbalk]} {
   catch { 
-    file copy -force c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_stub.vhdl C:/Development/PROGH2/eindopdracht/eindopdracht.ip_user_files/ip/blk_mem_notenbalk
+    file copy -force C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_stub.vhdl C:/Development/PROGH2/eindopdracht/eindopdracht.ip_user_files/ip/blk_mem_notenbalk
   }
 }
 file delete __synthesis_is_running__

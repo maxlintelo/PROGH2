@@ -38,6 +38,7 @@ architecture Behavioral of top is
         port (
             clk : in STD_LOGIC;
             reset : in STD_LOGIC;
+            reset_new_data : in std_logic;
             ps2_data : in STD_LOGIC;
             ps2_clk : in STD_LOGIC;
             new_data : out STD_LOGIC;
@@ -49,7 +50,8 @@ architecture Behavioral of top is
             clk : in std_logic;
             reset : in std_logic;
             note : in integer;
-            pwm : out std_logic
+            pwm : out std_logic;
+            enabled : in std_logic
         );
     end component pwm_sound;
     component vga_controller is
@@ -59,7 +61,9 @@ architecture Behavioral of top is
             red : out STD_LOGIC_VECTOR (3 downto 0);
             green : out STD_LOGIC_VECTOR (3 downto 0);
             blue : out STD_LOGIC_VECTOR (3 downto 0);
-            hsync, vsync : out STD_LOGIC
+            hsync, vsync : out STD_LOGIC;
+            note : in integer;
+            note_color : in std_logic_vector(1 downto 0)
         );
     end component vga_controller;
     component clk_wiz_vga is
@@ -75,6 +79,8 @@ architecture Behavioral of top is
     signal microblaze_o : std_logic_vector(31 downto 0);
     
     signal vga_clock : std_logic;
+    
+    signal s_pwm : std_logic;
 
 begin
     my_vga_clk : clk_wiz_vga port map (
@@ -89,7 +95,9 @@ begin
         vsync => top_vga_v_sync,
         red => top_vga_r,
         green => top_vga_g,
-        blue => top_vga_b
+        blue => top_vga_b,
+        note => to_integer(unsigned(microblaze_o(15 downto 8))),
+        note_color => microblaze_o(19 downto 18)
     );
     
     my_microblaze : microblaze_wrapper port map (
@@ -106,6 +114,7 @@ begin
     my_keyboard : ps2_keyboard port map (
         clk => sys_clock,
         reset => top_reset,
+        reset_new_data => microblaze_o(16),
         ps2_data => top_ps2_data,
         ps2_clk => top_ps2_clk,
         data => microblaze_i(31 downto 24),
@@ -114,7 +123,9 @@ begin
     my_sound : pwm_sound port map (
         clk => sys_clock,
         reset => top_reset,
-        note => to_integer(unsigned(microblaze_o(15 downto 0))),
-        pwm => top_pwm
+        note => to_integer(unsigned(microblaze_o(7 downto 0))),
+        pwm => s_pwm,
+        enabled => microblaze_o(17)
     );
+    top_pwm <= s_pwm when top_switches(0) = '1' else '0';
 end Behavioral;

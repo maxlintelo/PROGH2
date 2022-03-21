@@ -6,6 +6,7 @@ entity ps2_keyboard is
     port (
         clk : in STD_LOGIC;
         reset : in STD_LOGIC;
+        reset_new_data : in std_logic;
         ps2_data : in STD_LOGIC;
         ps2_clk : in STD_LOGIC;
         new_data : out STD_LOGIC;
@@ -88,7 +89,10 @@ begin
                 end if;
             -- end of transmission
             when done =>
-                next_state <= waiting;
+                if reset_new_data = '1' then
+                    next_state <= waiting;
+                end if;
+                
                 new_data <= '1';
         end case;
     end process;

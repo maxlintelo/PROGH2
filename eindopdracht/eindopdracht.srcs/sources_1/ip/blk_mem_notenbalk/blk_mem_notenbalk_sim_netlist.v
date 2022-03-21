@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Sun Mar 20 20:53:59 2022
-// Host        : DEKSTOP-MAX running 64-bit major release  (build 9200)
+// Date        : Mon Mar 21 10:57:17 2022
+// Host        : DESKTOP-5PCB5FN running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_sim_netlist.v
+//               C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_sim_netlist.v
 // Design      : blk_mem_notenbalk
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.

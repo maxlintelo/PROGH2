@@ -7,7 +7,8 @@ entity pwm_sound is
         clk : in std_logic;
         reset : in std_logic;
         note : in integer;
-        pwm : out std_logic
+        pwm : out std_logic;
+        enabled : in std_logic
     );
 end pwm_sound;
 
@@ -39,7 +40,9 @@ begin
                 clk_counter <= 0;
             else
                 if clk_counter < (wavelength / 2) then
-                    pwm <= '1';
+                    if enabled = '1' then
+                        pwm <= '1';
+                    end if;
                 end if;
                 clk_counter <= clk_counter + 1;
             end if;

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Mon Mar 21 15:47:34 2022
+| Date             : Mon Mar 21 22:59:11 2022
 | Host             : DESKTOP-5PCB5FN running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.355        |
+| Total On-Chip Power (W)  | 0.358        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.281        |
+| Dynamic (W)              | 0.284        |
 | Device Static (W)        | 0.074        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 83.2         |
@@ -53,21 +53,21 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.013 |       10 |       --- |             --- |
-| Slice Logic              |     0.005 |     5763 |       --- |             --- |
-|   LUT as Logic           |     0.003 |     2247 |     20800 |           10.80 |
+| Slice Logic              |     0.005 |     6136 |       --- |             --- |
+|   LUT as Logic           |     0.004 |     2525 |     20800 |           12.14 |
 |   LUT as Distributed RAM |    <0.001 |       64 |      9600 |            0.67 |
-|   CARRY4                 |    <0.001 |      251 |      8150 |            3.08 |
-|   Register               |    <0.001 |     2056 |     41600 |            4.94 |
+|   CARRY4                 |    <0.001 |      328 |      8150 |            4.02 |
+|   Register               |    <0.001 |     2039 |     41600 |            4.90 |
 |   F7/F8 Muxes            |    <0.001 |      111 |     32600 |            0.34 |
 |   LUT as Shift Register  |    <0.001 |       74 |      9600 |            0.77 |
-|   Others                 |    <0.001 |      502 |       --- |             --- |
-| Signals                  |     0.008 |     4403 |       --- |             --- |
-| Block RAM                |     0.007 |       31 |        50 |           62.00 |
+|   Others                 |    <0.001 |      506 |       --- |             --- |
+| Signals                  |     0.010 |     4832 |       --- |             --- |
+| Block RAM                |     0.009 |     32.5 |        50 |           65.00 |
 | MMCM                     |     0.223 |        2 |         5 |           40.00 |
-| DSPs                     |     0.003 |        3 |        90 |            3.33 |
-| I/O                      |     0.022 |       53 |       106 |           50.00 |
+| DSPs                     |     0.007 |        7 |        90 |            7.78 |
+| I/O                      |     0.018 |       53 |       106 |           50.00 |
 | Static Power             |     0.074 |          |           |                 |
-| Total                    |     0.355 |          |           |                 |
+| Total                    |     0.358 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,9 +77,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.047 |       0.036 |      0.011 |
+| Vccint    |       1.000 |     0.055 |       0.044 |      0.011 |
 | Vccaux    |       1.800 |     0.137 |       0.124 |      0.013 |
-| Vcco33    |       3.300 |     0.007 |       0.006 |      0.001 |
+| Vcco33    |       3.300 |     0.006 |       0.005 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -152,7 +152,7 @@ Table of Contents
 +---------------------------------+-----------+
 | Name                            | Power (W) |
 +---------------------------------+-----------+
-| top                             |     0.281 |
+| top                             |     0.284 |
 |   my_microblaze                 |     0.124 |
 |     microblaze_i                |     0.124 |
 |       axi_gpio_0                |     0.001 |
@@ -161,11 +161,13 @@ Table of Contents
 |       microblaze_0              |     0.011 |
 |       microblaze_0_local_memory |     0.002 |
 |   my_sound                      |     0.001 |
-|   my_vga                        |     0.016 |
-|     my_noot                     |     0.002 |
-|       U0                        |     0.002 |
+|   my_vga                        |     0.024 |
+|     my_flat                     |     0.001 |
+|       U0                        |     0.001 |
 |     my_notenbalk                |     0.006 |
 |       U0                        |     0.006 |
+|     my_sharp                    |     0.002 |
+|       U0                        |     0.002 |
 |   my_vga_clk                    |     0.117 |
 |     inst                        |     0.117 |
 +---------------------------------+-----------+

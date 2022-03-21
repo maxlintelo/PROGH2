@@ -7,6 +7,7 @@ entity pwm_sound is
         clk : in std_logic;
         reset : in std_logic;
         note : in integer;
+        accidental : in std_logic_vector(1 downto 0);
         pwm : out std_logic;
         enabled : in std_logic
     );
@@ -31,7 +32,7 @@ begin
     );
     
     process(clk, reset) is
-        variable wavelength : integer := 100_000_000 / frequency * 2;
+        variable wavelength : integer := 1_000_000_000 / frequency * 2;
     begin
         if reset = '1' then
         elsif rising_edge(clk) then
@@ -54,40 +55,91 @@ begin
         if reset = '1' then
             frequency <= 523;
         elsif rising_edge(clk) then
-            case note is
-                when 1 => -- F4b
-                    frequency <= 329;
-                when 2 => -- F4
-                    frequency <= 349;
-                when 3 | 4 => -- F4s | G4b
-                    frequency <= 369;
-                when 5 => -- G4
-                    frequency <= 392;
-                when 6 | 7 => -- G4s | A4b
-                    frequency <= 415;
-                when 8 => -- A4
-                    frequency <= 440;
-                when 9 | 10 => -- A4s | B4b
-                    frequency <= 466;
-                when 11 | 13 => -- B4 | C5b => B4
-                    frequency <= 493;
-                when 12 | 14 => -- B4s => C5 | C5
-                    frequency <= 523;
-                when 15 | 16 => -- C5s | D5b
-                    frequency <= 554;
-                when 17 => -- D5
-                    frequency <= 587;
-                when 18 | 19 => -- D5s | E5b
-                    frequency <= 622;
-                when 20 | 22 => -- E5 | F5b => E5
-                    frequency <= 659;
-                when 21 | 23 => -- E5s => F5 | F5
-                    frequency <= 698;
-                when 24 => -- F5s
-                    frequency <= 739;
-                when others => -- C5
-                    frequency <= 523;
-            end case;
+            if accidental(0) = '1' then
+                -- Sharps
+                case note is
+                when 0 => -- C5s
+                    frequency <= 5543;
+                when 1 => -- D5s
+                    frequency <= 6222;
+                when 2 => -- E5s
+                    frequency <= 6984;
+                when 3 => -- F5s
+                    frequency <= 7399;
+                when 4 => -- G5s
+                    frequency <= 8306;
+                when 5 => -- A5s
+                    frequency <= 9323;
+                when 6 => -- B5s
+                    frequency <= 10465;
+                when 7 => -- C6s
+                    frequency <= 11087;
+                when 8 => -- D6s
+                    frequency <= 12445;
+                when 9 => -- E6s
+                    frequency <= 13969;
+                when 10 => -- F6s
+                    frequency <= 14799;
+                when others =>
+                    frequency <= 5232;
+                end case;
+            elsif accidental(1) = '1' then
+                -- Flats
+                case note is
+                when 0 => -- C5b
+                    frequency <= 4938;
+                when 1 => -- D5b
+                    frequency <= 5543;
+                when 2 => -- E5b
+                    frequency <= 6222;
+                when 3 => -- F5b
+                    frequency <= 6592;
+                when 4 => -- G5b
+                    frequency <= 7399;
+                when 5 => -- A5b
+                    frequency <= 8306;
+                when 6 => -- B5b
+                    frequency <= 9323;
+                when 7 => -- C6b
+                    frequency <= 9877;
+                when 8 => -- D6b
+                    frequency <= 11087;
+                when 9 => -- E6b
+                    frequency <= 12445;
+                when 10 => -- F6b
+                    frequency <= 13185;
+                when others =>
+                    frequency <= 5232;
+                end case;
+            else
+                -- Naturals
+                case note is
+                when 0 => -- C5
+                    frequency <= 5232;
+                when 1 => -- D5
+                    frequency <= 5873;
+                when 2 => -- E5
+                    frequency <= 6592;
+                when 3 => -- F5
+                    frequency <= 6984;
+                when 4 => -- G5
+                    frequency <= 7839;
+                when 5 => -- A5
+                    frequency <= 8800;
+                when 6 => -- B5
+                    frequency <= 9877;
+                when 7 => -- C6
+                    frequency <= 10465;
+                when 8 => -- D6
+                    frequency <= 11746;
+                when 9 => -- E6
+                    frequency <= 13185;
+                when 10 => -- F6
+                    frequency <= 13969;
+                when others =>
+                    frequency <= 5232;
+                end case;
+            end if;
         end if;
     end process;
 end Behavioral;

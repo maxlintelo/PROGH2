@@ -2,11 +2,11 @@
 |       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
 +--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
 | clk_out1_microblaze_clk_wiz_0_0 |     clk_out1_clk_wiz_vga |                                                                                       my_vga/red_reg[2]/D|
-| clk_out1_microblaze_clk_wiz_0_0 |     clk_out1_clk_wiz_vga |                                                                                     my_vga/green_reg[0]/D|
-| clk_out1_microblaze_clk_wiz_0_0 |     clk_out1_clk_wiz_vga |                                                                                       my_vga/red_reg[1]/D|
 | clk_out1_microblaze_clk_wiz_0_0 |     clk_out1_clk_wiz_vga |                                                                                       my_vga/red_reg[0]/D|
 | clk_out1_microblaze_clk_wiz_0_0 |     clk_out1_clk_wiz_vga |                                                                                       my_vga/red_reg[3]/D|
+| clk_out1_microblaze_clk_wiz_0_0 |     clk_out1_clk_wiz_vga |                                                                                       my_vga/red_reg[1]/D|
 | clk_out1_microblaze_clk_wiz_0_0 |     clk_out1_clk_wiz_vga |                                                                                     my_vga/green_reg[2]/D|
 | clk_out1_microblaze_clk_wiz_0_0 |     clk_out1_clk_wiz_vga |                                                                                     my_vga/green_reg[1]/D|
+| clk_out1_microblaze_clk_wiz_0_0 |     clk_out1_clk_wiz_vga |                                                                                     my_vga/green_reg[0]/D|
 | clk_out1_microblaze_clk_wiz_0_0 |     clk_out1_clk_wiz_vga |                                                                                     my_vga/green_reg[3]/D|
 +--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+

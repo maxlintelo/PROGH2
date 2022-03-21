@@ -6,79 +6,195 @@
 #include "xparameters.h" // PERIPHERALS
 #include "sleep.h"
 
-#define false 0
-#define true 1
+typedef enum {
+	COLOR_RED = 0, COLOR_GREEN, COLOR_BLACK
+} color_t;
 
 typedef enum {
-	COLOR_RED,
-	COLOR_GREEN,
-	COLOR_BLACK
-} color_t;
+	PITCH_C5 = 0,
+	PITCH_D5,
+	PITCH_E5,
+	PITCH_F5,
+	PITCH_G5,
+	PITCH_A5,
+	PITCH_B5,
+	PITCH_C6,
+	PITCH_D6,
+	PITCH_E6,
+	PITCH_F6,
+	NUM_PITCH
+} pitch_t;
+
+typedef enum {
+	ACCIDENTAL_FLAT = 0, ACCIDENTAL_NATURAL, ACCIDENTAL_SHARP, NUM_ACCIDENTAL
+} accidental_t;
+
+typedef struct {
+	pitch_t pitch;
+	accidental_t accidental;
+} note_t;
+
+note_t getNotePressed(uint8_t keyPressed) {
+	switch(keyPressed) {
+	// All naturals
+	case 0x1C:
+		return (note_t){.pitch = PITCH_C5, .accidental = ACCIDENTAL_NATURAL};
+	case 0x1B:
+		return (note_t){.pitch = PITCH_D5, .accidental = ACCIDENTAL_NATURAL};
+	case 0x23:
+		return (note_t){.pitch = PITCH_E5, .accidental = ACCIDENTAL_NATURAL};
+	case 0x2B:
+		return (note_t){.pitch = PITCH_F5, .accidental = ACCIDENTAL_NATURAL};
+	case 0x34:
+		return (note_t){.pitch = PITCH_G5, .accidental = ACCIDENTAL_NATURAL};
+	case 0x33:
+		return (note_t){.pitch = PITCH_A5, .accidental = ACCIDENTAL_NATURAL};
+	case 0x3B:
+		return (note_t){.pitch = PITCH_B5, .accidental = ACCIDENTAL_NATURAL};
+	case 0x42:
+		return (note_t){.pitch = PITCH_C6, .accidental = ACCIDENTAL_NATURAL};
+	case 0x4B:
+		return (note_t){.pitch = PITCH_D6, .accidental = ACCIDENTAL_NATURAL};
+	case 0x4c:
+		return (note_t){.pitch = PITCH_E6, .accidental = ACCIDENTAL_NATURAL};
+	case 0x52:
+		return (note_t){.pitch = PITCH_F6, .accidental = ACCIDENTAL_NATURAL};
+	// All sharps
+	case 0x15:
+		return (note_t){.pitch = PITCH_C5, .accidental = ACCIDENTAL_SHARP};
+	case 0x1d:
+		return (note_t){.pitch = PITCH_D5, .accidental = ACCIDENTAL_SHARP};
+	case 0x24:
+		return (note_t){.pitch = PITCH_E5, .accidental = ACCIDENTAL_SHARP};
+	case 0x2d:
+		return (note_t){.pitch = PITCH_F5, .accidental = ACCIDENTAL_SHARP};
+	case 0x2c:
+		return (note_t){.pitch = PITCH_G5, .accidental = ACCIDENTAL_SHARP};
+	case 0x35:
+		return (note_t){.pitch = PITCH_A5, .accidental = ACCIDENTAL_SHARP};
+	case 0x3c:
+		return (note_t){.pitch = PITCH_B5, .accidental = ACCIDENTAL_SHARP};
+	case 0x43:
+		return (note_t){.pitch = PITCH_C6, .accidental = ACCIDENTAL_SHARP};
+	case 0x44:
+		return (note_t){.pitch = PITCH_D6, .accidental = ACCIDENTAL_SHARP};
+	case 0x4d:
+		return (note_t){.pitch = PITCH_E6, .accidental = ACCIDENTAL_SHARP};
+	case 0x54:
+		return (note_t){.pitch = PITCH_F6, .accidental = ACCIDENTAL_SHARP};
+	// All flats
+	case 0x1a:
+		return (note_t){.pitch = PITCH_C5, .accidental = ACCIDENTAL_FLAT};
+	case 0x22:
+		return (note_t){.pitch = PITCH_D5, .accidental = ACCIDENTAL_FLAT};
+	case 0x21:
+		return (note_t){.pitch = PITCH_E5, .accidental = ACCIDENTAL_FLAT};
+	case 0x2a:
+		return (note_t){.pitch = PITCH_F5, .accidental = ACCIDENTAL_FLAT};
+	case 0x32:
+		return (note_t){.pitch = PITCH_G5, .accidental = ACCIDENTAL_FLAT};
+	case 0x31:
+		return (note_t){.pitch = PITCH_A5, .accidental = ACCIDENTAL_FLAT};
+	case 0x3a:
+		return (note_t){.pitch = PITCH_B5, .accidental = ACCIDENTAL_FLAT};
+	case 0x41:
+		return (note_t){.pitch = PITCH_C6, .accidental = ACCIDENTAL_FLAT};
+	case 0x49:
+		return (note_t){.pitch = PITCH_D6, .accidental = ACCIDENTAL_FLAT};
+	case 0x4a:
+		return (note_t){.pitch = PITCH_E6, .accidental = ACCIDENTAL_FLAT};
+	case 0x59:
+		return (note_t){.pitch = PITCH_F6, .accidental = ACCIDENTAL_FLAT};
+	default:
+		return (note_t){.pitch = PITCH_C5, .accidental = ACCIDENTAL_NATURAL};
+	}
+}
+
+static uint16_t new_GetNoteHeight(note_t note) {
+	uint16_t start = 787; // Lower C
+	for (uint8_t i = 0; i < (uint8_t) note.pitch; i++) {
+		start -= 53;
+	}
+	return start;
+}
+
+/*
+ * GPIO
+ * 31   27   23   19   15   11   7    3
+ * 0000_0000_0000_0000_0000_0000_0000_0000
+ * ^^^^------------------------------------ NOTE PITCH
+ *		^^--------------------------------- ACCIDENTAL
+ * 		  ^^------------------------------- COLOR
+ * 		  	 ^^---------------------------- SCREEN ACCIDENTAL
+ * 					^---------------------- SOUND ENABLED
+ * 					 ^--------------------- RESET KEYBOARD
+ * 					   ^^^^ ^^^^ ^^^^ ^^^^- NOTE HEIGHT Y
+ */
 
 XGpio physical_gpio;
 XGpio gpio;
 
-u32 output = 0x00000000;
+u32 new_GpioOut = 0x00000000;
+void new_SendSoundNote(note_t note) {
+	new_GpioOut &= ~(0xFC << 24);
+	new_GpioOut |= ((uint8_t) note.pitch << 28);
+	if (note.accidental == ACCIDENTAL_FLAT) {
+		new_GpioOut |= (1 << 27);
+	} else if (note.accidental == ACCIDENTAL_SHARP) {
+		new_GpioOut |= (1 << 26);
+	}
+	XGpio_DiscreteWrite(&gpio, 2, new_GpioOut);
+}
+void new_SetSoundEnabled(uint8_t enable) {
+	if (enable) {
+		new_GpioOut |= (1 << 17);
+	} else {
+		new_GpioOut &= ~(1 << 17);
+	}
+	XGpio_DiscreteWrite(&gpio, 2, new_GpioOut);
+}
+void new_SendScreenNote(note_t note) {
+	// Reset the note height on the screen
+	new_GpioOut &= ~(0xFFFF);
+	// Set the new height
+	new_GpioOut |= new_GetNoteHeight(note);
 
-void setColor(color_t color) {
-	output &= ~(1 << 18);
-	output &= ~(1 << 19);
-	switch(color) {
-	case COLOR_RED:
-	{
-		output |= (1 << 18);
-		break;
+	new_GpioOut &= ~(1 << 23);
+	new_GpioOut &= ~(1 << 22);
+	if (note.accidental == ACCIDENTAL_FLAT) {
+		new_GpioOut |= (1 << 23);
+	} else if (note.accidental == ACCIDENTAL_SHARP) {
+		new_GpioOut |= (1 << 22);
 	}
-	case COLOR_GREEN:
-	{
-		output |= (1 << 19);
-		break;
+	XGpio_DiscreteWrite(&gpio, 2, new_GpioOut);
+}
+
+void new_SetNoteColor(color_t color) {
+	new_GpioOut &= ~(1 << 24);
+	new_GpioOut &= ~(1 << 25);
+	if (color == COLOR_RED) {
+		new_GpioOut |= (1 << 24);
+	} else if (color == COLOR_GREEN) {
+		new_GpioOut |= (1 << 25);
 	}
-	default:
-	{
-		break;
-	}
-	}
-	XGpio_DiscreteWrite(&gpio, 2, output);
+	XGpio_DiscreteWrite(&gpio, 2, new_GpioOut);
 }
-void enableSound() {
-	output |= (1 << 17);
-	XGpio_DiscreteWrite(&gpio, 2, output);
-}
-void disableSound() {
-	output &= ~(1 << 17);
-	XGpio_DiscreteWrite(&gpio, 2, output);
-}
-void sendSoundNote(int8_t note) {
-	output &= 0xFFFFFF00;
-	output |= note;
-	XGpio_DiscreteWrite(&gpio, 2, output);
-}
-void sendScreenNote(uint8_t note) {
-	output &= 0xFFFF00FF;
-	output |= note << 8;
-	XGpio_DiscreteWrite(&gpio, 2, output);
-}
-/*void sendNote(int note) {
-	output &= 0xFFFF0000; // Reset rechter 16 bits
-	output |= note;
-	XGpio_DiscreteWrite(&gpio, 2, output);
-}*/
-uint8_t waitForKeycode() {
+
+uint8_t waitForCode() {
 	while (!(XGpio_DiscreteRead(&gpio, 1) & (1 << 0))) {
 	}
 	uint8_t fpga_data = (uint8_t) (XGpio_DiscreteRead(&gpio, 1) >> 24);
-	output |= (1 << 16);
-	XGpio_DiscreteWrite(&gpio, 2, output);
-	output &= ~(1 << 16);
-	XGpio_DiscreteWrite(&gpio, 2, output);
+	new_GpioOut |= (1 << 16);
+	XGpio_DiscreteWrite(&gpio, 2, new_GpioOut);
+	new_GpioOut &= ~(1 << 16);
+	XGpio_DiscreteWrite(&gpio, 2, new_GpioOut);
 	return fpga_data;
 }
-uint8_t getKeyPress() {
-	uint8_t code = waitForKeycode();
-	while (waitForKeycode() == code) {
+uint8_t new_WaitForKey() {
+	uint8_t code = waitForCode();
+	while (waitForCode() == code) {
 	}
-	waitForKeycode();
+	waitForCode();
 	return code;
 }
 int random_number(int min_num, int max_num) {
@@ -96,88 +212,67 @@ int random_number(int min_num, int max_num) {
 	return result;
 }
 
-uint8_t getNote(uint8_t keyCode) {
-	switch(keyCode) {
-	case 0x1C:
-		return 2;
-	case 0x1B:
-		return 5;
-	case 0x23:
-		return 8;
-	case 0x2B:
-		return 11;
-	case 0x34:
-		return 14;
-	case 0x33:
-		return 17;
-	case 0x3B:
-		return 20;
-	case 0x42:
-		return 23;
-	default:
-		return -1;
-	}
+note_t getRandomNote() {
+	return (note_t ) {
+		.pitch = (pitch_t) random_number(0, NUM_PITCH - 1),
+		.accidental = (accidental_t) random_number(0, NUM_ACCIDENTAL - 1)
+	};
 }
 
-int main(void) {
-	u32 btn, led;
-	// GPIO Init
+void init(void) {
 	XGpio_Initialize(&physical_gpio, 0);
 	XGpio_Initialize(&gpio, 1);
-
 	XGpio_SetDataDirection(&physical_gpio, 2, 0x00000000); // Output leds
 	XGpio_SetDataDirection(&physical_gpio, 1, 0xFFFFFFFF); // Input switches
-
 	XGpio_SetDataDirection(&gpio, 1, 0x00000000); // Internal outputs
 	XGpio_SetDataDirection(&gpio, 2, 0xFFFFFFFF); // Internal inputs
+}
 
-	uint8_t previousNote = -1;
+//XGpio_DiscreteWrite(&gpio, 2, data);
+//XGpio_DiscreteWrite(&physical_gpio, 2, data >> 16);
 
+
+
+int main(void) {
+	init();
+	srand(12); // TODO Random seed
 	while (1) {
-		uint8_t randomNoot;
-		do {
-			randomNoot = (random_number(0, 7) * 3) + 2;
-		} while (randomNoot == previousNote);
+		note_t random_note = getRandomNote();
+		new_SendSoundNote(random_note);
+		new_SetNoteColor(COLOR_BLACK);
+		new_SendScreenNote(random_note);
+		new_SetSoundEnabled(1);
+		usleep(500000);
+		new_SetSoundEnabled(0);
 
-		sendSoundNote(randomNoot);
-		sendScreenNote(randomNoot);
-		xil_printf("\rrandom noot: %d", randomNoot);
 
-		enableSound();
-		usleep(1000000);
-		disableSound();
 
 		while(1) {
-			uint8_t keyCode = getKeyPress();
-			uint8_t note = getNote(keyCode);
-			xil_printf("\ruser note: %d", note);
-			if(note == randomNoot) {
+			uint8_t pressed_key = new_WaitForKey(); // Blocking
+			xil_printf("\rkey pressed: %08x", pressed_key);
+			note_t pressed_note = getNotePressed(pressed_key);
+			if(pressed_note.pitch == random_note.pitch && pressed_note.accidental == random_note.accidental) {
 				xil_printf("\rsuccess");
-				setColor(COLOR_GREEN);
-				sendSoundNote(randomNoot);
-				enableSound();
+				new_SetNoteColor(COLOR_GREEN);
+				new_SendSoundNote(random_note);
+				new_SetSoundEnabled(1);
 				usleep(1000000);
-				setColor(COLOR_BLACK);
-				disableSound();
+				new_SetNoteColor(COLOR_BLACK);
+				new_SetSoundEnabled(0);
 				break;
 			} else {
-				enableSound();
-				setColor(COLOR_RED);
+				new_SetNoteColor(COLOR_RED);
 
-				sendSoundNote(5);
+				new_SendSoundNote((note_t){.pitch = PITCH_G5, .accidental = ACCIDENTAL_NATURAL});
+				new_SetSoundEnabled(1);
 				usleep(200000);
-				sendSoundNote(1);
+				new_SendSoundNote((note_t){.pitch = PITCH_F5, .accidental = ACCIDENTAL_FLAT});
 				usleep(800000);
 
-				disableSound();
-				setColor(COLOR_BLACK);
+				new_SetSoundEnabled(0);
+				new_SetNoteColor(COLOR_BLACK);
 			}
 		}
-
-		previousNote = randomNoot;
-
-		//XGpio_DiscreteWrite(&gpio, 2, XGpio_DiscreteRead(&physical_gpio, 1) << 16);
-		//XGpio_DiscreteWrite(&physical_gpio, 2, XGpio_DiscreteRead(&physical_gpio, 1) << 16);
 	}
 	return 0;
 }

@@ -50,6 +50,7 @@ architecture Behavioral of top is
             clk : in std_logic;
             reset : in std_logic;
             note : in integer;
+            accidental : in std_logic_vector(1 downto 0);
             pwm : out std_logic;
             enabled : in std_logic
         );
@@ -62,8 +63,9 @@ architecture Behavioral of top is
             green : out STD_LOGIC_VECTOR (3 downto 0);
             blue : out STD_LOGIC_VECTOR (3 downto 0);
             hsync, vsync : out STD_LOGIC;
-            note : in integer;
-            note_color : in std_logic_vector(1 downto 0)
+            note_height : in integer;
+            note_color : in std_logic_vector(1 downto 0);
+            note_type : in std_logic_vector(1 downto 0)
         );
     end component vga_controller;
     component clk_wiz_vga is
@@ -96,8 +98,9 @@ begin
         red => top_vga_r,
         green => top_vga_g,
         blue => top_vga_b,
-        note => to_integer(unsigned(microblaze_o(15 downto 8))),
-        note_color => microblaze_o(19 downto 18)
+        note_height => to_integer(unsigned(microblaze_o(15 downto 0))),
+        note_color => microblaze_o(25 downto 24),
+        note_type => microblaze_o(23 downto 22)
     );
     
     my_microblaze : microblaze_wrapper port map (
@@ -123,7 +126,8 @@ begin
     my_sound : pwm_sound port map (
         clk => sys_clock,
         reset => top_reset,
-        note => to_integer(unsigned(microblaze_o(7 downto 0))),
+        note => to_integer(unsigned(microblaze_o(31 downto 28))),
+        accidental => microblaze_o(27 downto 26),
         pwm => s_pwm,
         enabled => microblaze_o(17)
     );

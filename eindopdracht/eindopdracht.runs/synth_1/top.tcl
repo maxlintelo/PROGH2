@@ -18,10 +18,7 @@ proc create_report { reportName command } {
   }
 }
 set_param chipscope.maxJobs 3
-set_param synth.incrementalSynthesisCache C:/Users/Max/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-4612-DESKTOP-5PCB5FN/incrSyn
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 create_project -in_memory -part xc7a35tcpg236-1
 
 set_param project.singleFileAddWarning.threshold 0
@@ -37,7 +34,9 @@ set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
 set_property ip_output_repo c:/Development/PROGH2/eindopdracht/eindopdracht.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 add_files C:/Development/PROGH2/eindopdracht/notenbalk.coe
-add_files c:/Development/PROGH2/eindopdracht/noot.coe
+add_files C:/Development/PROGH2/eindopdracht/noot.coe
+add_files C:/Development/PROGH2/eindopdracht/sharp.coe
+add_files C:/Development/PROGH2/eindopdracht/flat.coe
 read_vhdl -library eindopdracht {
   C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/constants.vhd
   C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd
@@ -91,8 +90,14 @@ set_property used_in_implementation false [get_files -all c:/Development/PROGH2/
 read_ip -quiet C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk.xci
 set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk_ooc.xdc]
 
-read_ip -quiet c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_noot/blk_mem_noot.xci
+read_ip -quiet C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_noot/blk_mem_noot.xci
 set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_noot/blk_mem_noot_ooc.xdc]
+
+read_ip -quiet C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_flat/blk_mem_flat.xci
+set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_flat/blk_mem_flat_ooc.xdc]
+
+read_ip -quiet C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_sharp/blk_mem_sharp.xci
+set_property used_in_implementation false [get_files -all c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_sharp/blk_mem_sharp_ooc.xdc]
 
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the

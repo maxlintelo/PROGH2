@@ -1,0 +1,2 @@
+blk_mem_flat.v,verilog,eindopdracht,../../../../eindopdracht.srcs/sources_1/ip/blk_mem_flat/sim/blk_mem_flat.v,
+glbl.v,Verilog,eindopdracht,glbl.v

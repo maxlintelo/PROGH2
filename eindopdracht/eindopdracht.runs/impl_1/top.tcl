@@ -67,8 +67,9 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 3
-  set_param synth.incrementalSynthesisCache C:/Users/Max/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-7364-DESKTOP-5PCB5FN/incrSyn
+  set_param chipscope.maxJobs 6
+  set_param synth.incrementalSynthesisCache C:/Users/Max/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-20984-DEKSTOP-MAX/incrSyn
+  set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a35tcpg236-1
   set_property board_part digilentinc.com:basys3:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
@@ -82,8 +83,11 @@ set rc [catch {
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
   add_files C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/microblaze.bd
+  read_ip -quiet c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_sound/clk_wiz_sound.xci
+  read_ip -quiet c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_vga/clk_wiz_vga.xci
+  read_ip -quiet c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/blk_mem_notenbalk.xci
   set_param project.isImplRun false
-  read_xdc C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/constrs_3/new/top.xdc
+  read_xdc C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/constrs_1/new/constr_manual.xdc
   set_param project.isImplRun true
   link_design -top top -part xc7a35tcpg236-1
   set_param project.isImplRun false
@@ -169,7 +173,7 @@ set rc [catch {
   set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
   catch { write_mem_info -force top.mmi }
   catch { write_bmm -force top_bd.bmm }
-  write_bitstream -force top.bit 
+  write_bitstream -force top.bit -verbose
   catch { write_sysdef -hwdef top.hwdef -bitfile top.bit -meminfo top.mmi -file top.sysdef }
   catch {write_debug_probes -quiet -force top}
   catch {file copy -force top.ltx debug_nets.ltx}

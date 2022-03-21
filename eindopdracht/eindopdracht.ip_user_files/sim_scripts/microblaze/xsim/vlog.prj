@@ -1,0 +1,9 @@
+verilog eindopdracht --include "../../../../eindopdracht.srcs/sources_1/bd/microblaze/ipshared/c923" --include "../../../../eindopdracht.srcs/sources_1/bd/microblaze/ipshared/ec67/hdl" \
+"../../../../eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_clk_wiz_0_0/microblaze_clk_wiz_0_0_clk_wiz.v" \
+"../../../../eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_clk_wiz_0_0/microblaze_clk_wiz_0_0.v" \
+"../../../../eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_lmb_bram_1/sim/microblaze_lmb_bram_1.v" \
+"../../../../eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_xbar_1/sim/microblaze_xbar_1.v" \
+
+verilog eindopdracht "glbl.v"
+
+nosort

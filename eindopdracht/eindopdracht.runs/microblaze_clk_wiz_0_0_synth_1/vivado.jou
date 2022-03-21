@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Fri Mar 11 10:06:25 2022
-# Process ID: 2740
+# Start of session at: Fri Mar 18 17:04:58 2022
+# Process ID: 5400
 # Current directory: C:/Development/PROGH2/eindopdracht/eindopdracht.runs/microblaze_clk_wiz_0_0_synth_1
 # Command line: vivado.exe -log microblaze_clk_wiz_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source microblaze_clk_wiz_0_0.tcl
 # Log file: C:/Development/PROGH2/eindopdracht/eindopdracht.runs/microblaze_clk_wiz_0_0_synth_1/microblaze_clk_wiz_0_0.vds

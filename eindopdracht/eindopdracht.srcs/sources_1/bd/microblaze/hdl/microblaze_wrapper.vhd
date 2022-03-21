@@ -1,8 +1,8 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
---Date        : Mon Mar 14 11:00:24 2022
---Host        : DESKTOP-5PCB5FN running 64-bit major release  (build 9200)
+--Date        : Fri Mar 18 17:04:43 2022
+--Host        : DEKSTOP-MAX running 64-bit major release  (build 9200)
 --Command     : generate_target microblaze_wrapper.bd
 --Design      : microblaze_wrapper
 --Purpose     : IP block netlist
@@ -29,9 +29,9 @@ architecture STRUCTURE of microblaze_wrapper is
   port (
     sys_clock : in STD_LOGIC;
     reset : in STD_LOGIC;
+    dip_switches_16bits_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     usb_uart_rxd : in STD_LOGIC;
     usb_uart_txd : out STD_LOGIC;
-    dip_switches_16bits_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     led_16bits_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
     GPIO_0_tri_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
     GPIO2_0_tri_o : out STD_LOGIC_VECTOR ( 31 downto 0 )

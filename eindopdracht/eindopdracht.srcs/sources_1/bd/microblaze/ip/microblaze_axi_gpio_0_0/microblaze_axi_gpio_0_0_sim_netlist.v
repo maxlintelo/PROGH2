@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Fri Mar 11 10:06:22 2022
-// Host        : DESKTOP-5PCB5FN running 64-bit major release  (build 9200)
+// Date        : Fri Mar 18 17:05:33 2022
+// Host        : DEKSTOP-MAX running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_axi_gpio_0_0/microblaze_axi_gpio_0_0_sim_netlist.v
+//               C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_axi_gpio_0_0/microblaze_axi_gpio_0_0_sim_netlist.v
 // Design      : microblaze_axi_gpio_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.

@@ -12,7 +12,12 @@ entity top is
         top_uart_tx : out std_logic;
         top_ps2_data : in std_logic;
         top_ps2_clk : in std_logic;
-        top_pwm : out std_logic
+        top_pwm : out std_logic;
+        top_vga_r : inout STD_LOGIC_VECTOR (3 downto 0);
+        top_vga_g : inout STD_LOGIC_VECTOR (3 downto 0);
+        top_vga_b : inout STD_LOGIC_VECTOR (3 downto 0);
+        top_vga_h_sync : inout STD_LOGIC;
+        top_vga_v_sync : inout STD_LOGIC
     );
 end top;
 
@@ -43,14 +48,50 @@ architecture Behavioral of top is
         port (
             clk : in std_logic;
             reset : in std_logic;
-            frequency : in integer;
+            note : in integer;
             pwm : out std_logic
         );
     end component pwm_sound;
+    component vga_controller is
+        port (
+            clk : in std_logic;
+            Pixel_clk : in STD_LOGIC; -- 148.5MHz
+            red : out STD_LOGIC_VECTOR (3 downto 0);
+            green : out STD_LOGIC_VECTOR (3 downto 0);
+            blue : out STD_LOGIC_VECTOR (3 downto 0);
+            hsync, vsync : out STD_LOGIC
+        );
+    end component vga_controller;
+    component clk_wiz_vga is
+        port ( 
+            clk_out1 : out STD_LOGIC;
+            reset : in STD_LOGIC;
+            locked : out STD_LOGIC;
+            clk_in1 : in STD_LOGIC
+        );
+    end component clk_wiz_vga;
     
     signal microblaze_i : std_logic_vector(31 downto 0);
     signal microblaze_o : std_logic_vector(31 downto 0);
+    
+    signal vga_clock : std_logic;
+
 begin
+    my_vga_clk : clk_wiz_vga port map (
+        clk_out1 => vga_clock,
+        reset => top_reset,
+        clk_in1 => sys_clock
+    );
+    my_vga : vga_controller port map (
+        clk => sys_clock,
+        pixel_clk => vga_clock,
+        hsync => top_vga_h_sync,
+        vsync => top_vga_v_sync,
+        red => top_vga_r,
+        green => top_vga_g,
+        blue => top_vga_b
+    );
+    
     my_microblaze : microblaze_wrapper port map (
         GPIO2_0_tri_o => microblaze_o,
         GPIO_0_tri_i => microblaze_i,
@@ -61,6 +102,7 @@ begin
         usb_uart_rxd => top_uart_rx,
         usb_uart_txd => top_uart_tx
     );
+    
     my_keyboard : ps2_keyboard port map (
         clk => sys_clock,
         reset => top_reset,
@@ -72,7 +114,7 @@ begin
     my_sound : pwm_sound port map (
         clk => sys_clock,
         reset => top_reset,
-        frequency => 523,
+        note => to_integer(unsigned(microblaze_o(15 downto 0))),
         pwm => top_pwm
     );
 end Behavioral;

@@ -1,0 +1,2 @@
+blk_mem_notenbalk.v,verilog,eindopdracht,../../../../eindopdracht.srcs/sources_1/ip/blk_mem_notenbalk/sim/blk_mem_notenbalk.v,
+glbl.v,Verilog,eindopdracht,glbl.v

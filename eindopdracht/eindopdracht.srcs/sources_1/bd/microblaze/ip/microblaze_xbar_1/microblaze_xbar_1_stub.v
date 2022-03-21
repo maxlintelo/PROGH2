@@ -1,8 +1,8 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Mon Mar 14 11:00:22 2022
-// Host        : DESKTOP-5PCB5FN running 64-bit major release  (build 9200)
+// Date        : Fri Mar 18 17:05:44 2022
+// Host        : DEKSTOP-MAX running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_xbar_1/microblaze_xbar_1_stub.v
 // Design      : microblaze_xbar_1

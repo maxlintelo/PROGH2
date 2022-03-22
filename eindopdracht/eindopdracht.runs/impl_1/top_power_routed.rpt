@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Mon Mar 21 22:59:11 2022
+| Date             : Tue Mar 22 14:28:23 2022
 | Host             : DESKTOP-5PCB5FN running 64-bit major release  (build 9200)
 | Command          : report_power -file top_power_routed.rpt -pb top_power_summary_routed.pb -rpx top_power_routed.rpx
 | Design           : top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.358        |
+| Total On-Chip Power (W)  | 0.369        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.284        |
+| Dynamic (W)              | 0.295        |
 | Device Static (W)        | 0.074        |
 | Effective TJA (C/W)      | 5.0          |
 | Max Ambient (C)          | 83.2         |
@@ -52,22 +52,22 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.013 |       10 |       --- |             --- |
-| Slice Logic              |     0.005 |     6136 |       --- |             --- |
-|   LUT as Logic           |     0.004 |     2525 |     20800 |           12.14 |
+| Clocks                   |     0.018 |       10 |       --- |             --- |
+| Slice Logic              |     0.005 |     8323 |       --- |             --- |
+|   LUT as Logic           |     0.004 |     4026 |     20800 |           19.36 |
 |   LUT as Distributed RAM |    <0.001 |       64 |      9600 |            0.67 |
-|   CARRY4                 |    <0.001 |      328 |      8150 |            4.02 |
-|   Register               |    <0.001 |     2039 |     41600 |            4.90 |
-|   F7/F8 Muxes            |    <0.001 |      111 |     32600 |            0.34 |
+|   CARRY4                 |    <0.001 |      605 |      8150 |            7.42 |
+|   Register               |    <0.001 |     2219 |     41600 |            5.33 |
+|   F7/F8 Muxes            |    <0.001 |      112 |     32600 |            0.34 |
 |   LUT as Shift Register  |    <0.001 |       74 |      9600 |            0.77 |
-|   Others                 |    <0.001 |      506 |       --- |             --- |
-| Signals                  |     0.010 |     4832 |       --- |             --- |
-| Block RAM                |     0.009 |     32.5 |        50 |           65.00 |
+|   Others                 |    <0.001 |      516 |       --- |             --- |
+| Signals                  |     0.010 |     6565 |       --- |             --- |
+| Block RAM                |     0.010 |     32.5 |        50 |           65.00 |
 | MMCM                     |     0.223 |        2 |         5 |           40.00 |
 | DSPs                     |     0.007 |        7 |        90 |            7.78 |
-| I/O                      |     0.018 |       53 |       106 |           50.00 |
+| I/O                      |     0.023 |       64 |       106 |           60.38 |
 | Static Power             |     0.074 |          |           |                 |
-| Total                    |     0.358 |          |           |                 |
+| Total                    |     0.369 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,9 +77,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.055 |       0.044 |      0.011 |
+| Vccint    |       1.000 |     0.061 |       0.050 |      0.011 |
 | Vccaux    |       1.800 |     0.137 |       0.124 |      0.013 |
-| Vcco33    |       3.300 |     0.006 |       0.005 |      0.001 |
+| Vcco33    |       3.300 |     0.008 |       0.007 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -137,9 +137,9 @@ Table of Contents
 | clk_out1_microblaze_clk_wiz_0_0                                            | my_microblaze/microblaze_i/clk_wiz_0/inst/clk_out1_microblaze_clk_wiz_0_0 |            10.0 |
 | clkfbout_clk_wiz_vga                                                       | my_vga_clk/inst/clkfbout_clk_wiz_vga                                      |            40.0 |
 | clkfbout_microblaze_clk_wiz_0_0                                            | my_microblaze/microblaze_i/clk_wiz_0/inst/clkfbout_microblaze_clk_wiz_0_0 |            10.0 |
+| my_microblaze/microblaze_i/clk_wiz_0/inst/clk_in1                          | sys_clock_IBUF_BUFG                                                       |            10.0 |
 | my_microblaze/microblaze_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/DRCK   | my_microblaze/microblaze_i/mdm_1/U0/Use_E2.BSCAN_I/DRCK                   |            33.3 |
 | my_microblaze/microblaze_i/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/UPDATE | my_microblaze/microblaze_i/mdm_1/U0/Use_E2.BSCAN_I/Dbg_Update_0           |            33.3 |
-| my_vga_clk/inst/clk_in1                                                    | sys_clock_IBUF_BUFG                                                       |            10.0 |
 +----------------------------------------------------------------------------+---------------------------------------------------------------------------+-----------------+
 
 
@@ -152,22 +152,22 @@ Table of Contents
 +---------------------------------+-----------+
 | Name                            | Power (W) |
 +---------------------------------+-----------+
-| top                             |     0.284 |
-|   my_microblaze                 |     0.124 |
-|     microblaze_i                |     0.124 |
+| top                             |     0.295 |
+|   my_microblaze                 |     0.128 |
+|     microblaze_i                |     0.127 |
 |       axi_gpio_0                |     0.001 |
 |       axi_gpio_1                |     0.002 |
 |       clk_wiz_0                 |     0.106 |
-|       microblaze_0              |     0.011 |
+|       microblaze_0              |     0.012 |
 |       microblaze_0_local_memory |     0.002 |
 |   my_sound                      |     0.001 |
-|   my_vga                        |     0.024 |
+|   my_vga                        |     0.025 |
 |     my_flat                     |     0.001 |
 |       U0                        |     0.001 |
-|     my_notenbalk                |     0.006 |
-|       U0                        |     0.006 |
-|     my_sharp                    |     0.002 |
-|       U0                        |     0.002 |
+|     my_notenbalk                |     0.007 |
+|       U0                        |     0.007 |
+|     my_sharp                    |     0.003 |
+|       U0                        |     0.003 |
 |   my_vga_clk                    |     0.117 |
 |     inst                        |     0.117 |
 +---------------------------------+-----------+

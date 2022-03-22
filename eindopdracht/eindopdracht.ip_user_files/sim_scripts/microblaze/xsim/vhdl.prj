@@ -10,5 +10,6 @@ vhdl eindopdracht  \
 "../../../../eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_rst_clk_wiz_0_100M_1/sim/microblaze_rst_clk_wiz_0_100M_1.vhd" \
 "../../../../eindopdracht.srcs/sources_1/bd/microblaze/sim/microblaze.vhd" \
 "../../../../eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_axi_gpio_1_1/sim/microblaze_axi_gpio_1_1.vhd" \
+"../../../../eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_axi_gpio_2_0/sim/microblaze_axi_gpio_2_0.vhd" \
 
 nosort

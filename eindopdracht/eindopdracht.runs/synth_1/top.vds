@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Mon Mar 21 22:56:44 2022
-# Process ID: 4612
+# Start of session at: Tue Mar 22 14:25:15 2022
+# Process ID: 2004
 # Current directory: C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/top.vds
@@ -19,84 +19,97 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 6096 
+INFO: Helper process launched with PID 5656 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 756.254 ; gain = 178.238
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 756.207 ; gain = 178.852
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'top' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:24]
-INFO: [Synth 8-3491] module 'clk_wiz_vga' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/clk_wiz_vga_stub.vhdl:5' bound to instance 'my_vga_clk' of component 'clk_wiz_vga' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:88]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_vga' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/clk_wiz_vga_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'vga_controller' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:10' bound to instance 'my_vga' of component 'vga_controller' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'top' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:26]
+INFO: [Synth 8-3491] module 'seven_segment_display' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/seven_segment_display.vhd:6' bound to instance 'my_ss_display' of component 'seven_segment_display' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:102]
+INFO: [Synth 8-638] synthesizing module 'seven_segment_display' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/seven_segment_display.vhd:17]
+WARNING: [Synth 8-614] signal 'right_int' is read in the process but is not in the sensitivity list [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/seven_segment_display.vhd:53]
+WARNING: [Synth 8-614] signal 'left_int' is read in the process but is not in the sensitivity list [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/seven_segment_display.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'seven_segment_display' (1#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/seven_segment_display.vhd:17]
+INFO: [Synth 8-3491] module 'clk_wiz_vga' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/clk_wiz_vga_stub.vhdl:5' bound to instance 'my_vga_clk' of component 'clk_wiz_vga' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:110]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_vga' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/clk_wiz_vga_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'vga_controller' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:10' bound to instance 'my_vga' of component 'vga_controller' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:115]
 INFO: [Synth 8-638] synthesizing module 'vga_controller' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:24]
-INFO: [Synth 8-3491] module 'blk_mem_notenbalk' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/blk_mem_notenbalk_stub.vhdl:5' bound to instance 'my_notenbalk' of component 'blk_mem_notenbalk' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:81]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_notenbalk' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/blk_mem_notenbalk_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'blk_mem_noot' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/blk_mem_noot_stub.vhdl:5' bound to instance 'my_noot' of component 'blk_mem_noot' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:87]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_noot' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/blk_mem_noot_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'blk_mem_flat' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/blk_mem_flat_stub.vhdl:5' bound to instance 'my_flat' of component 'blk_mem_flat' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:93]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_flat' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/blk_mem_flat_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'blk_mem_sharp' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/blk_mem_sharp_stub.vhdl:5' bound to instance 'my_sharp' of component 'blk_mem_sharp' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:99]
-INFO: [Synth 8-638] synthesizing module 'blk_mem_sharp' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/blk_mem_sharp_stub.vhdl:15]
-WARNING: [Synth 8-6014] Unused sequential element hcount_temp_reg was removed.  [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:222]
-INFO: [Synth 8-256] done synthesizing module 'vga_controller' (1#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:24]
-INFO: [Synth 8-3491] module 'microblaze_wrapper' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd:14' bound to instance 'my_microblaze' of component 'microblaze_wrapper' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:106]
-INFO: [Synth 8-638] synthesizing module 'microblaze_wrapper' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd:27]
-INFO: [Synth 8-3491] module 'microblaze' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1583' bound to instance 'microblaze_i' of component 'microblaze' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd:41]
-INFO: [Synth 8-638] synthesizing module 'microblaze' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1600]
-INFO: [Synth 8-3491] module 'microblaze_axi_gpio_0_0' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'microblaze_axi_gpio_0_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1910]
-INFO: [Synth 8-638] synthesizing module 'microblaze_axi_gpio_0_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_axi_gpio_0_0_stub.vhdl:32]
-INFO: [Synth 8-3491] module 'microblaze_axi_gpio_1_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_axi_gpio_1_1_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'microblaze_axi_gpio_1_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1934]
-INFO: [Synth 8-638] synthesizing module 'microblaze_axi_gpio_1_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_axi_gpio_1_1_stub.vhdl:32]
-INFO: [Synth 8-3491] module 'microblaze_axi_uartlite_0_0' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_axi_uartlite_0_0_stub.vhdl:5' bound to instance 'axi_uartlite_0' of component 'microblaze_axi_uartlite_0_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1958]
-INFO: [Synth 8-638] synthesizing module 'microblaze_axi_uartlite_0_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_axi_uartlite_0_0_stub.vhdl:33]
-INFO: [Synth 8-3491] module 'microblaze_clk_wiz_0_0' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'microblaze_clk_wiz_0_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1983]
-INFO: [Synth 8-638] synthesizing module 'microblaze_clk_wiz_0_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_clk_wiz_0_0_stub.vhdl:15]
-INFO: [Synth 8-3491] module 'microblaze_mdm_1_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_mdm_1_1_stub.vhdl:5' bound to instance 'mdm_1' of component 'microblaze_mdm_1_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1990]
-INFO: [Synth 8-638] synthesizing module 'microblaze_mdm_1_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_mdm_1_1_stub.vhdl:21]
-INFO: [Synth 8-3491] module 'microblaze_microblaze_0_2' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_microblaze_0_2_stub.vhdl:5' bound to instance 'microblaze_0' of component 'microblaze_microblaze_0_2' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:2003]
-INFO: [Synth 8-638] synthesizing module 'microblaze_microblaze_0_2' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_microblaze_0_2_stub.vhdl:63]
-INFO: [Synth 8-638] synthesizing module 'microblaze_microblaze_0_axi_periph_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1071]
+INFO: [Synth 8-3491] module 'blk_mem_notenbalk' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/blk_mem_notenbalk_stub.vhdl:5' bound to instance 'my_notenbalk' of component 'blk_mem_notenbalk' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:81]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_notenbalk' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/blk_mem_notenbalk_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'blk_mem_noot' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/blk_mem_noot_stub.vhdl:5' bound to instance 'my_noot' of component 'blk_mem_noot' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:87]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_noot' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/blk_mem_noot_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'blk_mem_flat' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/blk_mem_flat_stub.vhdl:5' bound to instance 'my_flat' of component 'blk_mem_flat' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_flat' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/blk_mem_flat_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'blk_mem_sharp' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/blk_mem_sharp_stub.vhdl:5' bound to instance 'my_sharp' of component 'blk_mem_sharp' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:99]
+INFO: [Synth 8-638] synthesizing module 'blk_mem_sharp' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/blk_mem_sharp_stub.vhdl:15]
+WARNING: [Synth 8-6014] Unused sequential element hcount_temp_reg was removed.  [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:114]
+INFO: [Synth 8-256] done synthesizing module 'vga_controller' (2#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:24]
+INFO: [Synth 8-3491] module 'microblaze_wrapper' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd:14' bound to instance 'my_microblaze' of component 'microblaze_wrapper' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:127]
+INFO: [Synth 8-638] synthesizing module 'microblaze_wrapper' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd:28]
+INFO: [Synth 8-3491] module 'microblaze' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1812' bound to instance 'microblaze_i' of component 'microblaze' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd:43]
+INFO: [Synth 8-638] synthesizing module 'microblaze' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1830]
+INFO: [Synth 8-3491] module 'microblaze_axi_gpio_0_0' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_0' of component 'microblaze_axi_gpio_0_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:2184]
+INFO: [Synth 8-638] synthesizing module 'microblaze_axi_gpio_0_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_axi_gpio_0_0_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'microblaze_axi_gpio_1_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_axi_gpio_1_1_stub.vhdl:5' bound to instance 'axi_gpio_1' of component 'microblaze_axi_gpio_1_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:2208]
+INFO: [Synth 8-638] synthesizing module 'microblaze_axi_gpio_1_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_axi_gpio_1_1_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'microblaze_axi_gpio_2_0' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_axi_gpio_2_0_stub.vhdl:5' bound to instance 'axi_gpio_2' of component 'microblaze_axi_gpio_2_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:2232]
+INFO: [Synth 8-638] synthesizing module 'microblaze_axi_gpio_2_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_axi_gpio_2_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'microblaze_axi_uartlite_0_0' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_axi_uartlite_0_0_stub.vhdl:5' bound to instance 'axi_uartlite_0' of component 'microblaze_axi_uartlite_0_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:2255]
+INFO: [Synth 8-638] synthesizing module 'microblaze_axi_uartlite_0_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_axi_uartlite_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'microblaze_clk_wiz_0_0' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_clk_wiz_0_0_stub.vhdl:5' bound to instance 'clk_wiz_0' of component 'microblaze_clk_wiz_0_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:2280]
+INFO: [Synth 8-638] synthesizing module 'microblaze_clk_wiz_0_0' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_clk_wiz_0_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'microblaze_mdm_1_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_mdm_1_1_stub.vhdl:5' bound to instance 'mdm_1' of component 'microblaze_mdm_1_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:2287]
+INFO: [Synth 8-638] synthesizing module 'microblaze_mdm_1_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_mdm_1_1_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'microblaze_microblaze_0_2' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_microblaze_0_2_stub.vhdl:5' bound to instance 'microblaze_0' of component 'microblaze_microblaze_0_2' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:2300]
+INFO: [Synth 8-638] synthesizing module 'microblaze_microblaze_0_2' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_microblaze_0_2_stub.vhdl:63]
+INFO: [Synth 8-638] synthesizing module 'microblaze_microblaze_0_axi_periph_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1191]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_2SZHJX' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:57]
-INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_2SZHJX' (2#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_2SZHJX' (3#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:57]
 INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_UXJV17' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:158]
-INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_UXJV17' (3#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:158]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_UXJV17' (4#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:158]
 INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_1HI1GR5' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:259]
-INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_1HI1GR5' (4#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:259]
-INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_SYAVRW' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:922]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_SYAVRW' (5#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:922]
-INFO: [Synth 8-3491] module 'microblaze_xbar_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_xbar_1_stub.vhdl:5' bound to instance 'xbar' of component 'microblaze_xbar_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1501]
-INFO: [Synth 8-638] synthesizing module 'microblaze_xbar_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_xbar_1_stub.vhdl:51]
-INFO: [Synth 8-256] done synthesizing module 'microblaze_microblaze_0_axi_periph_1' (6#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1071]
-INFO: [Synth 8-638] synthesizing module 'microblaze_0_local_memory_imp_HPR3PZ' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:343]
-INFO: [Synth 8-3491] module 'microblaze_dlmb_bram_if_cntlr_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_dlmb_bram_if_cntlr_1_stub.vhdl:5' bound to instance 'dlmb_bram_if_cntlr' of component 'microblaze_dlmb_bram_if_cntlr_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:557]
-INFO: [Synth 8-638] synthesizing module 'microblaze_dlmb_bram_if_cntlr_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_dlmb_bram_if_cntlr_1_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'microblaze_dlmb_v10_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_dlmb_v10_1_stub.vhdl:5' bound to instance 'dlmb_v10' of component 'microblaze_dlmb_v10_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:611]
-INFO: [Synth 8-638] synthesizing module 'microblaze_dlmb_v10_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_dlmb_v10_1_stub.vhdl:36]
-INFO: [Synth 8-3491] module 'microblaze_ilmb_bram_if_cntlr_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_ilmb_bram_if_cntlr_1_stub.vhdl:5' bound to instance 'ilmb_bram_if_cntlr' of component 'microblaze_ilmb_bram_if_cntlr_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:639]
-INFO: [Synth 8-638] synthesizing module 'microblaze_ilmb_bram_if_cntlr_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_ilmb_bram_if_cntlr_1_stub.vhdl:31]
-INFO: [Synth 8-3491] module 'microblaze_ilmb_v10_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_ilmb_v10_1_stub.vhdl:5' bound to instance 'ilmb_v10' of component 'microblaze_ilmb_v10_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:693]
-INFO: [Synth 8-638] synthesizing module 'microblaze_ilmb_v10_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_ilmb_v10_1_stub.vhdl:36]
-INFO: [Synth 8-3491] module 'microblaze_lmb_bram_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_lmb_bram_1_stub.vhdl:5' bound to instance 'lmb_bram' of component 'microblaze_lmb_bram_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:721]
-INFO: [Synth 8-638] synthesizing module 'microblaze_lmb_bram_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_lmb_bram_1_stub.vhdl:27]
-INFO: [Synth 8-256] done synthesizing module 'microblaze_0_local_memory_imp_HPR3PZ' (7#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:343]
-INFO: [Synth 8-3491] module 'microblaze_rst_clk_wiz_0_100M_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_rst_clk_wiz_0_100M_1_stub.vhdl:5' bound to instance 'rst_clk_wiz_0_100M' of component 'microblaze_rst_clk_wiz_0_100M_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:2165]
-INFO: [Synth 8-638] synthesizing module 'microblaze_rst_clk_wiz_0_100M_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/microblaze_rst_clk_wiz_0_100M_1_stub.vhdl:21]
-INFO: [Synth 8-256] done synthesizing module 'microblaze' (8#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1600]
-INFO: [Synth 8-256] done synthesizing module 'microblaze_wrapper' (9#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd:27]
-INFO: [Synth 8-3491] module 'ps2_keyboard' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/ps2_keyboard.vhd:5' bound to instance 'my_keyboard' of component 'ps2_keyboard' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:117]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_1HI1GR5' (5#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:259]
+INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_19Z7TXZ' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:360]
+INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_19Z7TXZ' (6#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:360]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_SYAVRW' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1023]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_SYAVRW' (7#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1023]
+INFO: [Synth 8-3491] module 'microblaze_xbar_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_xbar_1_stub.vhdl:5' bound to instance 'xbar' of component 'microblaze_xbar_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1713]
+INFO: [Synth 8-638] synthesizing module 'microblaze_xbar_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_xbar_1_stub.vhdl:51]
+INFO: [Synth 8-256] done synthesizing module 'microblaze_microblaze_0_axi_periph_1' (8#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1191]
+INFO: [Synth 8-638] synthesizing module 'microblaze_0_local_memory_imp_HPR3PZ' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:444]
+INFO: [Synth 8-3491] module 'microblaze_dlmb_bram_if_cntlr_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_dlmb_bram_if_cntlr_1_stub.vhdl:5' bound to instance 'dlmb_bram_if_cntlr' of component 'microblaze_dlmb_bram_if_cntlr_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:658]
+INFO: [Synth 8-638] synthesizing module 'microblaze_dlmb_bram_if_cntlr_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_dlmb_bram_if_cntlr_1_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'microblaze_dlmb_v10_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_dlmb_v10_1_stub.vhdl:5' bound to instance 'dlmb_v10' of component 'microblaze_dlmb_v10_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:712]
+INFO: [Synth 8-638] synthesizing module 'microblaze_dlmb_v10_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_dlmb_v10_1_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'microblaze_ilmb_bram_if_cntlr_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_ilmb_bram_if_cntlr_1_stub.vhdl:5' bound to instance 'ilmb_bram_if_cntlr' of component 'microblaze_ilmb_bram_if_cntlr_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:740]
+INFO: [Synth 8-638] synthesizing module 'microblaze_ilmb_bram_if_cntlr_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_ilmb_bram_if_cntlr_1_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'microblaze_ilmb_v10_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_ilmb_v10_1_stub.vhdl:5' bound to instance 'ilmb_v10' of component 'microblaze_ilmb_v10_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:794]
+INFO: [Synth 8-638] synthesizing module 'microblaze_ilmb_v10_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_ilmb_v10_1_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'microblaze_lmb_bram_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_lmb_bram_1_stub.vhdl:5' bound to instance 'lmb_bram' of component 'microblaze_lmb_bram_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:822]
+INFO: [Synth 8-638] synthesizing module 'microblaze_lmb_bram_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_lmb_bram_1_stub.vhdl:27]
+INFO: [Synth 8-256] done synthesizing module 'microblaze_0_local_memory_imp_HPR3PZ' (9#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:444]
+INFO: [Synth 8-3491] module 'microblaze_rst_clk_wiz_0_100M_1' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_rst_clk_wiz_0_100M_1_stub.vhdl:5' bound to instance 'rst_clk_wiz_0_100M' of component 'microblaze_rst_clk_wiz_0_100M_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:2481]
+INFO: [Synth 8-638] synthesizing module 'microblaze_rst_clk_wiz_0_100M_1' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/microblaze_rst_clk_wiz_0_100M_1_stub.vhdl:21]
+INFO: [Synth 8-256] done synthesizing module 'microblaze' (10#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/synth/microblaze.vhd:1830]
+INFO: [Synth 8-256] done synthesizing module 'microblaze_wrapper' (11#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/hdl/microblaze_wrapper.vhd:28]
+INFO: [Synth 8-3491] module 'ps2_keyboard' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/ps2_keyboard.vhd:5' bound to instance 'my_keyboard' of component 'ps2_keyboard' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:138]
 INFO: [Synth 8-638] synthesizing module 'ps2_keyboard' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/ps2_keyboard.vhd:17]
 WARNING: [Synth 8-614] signal 'reset_new_data' is read in the process but is not in the sensitivity list [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/ps2_keyboard.vhd:59]
-INFO: [Synth 8-256] done synthesizing module 'ps2_keyboard' (10#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/ps2_keyboard.vhd:17]
-INFO: [Synth 8-3491] module 'pwm_sound' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/pwm_sound.vhd:5' bound to instance 'my_sound' of component 'pwm_sound' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:126]
+INFO: [Synth 8-256] done synthesizing module 'ps2_keyboard' (12#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/ps2_keyboard.vhd:17]
+INFO: [Synth 8-3491] module 'pwm_sound' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/pwm_sound.vhd:5' bound to instance 'my_sound' of component 'pwm_sound' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:147]
 INFO: [Synth 8-638] synthesizing module 'pwm_sound' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/pwm_sound.vhd:16]
-INFO: [Synth 8-3491] module 'clk_wiz_sound' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/clk_wiz_sound_stub.vhdl:5' bound to instance 'pwm_clk' of component 'clk_wiz_sound' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/pwm_sound.vhd:29]
-INFO: [Synth 8-638] synthesizing module 'clk_wiz_sound' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-4612-DESKTOP-5PCB5FN/realtime/clk_wiz_sound_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'clk_wiz_sound' declared at 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/clk_wiz_sound_stub.vhdl:5' bound to instance 'pwm_clk' of component 'clk_wiz_sound' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/pwm_sound.vhd:29]
+INFO: [Synth 8-638] synthesizing module 'clk_wiz_sound' [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/.Xil/Vivado-2004-DESKTOP-5PCB5FN/realtime/clk_wiz_sound_stub.vhdl:15]
 WARNING: [Synth 8-614] signal 'frequency' is read in the process but is not in the sensitivity list [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/pwm_sound.vhd:34]
-INFO: [Synth 8-256] done synthesizing module 'pwm_sound' (11#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/pwm_sound.vhd:16]
-INFO: [Synth 8-256] done synthesizing module 'top' (12#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:24]
+INFO: [Synth 8-256] done synthesizing module 'pwm_sound' (13#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/pwm_sound.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'top' (14#1) [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/top.vhd:26]
 WARNING: [Synth 8-3331] design s00_couplers_imp_SYAVRW has unconnected port M_ACLK
 WARNING: [Synth 8-3331] design s00_couplers_imp_SYAVRW has unconnected port M_ARESETN
 WARNING: [Synth 8-3331] design s00_couplers_imp_SYAVRW has unconnected port S_ACLK
 WARNING: [Synth 8-3331] design s00_couplers_imp_SYAVRW has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m03_couplers_imp_19Z7TXZ has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m03_couplers_imp_19Z7TXZ has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m03_couplers_imp_19Z7TXZ has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m03_couplers_imp_19Z7TXZ has unconnected port S_ARESETN
 WARNING: [Synth 8-3331] design m02_couplers_imp_1HI1GR5 has unconnected port M_ACLK
 WARNING: [Synth 8-3331] design m02_couplers_imp_1HI1GR5 has unconnected port M_ARESETN
 WARNING: [Synth 8-3331] design m02_couplers_imp_1HI1GR5 has unconnected port S_ACLK
@@ -115,11 +128,13 @@ WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnec
 WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port M01_ARESETN
 WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port M02_ACLK
 WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port M02_ARESETN
+WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port M03_ACLK
+WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port M03_ARESETN
 WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port S00_ACLK
 WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port S00_ARESETN
 WARNING: [Synth 8-3331] design vga_controller has unconnected port clk
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 826.137 ; gain = 248.121
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 826.254 ; gain = 248.898
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -132,10 +147,10 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 826.137 ; gain = 248.121
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 826.254 ; gain = 248.898
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 826.137 ; gain = 248.121
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 826.254 ; gain = 248.898
 ---------------------------------------------------------------------------------
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
@@ -167,6 +182,8 @@ Parsing XDC File [c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1
 Finished Parsing XDC File [c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_xbar_1/microblaze_xbar_1/microblaze_xbar_1_in_context.xdc] for cell 'my_microblaze/microblaze_i/microblaze_0_axi_periph/xbar'
 Parsing XDC File [c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_axi_gpio_1_1/microblaze_axi_gpio_1_1/microblaze_axi_gpio_1_1_in_context.xdc] for cell 'my_microblaze/microblaze_i/axi_gpio_1'
 Finished Parsing XDC File [c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_axi_gpio_1_1/microblaze_axi_gpio_1_1/microblaze_axi_gpio_1_1_in_context.xdc] for cell 'my_microblaze/microblaze_i/axi_gpio_1'
+Parsing XDC File [c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_axi_gpio_2_0/microblaze_axi_gpio_2_0/microblaze_axi_gpio_2_0_in_context.xdc] for cell 'my_microblaze/microblaze_i/axi_gpio_2'
+Finished Parsing XDC File [c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/bd/microblaze/ip/microblaze_axi_gpio_2_0/microblaze_axi_gpio_2_0/microblaze_axi_gpio_2_0_in_context.xdc] for cell 'my_microblaze/microblaze_i/axi_gpio_2'
 Parsing XDC File [c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_sound/clk_wiz_sound/clk_wiz_sound_in_context.xdc] for cell 'my_sound/pwm_clk'
 WARNING: [Constraints 18-619] A clock with name 'sys_clock' already exists, overwriting the previous clock with the same name. [c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_sound/clk_wiz_sound/clk_wiz_sound_in_context.xdc:1]
 Finished Parsing XDC File [c:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/ip/clk_wiz_sound/clk_wiz_sound/clk_wiz_sound_in_context.xdc] for cell 'my_sound/pwm_clk'
@@ -189,25 +206,25 @@ Parsing XDC File [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/d
 Finished Parsing XDC File [C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 958.613 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 961.387 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 958.613 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 961.387 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'my_microblaze/microblaze_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'my_vga/my_flat' at clock pin 'clka' is different from the actual clock period '6.734', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'my_vga/my_noot' at clock pin 'clka' is different from the actual clock period '6.734', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'my_vga/my_notenbalk' at clock pin 'clka' is different from the actual clock period '6.734', this can lead to different synthesis results.
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'my_vga/my_sharp' at clock pin 'clka' is different from the actual clock period '6.734', this can lead to different synthesis results.
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 961.609 ; gain = 383.594
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 964.371 ; gain = 387.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 961.609 ; gain = 383.594
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 964.371 ; gain = 387.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -229,6 +246,7 @@ Applied set_property DONT_TOUCH = true for my_microblaze/microblaze_i/rst_clk_wi
 Applied set_property DONT_TOUCH = true for my_microblaze/microblaze_i/microblaze_0_axi_periph/xbar. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for my_microblaze/microblaze_i/microblaze_0_axi_periph. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for my_microblaze/microblaze_i/axi_gpio_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for my_microblaze/microblaze_i/axi_gpio_2. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for my_sound/pwm_clk. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for my_vga_clk. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for my_vga/my_notenbalk. (constraint file  auto generated constraint, line ).
@@ -236,8 +254,16 @@ Applied set_property DONT_TOUCH = true for my_vga/my_noot. (constraint file  aut
 Applied set_property DONT_TOUCH = true for my_vga/my_flat. (constraint file  auto generated constraint, line ).
 Applied set_property DONT_TOUCH = true for my_vga/my_sharp. (constraint file  auto generated constraint, line ).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 961.609 ; gain = 383.594
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 964.371 ; gain = 387.016
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5545] ROM "get_segments" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "get_segments" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "get_segments" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "get_segments" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "get_segments" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "get_segments" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "get_segments" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "get_segments" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-802] inferred FSM for state register 'current_state_reg' in module 'ps2_keyboard'
 INFO: [Synth 8-5545] ROM "frequency" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "frequency" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
@@ -251,7 +277,7 @@ INFO: [Synth 8-5545] ROM "frequency" won't be mapped to RAM because address size
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'current_state_reg' using encoding 'one-hot' in module 'ps2_keyboard'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 961.609 ; gain = 383.594
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 964.371 ; gain = 387.016
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -265,12 +291,13 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input     33 Bit       Adders := 2     
-	   2 Input     32 Bit       Adders := 4     
-	   2 Input     31 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 6     
+	   2 Input     31 Bit       Adders := 7     
 	   3 Input     15 Bit       Adders := 2     
 	   3 Input     14 Bit       Adders := 1     
 	   2 Input     12 Bit       Adders := 1     
 	   2 Input     11 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 4     
 	   2 Input      4 Bit       Adders := 1     
 +---Registers : 
 	               32 Bit    Registers := 1     
@@ -281,15 +308,19 @@ Detailed RTL Component Info :
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Muxes : 
-	   2 Input     32 Bit        Muxes := 1     
-	   2 Input     31 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input     31 Bit        Muxes := 7     
 	   2 Input     20 Bit        Muxes := 1     
 	   2 Input     17 Bit        Muxes := 1     
 	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     15 Bit        Muxes := 3     
 	   2 Input     11 Bit        Muxes := 1     
 	   3 Input     11 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 13    
+	   2 Input      7 Bit        Muxes := 3     
+	  14 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 8     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 15    
 	   3 Input      4 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 3     
 	   3 Input      1 Bit        Muxes := 3     
@@ -300,6 +331,19 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
+Module seven_segment_display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     31 Bit       Adders := 4     
+	   2 Input      5 Bit       Adders := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   2 Input     31 Bit        Muxes := 4     
+	   2 Input      7 Bit        Muxes := 3     
+	  14 Input      7 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 8     
+	   4 Input      4 Bit        Muxes := 1     
 Module vga_controller 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -318,7 +362,7 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     20 Bit        Muxes := 1     
 	   2 Input     11 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 13    
+	   2 Input      4 Bit        Muxes := 15    
 	   2 Input      1 Bit        Muxes := 1     
 Module ps2_keyboard 
 Detailed RTL Component Info : 
@@ -363,25 +407,25 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-4471] merging register 'my_vga/hcount_reg[11:0]' into 'my_vga/hcount_reg[11:0]' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:220]
-INFO: [Synth 8-4471] merging register 'my_vga/hcount_reg[11:0]' into 'my_vga/hcount_reg[11:0]' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:220]
-INFO: [Synth 8-4471] merging register 'my_vga/hcount_reg[11:0]' into 'my_vga/hcount_reg[11:0]' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:220]
+INFO: [Synth 8-4471] merging register 'my_vga/hcount_reg[11:0]' into 'my_vga/hcount_reg[11:0]' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:112]
+INFO: [Synth 8-4471] merging register 'my_vga/hcount_reg[11:0]' into 'my_vga/hcount_reg[11:0]' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:112]
+INFO: [Synth 8-4471] merging register 'my_vga/hcount_reg[11:0]' into 'my_vga/hcount_reg[11:0]' [C:/Development/PROGH2/eindopdracht/eindopdracht.srcs/sources_1/new/vga_controller.vhd:112]
 DSP Report: Generating DSP my_vga/noot_addr1, operation Mode is: A*(B:0xd1).
 DSP Report: operator my_vga/noot_addr1 is absorbed into DSP my_vga/noot_addr1.
 DSP Report: Generating DSP my_vga/noot_addr_reg, operation Mode is: PCIN+(A:0x0):B2+(C:0xfffffffffdda).
 DSP Report: register my_vga/hcount_reg is absorbed into DSP my_vga/noot_addr_reg.
 DSP Report: register my_vga/noot_addr_reg is absorbed into DSP my_vga/noot_addr_reg.
 DSP Report: operator my_vga/noot_addr0 is absorbed into DSP my_vga/noot_addr_reg.
-DSP Report: Generating DSP my_vga/notenbalk_addr_reg, operation Mode is: C+A*(B:0x3d4).
-DSP Report: register my_vga/notenbalk_addr_reg is absorbed into DSP my_vga/notenbalk_addr_reg.
-DSP Report: operator my_vga/notenbalk_addr0 is absorbed into DSP my_vga/notenbalk_addr_reg.
-DSP Report: operator my_vga/notenbalk_addr1 is absorbed into DSP my_vga/notenbalk_addr_reg.
 DSP Report: Generating DSP my_vga/flat_addr1, operation Mode is: A*(B:0x45).
 DSP Report: operator my_vga/flat_addr1 is absorbed into DSP my_vga/flat_addr1.
 DSP Report: Generating DSP my_vga/flat_addr_reg, operation Mode is: PCIN+(A:0x0):B2+(C:0xfffffffffe3e).
 DSP Report: register my_vga/hcount_reg is absorbed into DSP my_vga/flat_addr_reg.
 DSP Report: register my_vga/flat_addr_reg is absorbed into DSP my_vga/flat_addr_reg.
 DSP Report: operator my_vga/flat_addr0 is absorbed into DSP my_vga/flat_addr_reg.
+DSP Report: Generating DSP my_vga/notenbalk_addr_reg, operation Mode is: C+A*(B:0x3d4).
+DSP Report: register my_vga/notenbalk_addr_reg is absorbed into DSP my_vga/notenbalk_addr_reg.
+DSP Report: operator my_vga/notenbalk_addr0 is absorbed into DSP my_vga/notenbalk_addr_reg.
+DSP Report: operator my_vga/notenbalk_addr1 is absorbed into DSP my_vga/notenbalk_addr_reg.
 DSP Report: Generating DSP my_vga/sharp_addr1, operation Mode is: A*(B:0x7c).
 DSP Report: operator my_vga/sharp_addr1 is absorbed into DSP my_vga/sharp_addr1.
 DSP Report: Generating DSP my_vga/sharp_addr_reg, operation Mode is: PCIN+(A:0x0):B2+(C:0xfffffffffe70).
@@ -394,6 +438,8 @@ WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnec
 WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port M01_ARESETN
 WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port M02_ACLK
 WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port M02_ARESETN
+WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port M03_ACLK
+WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port M03_ARESETN
 WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port S00_ACLK
 WARNING: [Synth 8-3331] design microblaze_microblaze_0_axi_periph_1 has unconnected port S00_ARESETN
 INFO: [Synth 8-3886] merging instance 'my_sound/frequency_reg[31]' (FDC) to 'my_sound/frequency_reg[14]'
@@ -415,7 +461,7 @@ INFO: [Synth 8-3886] merging instance 'my_sound/frequency_reg[28]' (FDC) to 'my_
 INFO: [Synth 8-3886] merging instance 'my_sound/frequency_reg[29]' (FDC) to 'my_sound/frequency_reg[30]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\my_sound/frequency_reg[30] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 961.609 ; gain = 383.594
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 964.371 ; gain = 387.016
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -427,9 +473,9 @@ DSP: Preliminary Mapping  Report (see note below)
 +---------------+------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |vga_controller | A*(B:0xd1)                         | 15     | 9      | -      | -      | 24     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |top            | PCIN+(A:0x0):B2+(C:0xfffffffffdda) | 30     | 12     | 11     | -      | -1     | 0    | 1    | 0    | -    | -     | 0    | 1    | 
-|vga_controller | C+A*(B:0x3d4)                      | 11     | 11     | 13     | -      | 20     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
 |vga_controller | A*(B:0x45)                         | 14     | 8      | -      | -      | 22     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |top            | PCIN+(A:0x0):B2+(C:0xfffffffffe3e) | 30     | 12     | 10     | -      | -1     | 0    | 1    | 0    | -    | -     | 0    | 1    | 
+|vga_controller | C+A*(B:0x3d4)                      | 11     | 11     | 13     | -      | 20     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
 |vga_controller | A*(B:0x7c)                         | 15     | 8      | -      | -      | 23     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |top            | PCIN+(A:0x0):B2+(C:0xfffffffffe70) | 30     | 12     | 10     | -      | -1     | 0    | 1    | 0    | -    | -     | 0    | 1    | 
 +---------------+------------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
@@ -458,13 +504,13 @@ WARNING: [Synth 8-565] redefining clock 'sys_clock'
 INFO: [Synth 8-5578] Moved timing constraint from pin 'my_vga_clk/clk_out1' to pin 'my_vga_clk/bbstub_clk_out1/O'
 INFO: [Synth 8-5819] Moved 7 constraints on hierarchical pins to their respective driving/loading pins
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 969.035 ; gain = 391.020
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:32 . Memory (MB): peak = 978.660 ; gain = 401.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 983.176 ; gain = 405.160
+Finished Timing Optimization : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 992.809 ; gain = 415.453
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -476,7 +522,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 997.004 ; gain = 418.988
+Finished Technology Mapping : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 1032.953 ; gain = 455.598
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -500,7 +546,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1002.789 ; gain = 424.773
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1038.230 ; gain = 460.875
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -513,7 +559,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1002.789 ; gain = 424.773
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1038.230 ; gain = 460.875
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -525,25 +571,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1002.789 ; gain = 424.773
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1038.230 ; gain = 460.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1002.789 ; gain = 424.773
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1038.230 ; gain = 460.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1002.789 ; gain = 424.773
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1038.230 ; gain = 460.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1002.789 ; gain = 424.773
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1038.230 ; gain = 460.875
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -557,21 +603,22 @@ Report BlackBoxes:
 |2     |microblaze_xbar_1               |         1|
 |3     |microblaze_axi_gpio_0_0         |         1|
 |4     |microblaze_axi_gpio_1_1         |         1|
-|5     |microblaze_axi_uartlite_0_0     |         1|
-|6     |microblaze_clk_wiz_0_0          |         1|
-|7     |microblaze_mdm_1_1              |         1|
-|8     |microblaze_microblaze_0_2       |         1|
-|9     |microblaze_rst_clk_wiz_0_100M_1 |         1|
-|10    |microblaze_dlmb_bram_if_cntlr_1 |         1|
-|11    |microblaze_dlmb_v10_1           |         1|
-|12    |microblaze_ilmb_bram_if_cntlr_1 |         1|
-|13    |microblaze_ilmb_v10_1           |         1|
-|14    |microblaze_lmb_bram_1           |         1|
-|15    |clk_wiz_sound                   |         1|
-|16    |blk_mem_notenbalk               |         1|
-|17    |blk_mem_noot                    |         1|
-|18    |blk_mem_flat                    |         1|
-|19    |blk_mem_sharp                   |         1|
+|5     |microblaze_axi_gpio_2_0         |         1|
+|6     |microblaze_axi_uartlite_0_0     |         1|
+|7     |microblaze_clk_wiz_0_0          |         1|
+|8     |microblaze_mdm_1_1              |         1|
+|9     |microblaze_microblaze_0_2       |         1|
+|10    |microblaze_rst_clk_wiz_0_100M_1 |         1|
+|11    |microblaze_dlmb_bram_if_cntlr_1 |         1|
+|12    |microblaze_dlmb_v10_1           |         1|
+|13    |microblaze_ilmb_bram_if_cntlr_1 |         1|
+|14    |microblaze_ilmb_v10_1           |         1|
+|15    |microblaze_lmb_bram_1           |         1|
+|16    |clk_wiz_sound                   |         1|
+|17    |blk_mem_notenbalk               |         1|
+|18    |blk_mem_noot                    |         1|
+|19    |blk_mem_flat                    |         1|
+|20    |blk_mem_sharp                   |         1|
 +------+--------------------------------+----------+
 
 Report Cell Usage: 
@@ -582,74 +629,77 @@ Report Cell Usage:
 |2     |blk_mem_noot_bbox_2                     |     1|
 |3     |blk_mem_notenbalk_bbox_1                |     1|
 |4     |blk_mem_sharp_bbox_4                    |     1|
-|5     |clk_wiz_sound_bbox_18                   |     1|
+|5     |clk_wiz_sound_bbox_19                   |     1|
 |6     |clk_wiz_vga_bbox_0                      |     1|
 |7     |microblaze_axi_gpio_0_0_bbox_5          |     1|
 |8     |microblaze_axi_gpio_1_1_bbox_6          |     1|
-|9     |microblaze_axi_uartlite_0_0_bbox_7      |     1|
-|10    |microblaze_clk_wiz_0_0_bbox_8           |     1|
-|11    |microblaze_dlmb_bram_if_cntlr_1_bbox_12 |     1|
-|12    |microblaze_dlmb_v10_1_bbox_13           |     1|
-|13    |microblaze_ilmb_bram_if_cntlr_1_bbox_14 |     1|
-|14    |microblaze_ilmb_v10_1_bbox_15           |     1|
-|15    |microblaze_lmb_bram_1_bbox_16           |     1|
-|16    |microblaze_mdm_1_1_bbox_9               |     1|
-|17    |microblaze_microblaze_0_2_bbox_10       |     1|
-|18    |microblaze_rst_clk_wiz_0_100M_1_bbox_17 |     1|
-|19    |microblaze_xbar_1_bbox_11               |     1|
-|20    |CARRY4                                  |   290|
-|21    |DSP48E1                                 |     3|
-|22    |DSP48E1_1                               |     3|
-|23    |DSP48E1_2                               |     1|
-|24    |LUT1                                    |    72|
-|25    |LUT2                                    |   501|
-|26    |LUT3                                    |   414|
-|27    |LUT4                                    |   107|
-|28    |LUT5                                    |    13|
-|29    |LUT6                                    |    31|
-|30    |FDCE                                    |    28|
-|31    |FDPE                                    |     5|
-|32    |FDRE                                    |    70|
-|33    |IBUF                                    |    20|
-|34    |OBUF                                    |    32|
+|9     |microblaze_axi_gpio_2_0_bbox_7          |     1|
+|10    |microblaze_axi_uartlite_0_0_bbox_8      |     1|
+|11    |microblaze_clk_wiz_0_0_bbox_9           |     1|
+|12    |microblaze_dlmb_bram_if_cntlr_1_bbox_13 |     1|
+|13    |microblaze_dlmb_v10_1_bbox_14           |     1|
+|14    |microblaze_ilmb_bram_if_cntlr_1_bbox_15 |     1|
+|15    |microblaze_ilmb_v10_1_bbox_16           |     1|
+|16    |microblaze_lmb_bram_1_bbox_17           |     1|
+|17    |microblaze_mdm_1_1_bbox_10              |     1|
+|18    |microblaze_microblaze_0_2_bbox_11       |     1|
+|19    |microblaze_rst_clk_wiz_0_100M_1_bbox_18 |     1|
+|20    |microblaze_xbar_1_bbox_12               |     1|
+|21    |CARRY4                                  |   567|
+|22    |DSP48E1                                 |     3|
+|23    |DSP48E1_1                               |     3|
+|24    |DSP48E1_2                               |     1|
+|25    |LUT1                                    |    99|
+|26    |LUT2                                    |   771|
+|27    |LUT3                                    |   652|
+|28    |LUT4                                    |   296|
+|29    |LUT5                                    |   267|
+|30    |LUT6                                    |   685|
+|31    |MUXF7                                   |     1|
+|32    |FDCE                                    |    48|
+|33    |FDPE                                    |     5|
+|34    |FDRE                                    |    70|
+|35    |IBUF                                    |    20|
+|36    |OBUF                                    |    43|
 +------+----------------------------------------+------+
 
 Report Instance Areas: 
 +------+--------------------------------+-------------------------------------+------+
 |      |Instance                        |Module                               |Cells |
 +------+--------------------------------+-------------------------------------+------+
-|1     |top                             |                                     |  2883|
+|1     |top                             |                                     |  5008|
 |2     |  my_keyboard                   |ps2_keyboard                         |    42|
-|3     |  my_microblaze                 |microblaze_wrapper                   |  1373|
-|4     |    microblaze_i                |microblaze                           |  1285|
-|5     |      microblaze_0_axi_periph   |microblaze_microblaze_0_axi_periph_1 |   374|
+|3     |  my_microblaze                 |microblaze_wrapper                   |  3134|
+|4     |    microblaze_i                |microblaze                           |  1469|
+|5     |      microblaze_0_axi_periph   |microblaze_microblaze_0_axi_periph_1 |   485|
 |6     |      microblaze_0_local_memory |microblaze_0_local_memory_imp_HPR3PZ |   496|
 |7     |  my_sound                      |pwm_sound                            |  1190|
-|8     |  my_vga                        |vga_controller                       |   224|
+|8     |  my_ss_display                 |seven_segment_display                |    51|
+|9     |  my_vga                        |vga_controller                       |   235|
 +------+--------------------------------+-------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1002.789 ; gain = 424.773
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:36 . Memory (MB): peak = 1038.230 ; gain = 460.875
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 10 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1002.789 ; gain = 289.301
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1002.789 ; gain = 424.773
+Synthesis finished with 0 errors, 0 critical warnings and 12 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:34 . Memory (MB): peak = 1038.230 ; gain = 322.758
+Synthesis Optimization Complete : Time (s): cpu = 00:00:36 ; elapsed = 00:00:37 . Memory (MB): peak = 1038.230 ; gain = 460.875
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 297 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 575 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1002.789 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1038.230 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-117 Infos, 45 Warnings, 0 Critical Warnings and 0 Errors encountered.
+132 Infos, 55 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1002.789 ; gain = 683.172
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1002.789 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1038.230 ; gain = 719.492
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1038.230 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Development/PROGH2/eindopdracht/eindopdracht.runs/synth_1/top.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Mar 21 22:57:21 2022...
+INFO: [Common 17-206] Exiting Vivado at Tue Mar 22 14:26:05 2022...

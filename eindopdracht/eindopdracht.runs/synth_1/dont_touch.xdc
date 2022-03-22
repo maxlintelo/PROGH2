@@ -48,4 +48,7 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==microblaze_micr
 # IP: bd/microblaze/ip/microblaze_axi_gpio_1_1/microblaze_axi_gpio_1_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==microblaze_axi_gpio_1_1 || ORIG_REF_NAME==microblaze_axi_gpio_1_1} -quiet] -quiet
 
+# IP: bd/microblaze/ip/microblaze_axi_gpio_2_0/microblaze_axi_gpio_2_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==microblaze_axi_gpio_2_0 || ORIG_REF_NAME==microblaze_axi_gpio_2_0} -quiet] -quiet
+
 # XDC: bd/microblaze/microblaze_ooc.xdc

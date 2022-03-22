@@ -17,7 +17,9 @@ entity top is
         top_vga_g : inout STD_LOGIC_VECTOR (3 downto 0);
         top_vga_b : inout STD_LOGIC_VECTOR (3 downto 0);
         top_vga_h_sync : inout STD_LOGIC;
-        top_vga_v_sync : inout STD_LOGIC
+        top_vga_v_sync : inout STD_LOGIC;
+        top_display : out std_logic_vector(3 downto 0);
+        top_segment : out std_logic_vector(6 downto 0)
     );
 end top;
 
@@ -26,6 +28,7 @@ architecture Behavioral of top is
         port (
             GPIO2_0_tri_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
             GPIO_0_tri_i : in STD_LOGIC_VECTOR ( 31 downto 0 );
+            GPIO_1_tri_o : out STD_LOGIC_VECTOR ( 31 downto 0 );
             dip_switches_16bits_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
             led_16bits_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
             reset : in STD_LOGIC;
@@ -76,15 +79,34 @@ architecture Behavioral of top is
             clk_in1 : in STD_LOGIC
         );
     end component clk_wiz_vga;
+    component seven_segment_display is
+        port (
+            sys_clock : in std_logic;
+            sys_reset : in std_logic;
+            left_int : in integer;
+            right_int : in integer;
+            display : out std_logic_vector(3 downto 0);
+            segment : out std_logic_vector(6 downto 0)
+        );
+    end component seven_segment_display;
     
     signal microblaze_i : std_logic_vector(31 downto 0);
     signal microblaze_o : std_logic_vector(31 downto 0);
+    signal microblaze_o_score : std_logic_vector(31 downto 0);
     
     signal vga_clock : std_logic;
     
     signal s_pwm : std_logic;
 
 begin
+    my_ss_display : seven_segment_display port map (
+        sys_clock => sys_clock,
+        sys_reset => top_reset,
+        left_int => to_integer(unsigned(microblaze_o_score(31 downto 16))),
+        right_int => to_integer(unsigned(microblaze_o_score(15 downto 0))),
+        display => top_display,
+        segment => top_segment
+    );
     my_vga_clk : clk_wiz_vga port map (
         clk_out1 => vga_clock,
         reset => top_reset,
@@ -102,10 +124,10 @@ begin
         note_color => microblaze_o(25 downto 24),
         note_type => microblaze_o(23 downto 22)
     );
-    
     my_microblaze : microblaze_wrapper port map (
         GPIO2_0_tri_o => microblaze_o,
         GPIO_0_tri_i => microblaze_i,
+        GPIO_1_tri_o => microblaze_o_score,
         dip_switches_16bits_tri_i => top_switches,
         led_16bits_tri_o => top_leds,
         reset => top_reset,
@@ -113,7 +135,6 @@ begin
         usb_uart_rxd => top_uart_rx,
         usb_uart_txd => top_uart_tx
     );
-    
     my_keyboard : ps2_keyboard port map (
         clk => sys_clock,
         reset => top_reset,
